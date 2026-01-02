@@ -62,55 +62,80 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2>Bienvenue sur le site de <br> Yanni Delattre Balcer</h2>
+        
+        <h2 style="position: relative; z-index: 10;">Bienvenue sur le site de <br> Yanni Delattre Balcer</h2>
         <p>Je suis <span class="typed" data-typed-items="Développeur web, Administrateur réseau, Programmeur, Analyste en télécoms"></span></p>
         
-        <div class="social-links">
+        <div class="social-links" style="margin-bottom: 25px;">
           <a href="https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"><i class="bi bi-linkedin"></i></a>
           <a href="https://github.com/Yanni-Delattre-Balcer"><i class="bi bi-github"></i></a>
         </div>
 
-        <div style="margin-top: 25px;">
-          <p style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 10px;">Si vous avez aimé le site, lâchez un cœur</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
           
-          <button id="likeBtn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;">
-            <i id="heartIcon" class="bi bi-heart"></i>
-            <span id="likeCount">...</span>
-          </button>
+          <div style="display: flex; align-items: center; gap: 8px; opacity: 0.8;">
+            <i class="bi bi-eye" style="color: #00d4ff;"></i>
+            <span id="v-num" style="font-size: 14px;">...</span>
+          </div>
+
+          <div id="btn-like-clean" style="cursor: pointer; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);">
+            <i id="h-icon" class="bi bi-heart"></i>
+            <span id="l-num" style="font-size: 14px;">25</span>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // Identifiant unique pour votre site (ne pas changer)
-    const siteID = "yanni-delattre-balcer-site-2024";
-    const countDisplay = document.getElementById('likeCount');
-    const heart = document.getElementById('heartIcon');
+    (function() {
+      const lNum = document.getElementById('l-num');
+      const vNum = document.getElementById('v-num');
+      const btnLike = document.getElementById('btn-like-clean');
+      const iconLike = document.getElementById('h-icon');
+      
+      // On utilise une clé spécifique pour ne pas interférer avec d'autres tests
+      const namespace = "yanni_portfolio_final_v1";
 
-    // 1. Récupérer le total mondial au chargement
-    fetch(`https://api.countapi.xyz/get/${siteID}/likes`)
-      .then(res => res.json())
-      .then(data => {
-        countDisplay.innerText = data.value || 0;
-      })
-      .catch(() => countDisplay.innerText = "0");
+      // Chargement initial
+      async function initStats() {
+        try {
+          // Vues (Hit increment)
+          const resV = await fetch(`https://api.countapi.xyz/hit/${namespace}/visits`).catch(()=>null);
+          if(resV) { const d = await resV.json(); vNum.innerText = d.value; } else { vNum.innerText = "1"; }
 
-    // 2. Action au clic
-    document.getElementById('likeBtn').onclick = function() {
-      // On vérifie si l'utilisateur a déjà cliqué durant cette session
-      if (sessionStorage.getItem('voted')) return;
+          // Likes (Get simple)
+          const resL = await fetch(`https://api.countapi.xyz/get/${namespace}/likes`).catch(()=>null);
+          if(resL) { const d = await resL.json(); lNum.innerText = d.value || "25"; }
+        } catch(e) { vNum.innerText = "1"; }
+      }
 
-      fetch(`https://api.countapi.xyz/hit/${siteID}/likes`)
-        .then(res => res.json())
-        .then(data => {
-          countDisplay.innerText = data.value;
-          heart.classList.replace('bi-heart', 'bi-heart-fill');
-          heart.style.color = "#ff4b2b";
-          sessionStorage.setItem('voted', 'true');
-        });
-    };
+      // Check si déjà liké localement
+      let isVoted = localStorage.getItem('y_voted_global') === 'true';
+      if(isVoted) { 
+        iconLike.className = "bi bi-heart-fill"; 
+        iconLike.style.color = "#ff4b2b"; 
+      }
+
+      btnLike.onclick = async function() {
+        if(!isVoted) {
+          const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/likes`).catch(()=>null);
+          if(res) {
+            const d = await res.json();
+            lNum.innerText = d.value;
+            iconLike.className = "bi bi-heart-fill";
+            iconLike.style.color = "#ff4b2b";
+            localStorage.setItem('y_voted_global', 'true');
+            isVoted = true;
+          }
+        }
+      };
+
+      initStats();
+    })();
   </script>
+
 </section>
 <!-- Fin acceuil Section -->
 
