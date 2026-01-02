@@ -237,3 +237,66 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById('btn-like-action');
+    const icon = document.getElementById('h-icon');
+    const modal = document.getElementById('like-modal');
+    const form = document.getElementById('contact-like-form');
+    const btnText = document.getElementById('btn-text');
+    const closeModal = document.getElementById('close-modal');
+
+    // 1. Vérifier si l'utilisateur a déjà liké
+    if (localStorage.getItem('yanni_feedback_sent') === 'true') {
+        setLikedUI();
+    }
+
+    // 2. Fonction pour mettre à jour l'interface après un Like
+    function setLikedUI() {
+        icon.className = "bi bi-heart-fill";
+        btnText.innerText = "Avis enregistré !";
+        btn.classList.add('is-liked');
+    }
+
+    // 3. Ouvrir la modale au clic
+    btn.onclick = function() {
+        if (localStorage.getItem('yanni_feedback_sent') !== 'true') {
+            modal.style.display = 'flex';
+        }
+    };
+
+    // 4. Fermer la modale
+    closeModal.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // 5. Gestion de l'envoi du formulaire
+    form.onsubmit = async function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.innerText = "Envoi en cours...";
+        submitBtn.disabled = true;
+
+        const data = new FormData(form);
+        
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                localStorage.setItem('yanni_feedback_sent', 'true');
+                setLikedUI();
+                modal.style.display = 'none';
+            } else {
+                throw new Error();
+            }
+        } catch (err) {
+            alert("Petit souci de connexion. Réessayez.");
+            submitBtn.innerText = "Valider le Like et l'Avis";
+            submitBtn.disabled = false;
+        }
+    };
+});

@@ -877,6 +877,121 @@ section,
     background: none !important;
 }
 
+/* Titre et structure */
+.welcome-title {
+    position: relative; 
+    z-index: 10;
+}
+
+.social-links {
+    margin-bottom: 25px;
+}
+
+.cta-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;
+}
+
+/* --- LE BOUTON --- */
+.custom-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* Effet au survol : Devient ROUGE PLEIN */
+.custom-btn:hover {
+    background: #ff4b2b !important;
+    border-color: #ff4b2b !important;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 75, 43, 0.5);
+}
+
+.custom-btn:hover #h-icon {
+    transform: scale(1.2);
+}
+
+/* État une fois liké */
+.custom-btn.is-liked {
+    background: rgba(255, 75, 43, 0.15) !important;
+    border-color: #ff4b2b !important;
+    cursor: default !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.custom-btn.is-liked #h-icon {
+    color: #ff4b2b;
+}
+
+/* --- MODALE --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-content h4 { color: white; margin-bottom: 5px; font-weight: 700; }
+.modal-subtitle { color: #bbb; font-size: 14px; margin-bottom: 20px; }
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feedback-form input, .feedback-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #222;
+    color: white;
+}
+
+.feedback-form label { color: white; font-size: 13px; margin-bottom: -8px; }
+
+#submit-btn {
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.modal-footer { text-align: center; margin-top: 15px; }
+#close-modal { color: #888; font-size: 13px; cursor: pointer; text-decoration: underline; }
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/

@@ -63,79 +63,43 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         
-        <h2 style="position: relative; z-index: 10;">Bienvenue sur le site de <br> Yanni Delattre Balcer</h2>
+        <h2 class="welcome-title">Bienvenue sur le site de <br> Yanni Delattre Balcer</h2>
         <p>Je suis <span class="typed" data-typed-items="Développeur web, Administrateur réseau, Programmeur, Analyste en télécoms"></span></p>
         
-        <div class="social-links" style="margin-bottom: 25px;">
+        <div class="social-links">
           <a href="https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"><i class="bi bi-linkedin"></i></a>
           <a href="https://github.com/Yanni-Delattre-Balcer"><i class="bi bi-github"></i></a>
         </div>
 
-        <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-          
-          <div style="display: flex; align-items: center; gap: 8px; opacity: 0.8;">
-            <i class="bi bi-eye" style="color: #00d4ff;"></i>
-            <span id="v-num" style="font-size: 14px;">...</span>
-          </div>
-
-          <div id="btn-like-clean" style="cursor: pointer; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);">
+        <div class="cta-container">
+          <div id="btn-like-action" class="custom-btn">
             <i id="h-icon" class="bi bi-heart"></i>
-            <span id="l-num" style="font-size: 14px;">25</span>
+            <span id="btn-text">Laisser un Like et un Avis</span>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 
-  <script>
-    (function() {
-      const lNum = document.getElementById('l-num');
-      const vNum = document.getElementById('v-num');
-      const btnLike = document.getElementById('btn-like-clean');
-      const iconLike = document.getElementById('h-icon');
+  <div id="like-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h4>Merci de votre visite ! 😊</h4>
+      <p class="modal-subtitle">Laissez un avis pour valider votre like.</p>
       
-      // On utilise une clé spécifique pour ne pas interférer avec d'autres tests
-      const namespace = "yanni_portfolio_final_v1";
-
-      // Chargement initial
-      async function initStats() {
-        try {
-          // Vues (Hit increment)
-          const resV = await fetch(`https://api.countapi.xyz/hit/${namespace}/visits`).catch(()=>null);
-          if(resV) { const d = await resV.json(); vNum.innerText = d.value; } else { vNum.innerText = "1"; }
-
-          // Likes (Get simple)
-          const resL = await fetch(`https://api.countapi.xyz/get/${namespace}/likes`).catch(()=>null);
-          if(resL) { const d = await resL.json(); lNum.innerText = d.value || "25"; }
-        } catch(e) { vNum.innerText = "1"; }
-      }
-
-      // Check si déjà liké localement
-      let isVoted = localStorage.getItem('y_voted_global') === 'true';
-      if(isVoted) { 
-        iconLike.className = "bi bi-heart-fill"; 
-        iconLike.style.color = "#ff4b2b"; 
-      }
-
-      btnLike.onclick = async function() {
-        if(!isVoted) {
-          const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/likes`).catch(()=>null);
-          if(res) {
-            const d = await res.json();
-            lNum.innerText = d.value;
-            iconLike.className = "bi bi-heart-fill";
-            iconLike.style.color = "#ff4b2b";
-            localStorage.setItem('y_voted_global', 'true');
-            isVoted = true;
-          }
-        }
-      };
-
-      initStats();
-    })();
-  </script>
-
+      <form id="contact-like-form" action="https://formspree.io/f/xkogwqpw" method="POST" class="feedback-form">
+        <input type="hidden" name="_subject" value="Nouvel Avis Portfolio - Yanni">
+        <input type="text" name="nom_prenom" placeholder="Nom & Prénom (Facultatif)">
+        <input type="text" name="metier" placeholder="Métier (Facultatif)">
+        <label>Votre avis est requis *</label>
+        <textarea name="commentaire" placeholder="Qu'avez-vous pensé de mon portfolio ?" required rows="4"></textarea>
+        <button type="submit" id="submit-btn">Valider le like et l'avis</button>
+      </form>
+      
+      <div class="modal-footer">
+        <span id="close-modal">Annuler</span>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- Fin acceuil Section -->
 
