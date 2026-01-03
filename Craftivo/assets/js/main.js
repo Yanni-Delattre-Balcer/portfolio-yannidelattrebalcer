@@ -182,7 +182,7 @@
 })();
 
 /**
- * SECTION ACCUEIL : Gestion du Like et Feedback (Modale)
+ * SECTION ACCUEIL : Gestion du Like et Feedback (Modale corrigée pour Anti-Spam)
  */
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById('btn-like-action');
@@ -213,30 +213,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (form) {
-        form.onsubmit = async function(e) {
-            e.preventDefault();
+        form.onsubmit = function() {
             const submitBtn = document.getElementById('submit-btn');
-            
             const isEnglish = document.documentElement.lang === 'en';
-            const originalText = submitBtn.innerText;
-            submitBtn.innerText = isEnglish ? "Sending..." : "Envoi en cours...";
-            submitBtn.disabled = true;
-
-            const data = new FormData(form);
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST', body: data, headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    localStorage.setItem('yanni_feedback_sent', 'true');
-                    setLikedUI();
-                    modal.style.display = 'none';
-                } else { throw new Error(); }
-            } catch (err) {
-                alert(isEnglish ? "Error. Please try again." : "Erreur. Réessayez.");
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-            }
+            
+            // Changement visuel pour l'utilisateur
+            submitBtn.innerText = isEnglish ? "Redirecting..." : "Redirection...";
+            
+            // On enregistre le succès localement avant la redirection
+            localStorage.setItem('yanni_feedback_sent', 'true');
+            
+            // On laisse le formulaire s'envoyer normalement pour gérer le CAPTCHA Formspree
+            return true; 
         };
     }
 });
