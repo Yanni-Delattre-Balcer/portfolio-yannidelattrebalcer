@@ -5,7 +5,6 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
 (function() {
   "use strict";
 
@@ -28,8 +27,10 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
   }
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
@@ -152,7 +153,7 @@
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
-      swiperElement.classList.contains("swiper-tab") ? initSwiperWithCustomPagination(swiperElement, config) : new Swiper(swiperElement, config);
+      new Swiper(swiperElement, config);
     });
   }
   window.addEventListener("load", initSwiper);
@@ -182,7 +183,6 @@
 
 /**
  * SECTION ACCUEIL : Gestion du Like et Feedback (Modale)
- * Version Simplifiée (Le texte est géré par CSS)
  */
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById('btn-like-action');
@@ -191,18 +191,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('contact-like-form');
     const closeModal = document.getElementById('close-modal');
 
-    // 1. Vérifier le stockage local
     if (localStorage.getItem('yanni_feedback_sent') === 'true') {
         setLikedUI();
     }
 
-    // 2. Mise à jour UI (Juste la classe et l'icône, le texte est en CSS)
     function setLikedUI() {
-        icon.className = "bi bi-heart-fill";
-        btn.classList.add('is-liked');
+        if (icon) icon.className = "bi bi-heart-fill";
+        if (btn) btn.classList.add('is-liked');
     }
 
-    // 3. Events
     if (btn) {
         btn.onclick = function() {
             if (localStorage.getItem('yanni_feedback_sent') !== 'true') {
@@ -220,7 +217,6 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             const submitBtn = document.getElementById('submit-btn');
             
-            // Petit hack pour le texte du bouton loading (multilingue simple via JS ici ou CSS avancé)
             const isEnglish = document.documentElement.lang === 'en';
             const originalText = submitBtn.innerText;
             submitBtn.innerText = isEnglish ? "Sending..." : "Envoi en cours...";
