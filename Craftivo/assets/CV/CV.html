@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Yanni Delattre Balcer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&family=Raleway:wght@400;600;700;800&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --background-color: #141414;
+      --default-color: #d9d9d9;
+      --heading-color: #ededed;
+      --accent-color: #ff4d4f;
+      --surface-color: #1c1c1c;
+      --contrast-color: #ffffff;
+      --default-font: "Roboto", system-ui, sans-serif;
+      --heading-font: "Mulish", sans-serif;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: var(--default-font);
+      background: var(--background-color);
+      color: var(--default-color);
+    }
+    
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    .cv-page {
+      width: 210mm;
+      height: 297mm;
+      background: var(--surface-color);
+      margin: 0 auto;
+      box-shadow: none;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .cv-header {
+      background: linear-gradient(135deg, rgba(255, 77, 79, 0.2), rgba(255, 77, 79, 0.05));
+      padding: 18px 35px 15px;
+      border-bottom: 3px solid var(--accent-color);
+      position: relative;
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .profile-photo {
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 6px 20px rgba(255, 77, 79, 0.4);
+    }
+    
+    .header-text {
+      flex: 1;
+    }
+    
+    .cv-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--heading-color);
+      margin-bottom: 3px;
+      font-family: var(--heading-font);
+      letter-spacing: -0.5px;
+    }
+    
+    .cv-title {
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+    }
+    
+    .cv-tagline {
+      font-size: 10.5px;
+      line-height: 1.4;
+      color: var(--default-color);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    
+    .header-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 9px;
+    }
+    
+    .contact-item-header {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--default-color);
+    }
+    
+    .contact-item-header i {
+      color: var(--accent-color);
+      font-size: 10px;
+    }
+    
+    .contact-item-header a {
+      color: var(--default-color);
+      text-decoration: none;
+    }
+    
+    .cv-body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      flex: 1;
+      overflow: hidden;
+    }
+    
+    .cv-sidebar {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px 18px;
+      border-right: 2px solid rgba(255, 77, 79, 0.2);
+      overflow: hidden;
+    }
+    
+    .sidebar-section {
+      margin-bottom: 18px;
+    }
+    
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-title {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      margin-bottom: 10px;
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 4px;
+      font-family: var(--heading-font);
+    }
+    
+    .skill-item {
+      margin-bottom: 9px;
+    }
+    
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    
+    .skill-name {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+    
+    .skill-percent {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+    
+    .skill-bar {
+      height: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-color), #ff6b9d);
+      border-radius: 3px;
+      transition: width 1s ease-out;
+    }
+    
+    .cert-item {
+      margin-bottom: 6px;
+      padding: 5px 7px;
+      background: rgba(255, 77, 79, 0.08);
+      border-left: 3px solid var(--accent-color);
+      border-radius: 3px;
+    }
+    
+    .cert-name {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 1px;
+    }
+    
+    .cert-year {
+      font-size: 8px;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    
+    .language-name {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+    
+    .language-level {
+      font-size: 8px;
+      color: var(--accent-color);
+      font-weight: 700;
+      background: rgba(255, 77, 79, 0.15);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+    
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-size: 9px;
+    }
+    
+    .interest-item i {
+      color: var(--accent-color);
+      font-size: 11px;
+    }
+    
+    .cv-main {
+      padding: 20px 30px;
+      overflow: hidden;
+    }
+    
+    .main-section {
+      margin-bottom: 16px;
+    }
+    
+    .main-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .section-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--heading-color);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 5px;
+      font-family: var(--heading-font);
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .education-item {
+      margin-bottom: 11px;
+      padding-left: 16px;
+      border-left: 2px solid rgba(255, 77, 79, 0.3);
+      position: relative;
+    }
+    
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -5.5px;
+      top: 2px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+    }
+    
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+    
+    .education-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+    }
+    
+    .education-date {
+      font-size: 8.5px;
+      color: var(--accent-color);
+      font-weight: 700;
+      background: rgba(255, 77, 79, 0.15);
+      padding: 2px 7px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    
+    .education-school {
+      font-size: 9.5px;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .education-desc {
+      font-size: 8.5px;
+      line-height: 1.35;
+      color: var(--default-color);
+    }
+    
+    .experience-item {
+      margin-bottom: 11px;
+      padding-left: 16px;
+      border-left: 2px solid rgba(255, 77, 79, 0.3);
+      position: relative;
+    }
+    
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: -5.5px;
+      top: 2px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+    }
+    
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+    
+    .experience-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+    }
+    
+    .experience-company {
+      font-size: 9.5px;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .experience-date {
+      font-size: 8.5px;
+      color: var(--accent-color);
+      font-weight: 700;
+      background: rgba(255, 77, 79, 0.15);
+      padding: 2px 7px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    
+    .experience-desc {
+      font-size: 8.5px;
+      line-height: 1.4;
+      color: var(--default-color);
+    }
+    
+    .experience-desc ul {
+      margin: 3px 0 0 10px;
+      padding: 0;
+    }
+    
+    .experience-desc li {
+      margin-bottom: 2px;
+      position: relative;
+      padding-left: 3px;
+    }
+    
+    .experience-desc li::marker {
+      color: var(--accent-color);
+    }
+    
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .tech-category {
+      background: rgba(255, 77, 79, 0.05);
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 77, 79, 0.2);
+    }
+    
+    .tech-category-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+    
+    .tech-tag {
+      background: rgba(255, 77, 79, 0.15);
+      color: var(--heading-color);
+      padding: 2px 6px;
+      border-radius: 7px;
+      font-size: 8px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 77, 79, 0.3);
+    }
+    
+    .objective-box {
+      background: linear-gradient(135deg, rgba(255, 77, 79, 0.1), rgba(255, 77, 79, 0.05));
+      padding: 10px;
+      border-radius: 4px;
+      border-left: 3px solid var(--accent-color);
+      font-size: 9.5px;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--default-color);
+    }
+    
+    @media (max-width: 768px) {
+      .cv-page {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        min-height: 100vh;
+      }
+      
+      .cv-body {
+        grid-template-columns: 1fr;
+      }
+      
+      .cv-sidebar {
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 77, 79, 0.2);
+      }
+      
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .header-contact {
+        justify-content: center;
+      }
+      
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media print {
+      body {
+        background: white;
+      }
+      
+      .cv-page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      
+      .main-section {
+        page-break-inside: avoid;
+      }
+      
+      .experience-item, .education-item {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-page">
+    <header class="cv-header">
+      <div class="header-content">
+        <div class="profile-photo">YDB</div>
+        <div class="header-text">
+          <h1 class="cv-name">Yanni Delattre Balcer</h1>
+          <h2 class="cv-title">Étudiant BUT R&T · Cybersécurité</h2>
+          <p class="cv-tagline">Développeur web, Administrateur réseau, Programmeur, Analyste en télécoms</p>
+          <div class="header-contact">
+            <div class="contact-item-header">
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:yannidelattrebalcer.artois@gmail.com">yannidelattrebalcer.artois@gmail.com</a>
+            </div>
+            <div class="contact-item-header">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>France / 62 (Pas-de-Calais)</span>
+            </div>
+            <div class="contact-item-header">
+              <i class="bi bi-car-front-fill"></i>
+              <span>Permis B</span>
+            </div>
+            <div class="contact-item-header">
+              <i class="bi bi-linkedin"></i>
+              <a href="https://linkedin.com/in/yanni-delattre-balcer-73bb573a3">LinkedIn</a>
+            </div>
+            <div class="contact-item-header">
+              <i class="bi bi-github"></i>
+              <a href="https://github.com/Yanni-Delattre-Balcer">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cv-body">
+      <aside class="cv-sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Compétences Clés</h3>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Anglais Tech</span>
+              <span class="skill-percent">83%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 83%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Systèmes d'exploitation</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Programmation</span>
+              <span class="skill-percent">77%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 77%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Réseaux</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Math du signal</span>
+              <span class="skill-percent">72%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 72%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Web</span>
+              <span class="skill-percent">63%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 63%"></div></div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Certifications</h3>
+          <div class="cert-item">
+            <div class="cert-name">CCNA SRWE</div>
+            <div class="cert-year">En cours (2025)</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Python Essentials 2</div>
+            <div class="cert-year">2025 - Cisco</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Python Essentials 1</div>
+            <div class="cert-year">2025 - Cisco</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">PIX Lycée</div>
+            <div class="cert-year">2025</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">PIX Collège</div>
+            <div class="cert-year">2022</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Langues</h3>
+          <div class="language-item">
+            <span class="language-name">Français</span>
+            <span class="language-level">Natif</span>
+          </div>
+          <div class="language-item">
+            <span class="language-name">Anglais</span>
+            <span class="language-level">B1/B2</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Disponibilité</h3>
+          <div class="interest-item">
+            <i class="bi bi-calendar-check"></i>
+            <span>Jeudi après-midi</span>
+          </div>
+          <div class="interest-item">
+            <i class="bi bi-calendar-check"></i>
+            <span>Week-end</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="cv-main">
+        <section class="main-section">
+          <h3 class="section-title">Objectif Professionnel</h3>
+          <div class="objective-box">
+            Mon objectif ? Bâtir des bases solides pour poursuivre vers un Bac+5 voir Bac+9 en cybersécurité, avec pour but final de travailler dans le pentesting. Curieux de nature, je cherche constamment à comprendre les systèmes en profondeur et je reste attentif aux certifications pour devenir un étudiant polyvalent, capable de protéger les infrastructures que j'apprends à construire.
+          </div>
+        </section>
+
+        <section class="main-section">
+          <h3 class="section-title">Formation</h3>
+          
+          <div class="education-item">
+            <div class="education-header">
+              <div>
+                <div class="education-title">BUT Réseaux et Télécommunications (R&T)</div>
+                <div class="education-school">IUT de Béthune</div>
+              </div>
+              <div class="education-date">2025-2026</div>
+            </div>
+            <div class="education-desc">
+              Actuellement en première année de BUT R&T, je prévois de choisir le parcours Cybersécurité pour mes deux dernières années d'études. En cours d'obtention.
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="education-header">
+              <div>
+                <div class="education-title">Baccalauréat Général</div>
+                <div class="education-school">Lycée privé polyvalent Saint-Paul, Lens</div>
+              </div>
+              <div class="education-date">2022-2025</div>
+            </div>
+            <div class="education-desc">
+              Spécialités: <strong>Mathématiques</strong> & <strong>NSI</strong> (Numérique et Sciences Informatiques) · Physique-Chimie en 1ère · Obtenu
+            </div>
+          </div>
+        </section>
+
+        <section class="main-section">
+          <h3 class="section-title">Projets & Réalisations</h3>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Site Web Professionnel Salon de Coiffure</div>
+                <div class="experience-company">Projet Personnel · Loison-sous-Lens</div>
+              </div>
+              <div class="experience-date">2025</div>
+            </div>
+            <div class="experience-desc">
+              Création d'une interface moderne pour salon de coiffure et institut de beauté. Site intuitif facilitant l'accès aux tarifs et aux informations pratiques.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Analyse Ligne de Transmission Coaxiale 75Ω</div>
+                <div class="experience-company">Projet Académique R&T</div>
+              </div>
+              <div class="experience-date">2025</div>
+            </div>
+            <div class="experience-desc">
+              Analyse de faisabilité et simulation (Matlab/LTspice) d'une ligne de transmission coaxiale. Étude de l'atténuation et du délai de propagation sur 5m et 20m.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Modélisation 3D Architecturale</div>
+                <div class="experience-company">Projet Personnel</div>
+              </div>
+              <div class="experience-date">2021</div>
+            </div>
+            <div class="experience-desc">
+              Modélisation d'une habitation et son agrandissement (SketchUp et Sweet Home 3D). Plans pour dossier de mairie et support technique pour artisans.
+            </div>
+          </div>
+        </section>
+
+        <section class="main-section">
+          <h3 class="section-title">Expérience</h3>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Stage Observation - Service Informatique</div>
+                <div class="experience-company">Swiss Life France · Roubaix</div>
+              </div>
+              <div class="experience-date">2022</div>
+            </div>
+            <div class="experience-desc">
+              Stage d'observation découverte du développement web et des enjeux IT. Échange déterminant avec le Responsable Cybersécurité qui a confirmé ma vocation vers la cybersécurité et le pentesting.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Stage Observation - Service Informatique</div>
+                <div class="experience-company">Mairie de Loison-sous-Lens</div>
+              </div>
+              <div class="experience-date">2021</div>
+            </div>
+            <div class="experience-desc">
+              Découverte de l'organisation d'une collectivité et gestion d'un parc informatique (résolution d'incidents, assistance utilisateurs). Première expérience ayant consolidé mon choix d'orientation vers NSI.
+            </div>
+          </div>
+        </section>
+
+        <section class="main-section">
+          <h3 class="section-title">Compétences Techniques</h3>
+          <div class="tech-grid">
+            <div class="tech-category">
+              <div class="tech-category-title">Systèmes & Réseaux</div>
+              <div class="tech-tags">
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">TCP/IP</span>
+                <span class="tech-tag">Architecture</span>
+                <span class="tech-tag">Admin Système</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <div class="tech-category-title">Développement</div>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML/CSS/JS</span>
+                <span class="tech-tag">Programmation</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <div class="tech-category-title">Télécoms & Signal</div>
+              <div class="tech-tags">
+                <span class="tech-tag">Math Signal</span>
+                <span class="tech-tag">Transmission</span>
+                <span class="tech-tag">Électronique</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <div class="tech-category-title">Outils </div>
+              <div class="tech-tags">
+                <span class="tech-tag">Matlab</span>
+                <span class="tech-tag">LTspice</span>
+                <span class="tech-tag">Wireshark</span>
+                <span class="tech-tag">Kali-linux / Ubuntu</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const skillBars = document.querySelectorAll('.skill-fill');
+      skillBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>

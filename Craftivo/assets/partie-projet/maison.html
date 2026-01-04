@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport de Projet - Rénovation et Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #d9d9d9;
+            background-color: #141414;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 40px;
+            background-color: #1c1c1c;
+            border-bottom: 3px solid #ff4d4f;
+            box-shadow: 0 4px 20px rgba(255, 77, 79, 0.3);
+        }
+        
+        h1 {
+            color: #ff4d4f;
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(255, 77, 79, 0.5);
+        }
+        
+        .subtitle {
+            color: #b0b0b0;
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .content-wrapper {
+            padding: 40px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: #ff4d4f;
+            font-size: 28px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 5px solid #ff4d4f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h3 {
+            color: #ff6b7a;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #ff6b7a;
+        }
+        
+        h4 {
+            color: #ffa8b0;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        p {
+            color: #d9d9d9;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .before, .after {
+            padding: 25px;
+            border-radius: 12px;
+            background: #1c1c1c;
+            border: 2px solid;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .before {
+            border-color: #ff4d4f;
+            background: linear-gradient(135deg, rgba(255, 77, 79, 0.1) 0%, rgba(255, 77, 79, 0.05) 100%);
+        }
+        
+        .after {
+            border-color: #5fb759;
+            background: linear-gradient(135deg, rgba(95, 183, 89, 0.1) 0%, rgba(95, 183, 89, 0.05) 100%);
+        }
+        
+        .label {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .before .label {
+            color: #ff4d4f;
+        }
+        
+        .after .label {
+            color: #5fb759;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+            color: #d9d9d9;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: #ff6b7a;
+            font-weight: 600;
+        }
+        
+        .technical-specs {
+            background: #1c1c1c;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 77, 79, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .spec-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #ff4d4f;
+        }
+        
+        .spec-label {
+            font-weight: bold;
+            color: #ff6b7a;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .spec-value {
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+        
+        .materials {
+            background: rgba(255, 107, 122, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px solid #ff6b7a;
+        }
+        
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #ff4d4f;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(255, 77, 79, 0.3);
+            margin-bottom: 15px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding: 40px;
+            border-top: 3px solid #ff4d4f;
+            text-align: center;
+            color: #808080;
+            font-size: 13px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer strong {
+            color: #ff6b7a;
+        }
+        
+        @media print {
+            body {
+                background: #141414;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .comparison,
+            .image-grid,
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RAPPORT DE PROJET</h1>
+            <div class="subtitle">Rénovation et Extension d'Habitation</div>
+            <div class="subtitle" style="margin-top: 10px;">2021</div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>1. Présentation du Projet</h2>
+                <p>
+                    Ce projet concerne la rénovation et l'extension d'une habitation existante. Les travaux comprennent 
+                    l'ajout d'une nouvelle construction ainsi que l'aménagement des espaces existants pour créer 
+                    un ensemble harmonieux et fonctionnel.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>2. Vues d'Ensemble du Projet</h2>
+                
+                <h3>2.1 État Existant</h3>
+                <div class="image-container">
+                    <p style="color: #ff4d4f; font-weight: bold; margin-bottom: 15px; font-size: 18px;">🏠 AVANT - Vue avant travaux</p>
+                    <img src="vue avant travaux.png" alt="Vue avant travaux" class="project-image">
+                    <p class="image-caption">État de l'habitation avant les travaux d'extension</p>
+                </div>
+
+                <h3>2.2 Vues 3D du Projet Final</h3>
+                
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="vue après travaux.png" alt="Vue après travaux" class="project-image">
+                        <p class="image-caption">Vue d'ensemble avec nouvelle construction après travaux</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="vue aèrienne avec extension.png" alt="Vue aérienne avec extension" class="project-image">
+                        <p class="image-caption">Vue aérienne montrant l'intégration avec le bâtiment existant</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. Analyse Comparative : Avant / Après</h2>
+                
+                <div class="comparison">
+                    <div class="before">
+                        <div class="label">🏠 AVANT</div>
+                        <ul>
+                            <li>Bâtiment existant avec jardin</li>
+                            <li>Garage séparé</li>
+                            <li>Espace de vie limité</li>
+                            <li>Pas de liaison entre les espaces</li>
+                            <li>Toiture traditionnelle</li>
+                            <li>Murs en briques apparentes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="after">
+                        <div class="label">✨ APRÈS</div>
+                        <ul>
+                            <li>Extension moderne ajoutée</li>
+                            <li>Nouvelle chambre créée</li>
+                            <li>Bureau supplémentaire</li>
+                            <li>Espace jardin optimisé</li>
+                            <li>Toiture plate EPDM</li>
+                            <li>Liaison harmonieuse entre ancien et nouveau</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>4. Plans et Élévations</h2>
+                
+                <h3>4.1 Vue en Plan (Vue du dessus)</h3>
+                <div class="image-container">
+                    <img src="vue aèrienne.png" alt="Vue aérienne" class="project-image">
+                    <p class="image-caption">Vue aérienne montrant les dimensions : 4,15m x 5,48m avec tranchée drainante EP</p>
+                </div>
+
+                <h3>4.2 Élévations</h3>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="vue coté droit.png" alt="Vue côté droit" class="project-image">
+                        <p class="image-caption">Vue latérale droite du projet complet</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="vue coté gauche.png" alt="Vue côté gauche" class="project-image">
+                        <p class="image-caption">Vue latérale gauche du projet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. Façades et Ouvertures</h2>
+                
+                <h3>5.1 Façade Jardin</h3>
+                <div class="image-container">
+                    <img src="vue de face.png" alt="Vue de face" class="project-image">
+                    <p class="image-caption">Dimensions précises : Largeur totale 5,50m avec hauteurs d'allège à 1,00m et 0,38m</p>
+                </div>
+
+                <h3>5.2 Vue Arrière</h3>
+                <div class="image-container">
+                    <img src="vue dèrriere.png" alt="Vue derrière" class="project-image">
+                    <p class="image-caption">Vue arrière montrant la connexion entre les espaces existants et nouveaux</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. Description des Travaux Réalisés</h2>
+                
+                <h3>6.1 Nouvelle Construction</h3>
+                <div class="technical-specs">
+                    <h4>Dimensions et Surface</h4>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Longueur</div>
+                            <div class="spec-value">5,48 m</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Largeur</div>
+                            <div class="spec-value">4,15 m à 5,25 m</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Hauteur</div>
+                            <div class="spec-value">Variable (toiture en pente)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Surface ajoutée</div>
+                            <div class="spec-value">≈ 25 m²</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>6.2 Espaces Créés</h3>
+                <ul>
+                    <li><strong>Nouvelle Chambre</strong> - Espace confortable et lumineux</li>
+                    <li><strong>Nouveau Bureau</strong> - Espace de travail dédié</li>
+                    <li><strong>Tranchée Drainante EP</strong> - Gestion des eaux pluviales</li>
+                    <li><strong>Espace Jardin Réaménagé</strong> - Optimisation de l'extérieur</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. Plan de Distribution</h2>
+                
+                <div class="image-container">
+                    <img src="PLAN DE MASSE 2.png" alt="Plan de masse" class="project-image">
+                    <p class="image-caption">Répartition fonctionnelle des espaces après travaux</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="plan en coupe.png" alt="Plan en coupe" class="project-image">
+                    <p class="image-caption">Vue en coupe montrant la distribution entre bâtiment existant et nouvelle construction</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>8. Vues Supplémentaires du Projet</h2>
+                
+                <h3>8.1 Façades Avant et Après</h3>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="façade avant travaux.png" alt="Façade avant travaux" class="project-image">
+                        <p class="image-caption">Façade avant les travaux d'extension</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="façade après travaux.png" alt="Façade après travaux" class="project-image">
+                        <p class="image-caption">Façade après les travaux d'extension</p>
+                    </div>
+                </div>
+
+                <h3>8.2 Vues Latérales</h3>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="côté 2.png" alt="Côté 2" class="project-image">
+                        <p class="image-caption">Vue latérale alternative de l'ensemble</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="toutes côtes.png" alt="Toutes côtes" class="project-image">
+                        <p class="image-caption">Vue avec toutes les cotations du bâtiment</p>
+                    </div>
+                </div>
+
+                <h3>8.3 Vues 3D Détaillées</h3>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="vue plongeante avant.png" alt="Vue plongeante avant" class="project-image">
+                        <p class="image-caption">Perspective 3D plongeante depuis l'avant</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="vue plongeante arrière.png" alt="Vue plongeante arrière" class="project-image">
+                        <p class="image-caption">Perspective 3D plongeante depuis l'arrière</p>
+                    </div>
+                </div>
+
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="vue aèrienne sans extension.png" alt="Vue aérienne sans extension" class="project-image">
+                        <p class="image-caption">Vue aérienne de l'état existant sans extension</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="maison maintenant - Copie2.png" alt="Maison état actuel" class="project-image">
+                        <p class="image-caption">Vue d'ensemble du projet complet finalisé</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>9. Spécifications Techniques Détaillées</h2>
+                
+                <div class="materials">
+                    <h3 style="color: #ff4d4f; margin-top: 0;">9.1 Matériaux de Toiture</h3>
+                    <ul>
+                        <li><strong>Toiture EPDM</strong> - Membrane étanche haute performance</li>
+                        <li><strong>Couvertines en tête de mur</strong> - Finition zinc</li>
+                        <li><strong>Parpaings crépis</strong> - Couleur gris cendre identique à la maison</li>
+                        <li><strong>Fenêtre coupole</strong> - 100 × 100 cm pour apport de lumière naturelle</li>
+                    </ul>
+                </div>
+
+                <div class="technical-specs">
+                    <h4>9.2 Menuiseries Extérieures PVC Blanc</h4>
+                    <ul>
+                        <li><strong>Porte-fenêtre</strong> - 120 × 205 cm</li>
+                        <li><strong>Fenêtre 3 vantaux</strong> - 214 × 120 cm</li>
+                        <li><strong>Fenêtre coupole</strong> - 100 × 100 cm (toiture)</li>
+                    </ul>
+                </div>
+
+                <div class="technical-specs">
+                    <h4>9.3 Dimensions des Ouvertures</h4>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Porte-fenêtre</div>
+                            <div class="spec-value">1,20 m × 2,05 m</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Grande fenêtre</div>
+                            <div class="spec-value">2,14 m × 1,20 m</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Hauteur allège</div>
+                            <div class="spec-value">1,00 m / 0,38 m</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Hauteur linteau</div>
+                            <div class="spec-value">0,82 m / 1,14 m</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>9.4 Gestion des Eaux Pluviales</h3>
+                <ul>
+                    <li><strong>Descente EP en zinc</strong> - Raccordement à la tranchée drainante</li>
+                    <li><strong>Tranchée drainante EP</strong> - Évacuation optimale des eaux de toiture</li>
+                    <li><strong>Système intégré</strong> - Conçu pour assurer une évacuation efficace</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>10. Aspects Esthétiques et Intégration</h2>
+                
+                <h3>10.1 Intégration Architecturale</h3>
+                <ul>
+                    <li>Harmonie avec le bâtiment existant</li>
+                    <li>Crépi de couleur identique (gris cendre)</li>
+                    <li>Menuiseries blanches en PVC pour cohérence visuelle</li>
+                    <li>Toiture plate moderne créant un contraste élégant</li>
+                </ul>
+
+                <h3>10.2 Façades</h3>
+                <ul>
+                    <li><strong>Façade jardin</strong> - Grande baie vitrée (214×120cm) pour luminosité maximale</li>
+                    <li><strong>Façade cour</strong> - Porte-fenêtre (120×205cm) avec accès extérieur direct</li>
+                    <li><strong>Murs crépis</strong> - Finition soignée et durable, ton gris cendre</li>
+                    <li><strong>Parpaings</strong> - Couleur identique à l'habitation existante pour unité visuelle</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>11. Outils de Conception Utilisés</h2>
+                
+                <h3>11.1 SketchUp</h3>
+                <p>
+                    Modélisation 3D complète du projet permettant de visualiser l'ensemble sous tous les angles, 
+                    avec représentation détaillée des matériaux, textures et dimensions exactes. Les vues 3D permettent 
+                    d'anticiper le rendu final et de valider les choix esthétiques.
+                </p>
+
+                <h3>11.2 Sweet Home 3D</h3>
+                <p>
+                    Plans 2D et vues en perspective pour l'aménagement intérieur, facilitant la compréhension 
+                    de la distribution des espaces et la circulation entre les différentes zones. Permet une 
+                    visualisation précise des dimensions et de l'ergonomie des pièces.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>12. Avantages du Projet</h2>
+                
+                <div class="comparison">
+                    <div class="after" style="grid-column: span 2;">
+                        <div class="label">✅ BÉNÉFICES</div>
+                        <ul>
+                            <li><strong>Surface habitable augmentée</strong> - Environ 25 m² supplémentaires</li>
+                            <li><strong>Espaces de vie optimisés</strong> - Bureau et chambre supplémentaires</li>
+                            <li><strong>Luminosité améliorée</strong> - Grandes ouvertures vitrées (214×120cm + 120×205cm)</li>
+                            <li><strong>Valorisation immobilière</strong> - Extension de qualité avec matériaux durables</li>
+                            <li><strong>Confort moderne</strong> - Menuiseries PVC performantes, isolation optimale</li>
+                            <li><strong>Gestion des eaux pluviales</strong> - Système complet avec tranchée drainante</li>
+                            <li><strong>Esthétique harmonieuse</strong> - Intégration parfaite avec l'existant</li>
+                            <li><strong>Fonctionnalité</strong> - Circulation optimisée entre les espaces</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>13. Récapitulatif Technique</h2>
+                
+                <div style="background: linear-gradient(135deg, rgba(255, 77, 79, 0.2) 0%, rgba(255, 77, 79, 0.1) 100%); padding: 30px; border-radius: 12px; border: 2px solid #ff4d4f;">
+                    <h3 style="color: #ff4d4f; margin-top: 0;">Synthèse du Projet</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 15px;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; border-left: 3px solid #ff6b7a;">
+                            <strong style="color: #ff6b7a;">📐 Dimensions:</strong><br>
+                            <span style="color: #c0c0c0;">
+                                • Longueur: 5,48 m<br>
+                                • Largeur: 4,15-5,25 m<br>
+                                • Surface: ~25 m²
+                            </span>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; border-left: 3px solid #ff6b7a;">
+                            <strong style="color: #ff6b7a;">🏗️ Matériaux:</strong><br>
+                            <span style="color: #c0c0c0;">
+                                • Toiture EPDM<br>
+                                • Crépi gris cendre<br>
+                                • Menuiseries PVC blanc
+                            </span>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; border-left: 3px solid #ff6b7a;">
+                            <strong style="color: #ff6b7a;">🚪 Ouvertures:</strong><br>
+                            <span style="color: #c0c0c0;">
+                                • Porte-fenêtre: 120×205cm<br>
+                                • Fenêtre: 214×120cm<br>
+                                • Coupole: 100×100cm
+                            </span>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; border-left: 3px solid #ff6b7a;">
+                            <strong style="color: #ff6b7a;">🏠 Espaces:</strong><br>
+                            <span style="color: #c0c0c0;">
+                                • Bureau<br>
+                                • Chambre<br>
+                                • Jardin réaménagé
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p><strong>Rapport de Projet - Rénovation et Extension d'Habitation </strong></p>
