@@ -228,3 +228,37 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     }
 });
+// Gestion des filtres Portfolio depuis le footer
+document.querySelectorAll('.footer-links a[data-filter]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const filter = this.getAttribute('data-filter');
+    
+    // Scroll vers la section Portfolio
+    document.querySelector('#Portfolio').scrollIntoView({ behavior: 'smooth' });
+    
+    // Attendre que le scroll soit terminé puis activer le filtre
+    setTimeout(() => {
+      const filterButton = document.querySelector(`.portfolio-filters [data-filter="${filter}"]`);
+      if (filterButton) {
+        filterButton.click();
+      }
+    }, 100);
+  });
+});
+// Gestion des filtres Portfolio depuis le footer ET depuis les compétences
+document.querySelectorAll('a[data-filter]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const filter = this.getAttribute('data-filter');
+    
+    // Scroll instantané vers Portfolio
+    document.querySelector('#Portfolio').scrollIntoView({ behavior: 'auto' });
+    
+    // Activer le filtre immédiatement
+    const filterButton = document.querySelector(`.portfolio-filters [data-filter="${filter}"]`);
+    if (filterButton) {
+      filterButton.click();
+    }
+  });
+});

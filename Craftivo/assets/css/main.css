@@ -1054,6 +1054,39 @@ bottom: 0;
 background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 animation: shimmer 2s infinite;
 }
+/* ========================================
+   ICÔNES D'AMPOULE - COMPÉTENCES CLIQUABLES
+   ======================================== */
+
+.skill-name a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-name a .bi-lightbulb-fill {
+  color: #ffd700;
+  font-size: 1em;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.skill-name a:hover .bi-lightbulb-fill {
+  color: #ffed4e;
+  animation: none;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
 /* ========== Animations ========== */
 @keyframes pulse {
 0%, 100% { opacity: 1; }
