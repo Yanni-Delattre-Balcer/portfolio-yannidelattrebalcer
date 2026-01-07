@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- ========================================
+     HEAD - METADATA AND RESOURCES
+     ======================================== -->
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -8,70 +11,94 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
+<!-- END HEAD -->
 
+<!-- ========================================
+     BODY - MAIN CONTENT
+     ======================================== -->
 <body class="index-page">  
 
+  <!-- ========================================
+       HEADER - MAIN NAVIGATION
+       ======================================== -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <!-- Logo -->
+      <a href="index_en.html" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/favicon.png" alt="My logo">
       </a>
 
+      <!-- Navigation Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active"></a></li>
-          <li><a href="#Acceuil">Home</a></li>
-          <li><a href="#Moi">About</a></li>
-          <li><a href="#Compétences">Skills</a></li>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Skills">Skills</a></li>
           <li><a href="#Portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
           
+          <!-- Language Selector -->
           <li class="d-flex align-items-center">
-             <a href="index.html" title="Traduire en Français" style="padding-left: 20px; display: flex; align-items: center;">
-                <img src="assets/img/fr-flag.png" alt="French" class="nav-flag" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover;">
+             <a href="index.html" title="Traduire en français" style="padding-left: 20px; display: flex; align-items: center;">
+                <img src="assets/img/fr-flag.png" alt="Français" class="nav-flag" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover;">
              </a>
           </li>
-
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
     </div>
   </header>
+  <!-- END HEADER -->
 
+  <!-- ========================================
+       MAIN - MAIN SITE CONTENT
+       ======================================== -->
   <main class="main">
 
-    <section id="Acceuil" class="hero section dark-background">
+    <!-- ========================================
+         HOME / HERO SECTION
+         ======================================== -->
+    <section id="Home" class="hero section dark-background">
+      <!-- Background Image -->
       <img src="assets/img/profile/profile-bg-5.webp" alt="" data-aos="fade-in">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
             
-            <h2 class="welcome-title">Welcome to the website of <br> Yanni Delattre Balcer</h2>
-            <p>I am a <span class="typed" data-typed-items="Web Developer, Network Administrator, Programmer, Telecom Analyst"></span></p>
+            <!-- Welcome Title -->
+            <h2 class="welcome-title">Welcome to <br> Yanni Delattre Balcer's Website</h2>
+            <p>I am a <span class="typed" data-typed-items="computer networking and telecommunications student"></span></p>
             
+            <!-- Social Links -->
             <div class="social-links">
               <a href="https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"><i class="bi bi-linkedin"></i></a>
               <a href="https://github.com/Yanni-Delattre-Balcer"><i class="bi bi-github"></i></a>
             </div>
 
+            <!-- Like Button and Review -->
             <div class="cta-container">
               <div id="btn-like-action" class="custom-btn">
                 <i id="h-icon" class="bi bi-heart"></i>
@@ -82,18 +109,20 @@
         </div>
       </div>
 
+      <!-- Modal for Review Form -->
       <div id="like-modal" class="modal-overlay">
         <div class="modal-content">
-          <h4>Thanks for visiting! 😊</h4>
+          <h4>Thank you for visiting! 😊</h4>
           <p class="modal-subtitle">Leave a review to validate your like.</p>
           
+          <!-- Review Form -->
           <form id="contact-like-form" action="https://formspree.io/f/xkogwqpw" method="POST" class="feedback-form">
             <input type="hidden" name="_subject" value="New Portfolio Review - Yanni">
-            <input type="text" name="nom_prenom" placeholder="Name (Optional)">
-            <input type="text" name="metier" placeholder="Job Title (Optional)">
+            <input type="text" name="nom_prenom" placeholder="First & Last Name (Optional)">
+            <input type="text" name="metier" placeholder="Profession (Optional)">
             <label>Your review is required *</label>
             <textarea name="commentaire" placeholder="What did you think of my portfolio?" required rows="4"></textarea>
-            <button type="submit" id="submit-btn">Validate Like & Review</button>
+            <button type="submit" id="submit-btn">Validate like and review</button>
           </form>
           
           <div class="modal-footer">
@@ -102,59 +131,82 @@
         </div>
       </div>
     </section>
+    <!-- END HOME SECTION -->
 
-    <section id="Moi" class="about section">
+    <!-- ========================================
+         ABOUT SECTION
+         ======================================== -->
+    <section id="About" class="about section">
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
          <span class="subtitle">About Me</span>
       </div>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5">
+          
+          <!-- Profile Card (left column) -->
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="150">
             <div class="profile-card">
+              <!-- Profile Header -->
               <div class="profile-header">
                 <div class="profile-avatar">
                    <img src="assets/img/profile/profile-square-3.webp" class="img-fluid" alt="">
                   <div class="status-indicator"></div>
                 </div>
                 <h3>Yanni Delattre Balcer</h3>
-                <span class="role">1st Year Student in Networks & Telecoms</span>
+                <span class="role">First-Year Networking & Telecom Student</span>
+                
+                <!-- Star Rating -->
                 <div class="rating">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-                  <span>3.5</span>
-                  <span> My profile shows <strong> 3.5/5 stars</strong>. This score is based on my actual grades.</span>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                  <span>4/5</span>
+                  <span> My profile shows a <strong>4/5 stars</strong> rating. This score is based on my actual academic grades.</span>
                 </div>
               </div>
+
+              <!-- Profile Statistics -->
               <div class="profile-stats">
-                <div class="stat-item"><h4>0</h4><p>Projects</p></div>
-                <div class="stat-item"><h4>+1</h4><p>Degrees</p></div>
+                <div class="stat-item"><h4>3</h4><p>Projects</p></div>
+                <div class="stat-item"><h4>+1</h4><p>Bachelor's Degree</p></div>
                 <div class="stat-item"><h4>5</h4><p>Certifications</p></div>
               </div>
+
+              <!-- Action Buttons -->
               <div class="profile-actions">
-                 <a href="#" class="btn-primary"><i class="bi bi-download"></i>Download CV</a>
+                 <a href="assets/CV/CV.pdf" class="btn-primary"><i class="bi bi-download"></i>Download my Resume</a>
                 <a href="mailto:yannidelattrebalcer.artois@gmail.com" class="btn-secondary"><i class="bi bi-envelope"></i> Contact Me</a>
               </div>
+
+              <!-- Social Links -->
               <div class="social-connect">
                  <a href="https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"><i class="bi bi-linkedin"></i></a>
                 <a href="https://github.com/Yanni-Delattre-Balcer"><i class="bi bi-github"></i></a>
               </div>
             </div>
           </div>
+
+          <!-- Detailed Information (right column) -->
           <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
             <div class="content-wrapper">
-               <div class="bio-section">
-                <div class="section-tag">Let's talk about me</div>
-                <h2>Administer, Connect, Secure: Architecture serving Cybersecurity</h2>
-                <p>Passionate about IT. Today, my University Diploma in Networks & Telecommunications (BUT R&T) allows me to be at the heart of the subject: I don't settle for theory, I practice to learn how to administer networks, connect businesses, and create high-performance IT tools.</p>
-                <p>My goal? To build solid foundations to pursue a Master's degree in cybersecurity, with the ultimate goal of working in pentesting. Curious by nature, I constantly seek to understand systems in depth and keep an eye on certifications to become a versatile student capable of protecting the infrastructures I learn to build.</p>
+              
+              <!-- Biography Section -->
+              <div class="bio-section">
+                <div class="section-tag">About Me</div>
+                <h2>Administer, Connect, Secure: Network Architecture in Service of Cybersecurity</h2>
+                <p>Passionate about IT and technology. Today, my Bachelor's degree in Networking & Telecommunications places me at the heart of the field: I don't just learn theory, I practice hands-on to master network administration, enterprise connectivity, and high-performance IT tool development.</p>
+                <p>My goal? Build a solid foundation to pursue a Master's degree or even Ph.D. in cybersecurity, with the ultimate aim of working in penetration testing. Naturally curious, I constantly seek to understand systems in depth and stay current with certifications to become a versatile professional capable of protecting the infrastructures I'm learning to build.</p>
               </div>
+
+              <!-- Details Grid -->
               <div class="details-grid">
                 <div class="detail-item" data-aos="fade-up" data-aos-delay="250">
                   <i class="bi bi-briefcase"></i>
-                   <div class="detail-content"><span>Acquired:</span><strong>General Baccalaureate, Specialties Math & CS | Obtained.</strong></div>
+                   <div class="detail-content"><span>Completed:</span><strong>High School Diploma, specializing in Mathematics & Computer Science | Obtained.</strong></div>
                 </div>
                 <div class="detail-item" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-mortarboard"></i>
-                  <div class="detail-content"><span>Education Level: </span><strong>Bachelor's Degree R&T:<br>In progress (First Year).</strong></div>
+                  <div class="detail-content"><span>Bachelor's Level: </span><strong>Bachelor's in Networks & Telecommunications:<br>In progress (First year).</strong></div>
                 </div>
                 <div class="detail-item" data-aos="fade-up" data-aos-delay="350">
                   <i class="bi bi-geo-alt"></i>
@@ -166,7 +218,7 @@
                 </div>
                 <div class="detail-item" data-aos="fade-up" data-aos-delay="150">
                   <i class="bi bi-car-front"></i>
-                  <div class="detail-content"><span>Mobility:</span><strong>Driving License (Permis B)</strong></div>
+                  <div class="detail-content"><span>Mobility:</span><strong>Driver's License (Class B)</strong></div>
                 </div>
                 <div class="detail-item" data-aos="fade-up" data-aos-delay="200">
                   <i class="bi bi-calendar-check"></i>
@@ -178,21 +230,31 @@
         </div>
       </div>
     </section>
+    <!-- END ABOUT SECTION -->
 
-    <section id="Moi2" class="resume section">
+    <!-- ========================================
+         EXPERIENCE & EDUCATION SECTION
+         ======================================== -->
+    <section id="About2" class="resume section">
       <div class="container section-title" data-aos="fade-up"></div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5">
-           <div class="col-lg-6">
+          
+          <!-- Professional Experience (left column) -->
+          <div class="col-lg-6">
             <div class="experience-section">
+              <!-- Section Header -->
               <div class="section-header" data-aos="fade-right" data-aos-delay="200">
                 <div class="header-content">
                   <span class="section-badge">Experience</span>
-                  <h2>Corporate Experience:</h2>
+                  <h2>Professional Experience:</h2>
                  </div>
               </div>
+
+              <!-- Experience Cards -->
               <div class="experience-cards">
+                <!-- Experience 1: Swiss Life France -->
                 <div class="exp-card" data-aos="zoom-in" data-aos-delay="350">
                    <div class="card-header">
                     <div class="company-logo"><i class="bi bi-buildings"></i></div>
@@ -201,9 +263,11 @@
                     <h3>Swiss Life France</h3>
                     <p class="company-name">Roubaix</p>
                     <span class="duration">2022</span>
-                    <p class="description">During my sophomore year (Seconde), I completed an observation internship within the IT department, which allowed me to discover the challenges of web development and broaden my vision of digital professions. This immersion was decisive, but it was particularly my exchange with the Cybersecurity Manager at Swiss Life that confirmed my vocation. This meeting clarified my professional project and motivated my orientation towards cybersecurity and pentesting.</p>
+                    <p class="description">During my sophomore year, I completed an observation internship within the IT department, which allowed me to discover the challenges of web development and broaden my understanding of digital careers. This immersion was pivotal, but it was particularly my conversation with Swiss Life's Cybersecurity Manager that confirmed my vocation. This meeting clarified my professional goals and motivated my orientation toward cybersecurity and penetration testing.</p>
                   </div>
                 </div>
+
+                <!-- Experience 2: City Hall -->
                 <div class="exp-card" data-aos="zoom-in" data-aos-delay="400">
                   <div class="card-header">
                      <div class="company-logo"><i class="bi bi-buildings"></i></div>
@@ -212,54 +276,65 @@
                      <h3>City Hall</h3>
                     <p class="company-name">Loison-sous-Lens</p>
                     <span class="duration">2021</span>
-                    <p class="description">During my year of 9th grade (Troisième), I completed an observation internship within the IT department of the Loison-sous-Lens town hall. This experience allowed me to discover the organization of a local authority and the operational management of an IT park (incident resolution, user assistance). This first immersion was decisive and consolidated my choice to move towards the CS specialty in high school.</p>
+                    <p class="description">During my ninth grade year, I completed an observation internship within the IT department of Loison-sous-Lens City Hall. This experience gave me insight into municipal organization and the operational management of an IT infrastructure (incident resolution, user support). This initial immersion was decisive and reinforced my choice to pursue Computer Science specialization in high school.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Educational Background (right column) -->
           <div class="col-lg-6">
             <div class="education-section">
-               <div class="section-header" data-aos="fade-left" data-aos-delay="200">
+              <!-- Section Header -->
+              <div class="section-header" data-aos="fade-left" data-aos-delay="200">
                 <div class="header-content">
                   <span class="section-badge">Education</span>
-                  <h2>Study Path:</h2>
+                  <h2>Academic Journey:</h2>
                 </div>
               </div>
-               <div class="education-timeline" data-aos="fade-left" data-aos-delay="300">
+
+              <!-- Education Timeline -->
+              <div class="education-timeline" data-aos="fade-left" data-aos-delay="300">
                 <div class="timeline-track">
+                  
+                  <!-- Step 1: Bachelor's Degree -->
                   <div class="timeline-item">
                     <div class="timeline-marker"><i class="bi bi-mortarboard-fill"></i></div>
                     <div class="timeline-content">
                       <div class="education-meta">
                         <span class="year-range">2025 - 2026</span>
-                         <span class="degree-level">Bachelor</span>
+                         <span class="degree-level">Bachelor's Degree</span>
                       </div>
-                      <h4>University Bachelor of Technology in Networks & Telecoms.</h4>
-                      <p class="institution">IUT de Béthune</p>
-                       <p class="description">Currently in the first year, I plan to choose the Cybersecurity path for my last two years of study.</p>
+                      <h4>Bachelor's in Networks & Telecommunications (R&T).</h4>
+                      <p class="institution">IUT of Béthune</p>
+                       <p class="description">Currently in my first year of the Networking & Telecommunications Bachelor's program, I plan to specialize in Cybersecurity for my final two years of study.</p>
                       <div class="achievement">
                       <i class="bi bi-award"></i>
                       <span>In progress</span>
                      </div>
                     </div>
                   </div>
+
+                  <!-- Step 2: High School Diploma -->
                   <div class="timeline-item">
                     <div class="timeline-marker"><i class="bi bi-book"></i></div>
                     <div class="timeline-content">
                       <div class="education-meta">
                          <span class="year-range">2022 - 2025</span>
-                        <span class="degree-level">High School Diploma</span>
+                        <span class="degree-level">High School Graduate</span>
                       </div>
-                      <h4>General Baccalaureate, Specialties Mathematics and Computer Science.</h4>
-                       <p class="institution">Lycée privé polyvalent Saint-Paul, Lens</p>
-                      <p class="description">Holder of the General Baccalaureate (2025). I followed the Mathematics, Computer Science, and Physics-Chemistry specialties in 11th grade, then kept Mathematics and CS in 12th grade.</p>
+                      <h4>General High School Diploma, specializing in Mathematics and Computer Science (NSI).</h4>
+                       <p class="institution">Saint-Paul Private High School in Lens</p>
+                      <p class="description">Holder of a general high school diploma (2025). I pursued specializations in Mathematics, Computer Science, and Physics-Chemistry in junior year, then continued with Mathematics and Computer Science in senior year.</p>
                       <div class="achievement">
                       <i class="bi bi-award"></i>
                       <span>Obtained</span>
                      </div>
                     </div>
                   </div>
+
+                  <!-- Step 3: Certifications -->
                   <div class="timeline-item">
                     <div class="timeline-marker"><i class="bi bi-patch-check-fill"></i></div>
                     <div class="timeline-content">
@@ -268,29 +343,31 @@
                         <span class="degree-level">Certifications</span>
                       </div>
                       <h4>Professional Certifications</h4>
+                      
+                      <!-- Certifications List -->
                       <div class="certifications-list">
                          <div class="cert-item">
-                          <span class="cert-name">PIX College</span>
-                          <a href="assets/pdf/certification-pix-20220506.pdf" class="btn-primary"><i class="bi bi-download"></i> Download Certificate</a>
+                          <span class="cert-name">PIX Middle School</span>
+                          <a href="assets/pdf-certif/certification-pix-20220506.pdf" class="btn-primary"><i class="bi bi-download"></i> Download certificate</a>
                           <span class="cert-year">2022</span>
                       </div>
                         <div class="cert-item">
                           <span class="cert-name">PIX High School</span>
-                           <a href="assets/pdf/certification-pix-20250305.pdf" class="btn-primary"><i class="bi bi-download"></i> Download Certificate</a>
+                           <a href="assets/pdf-certif/certification-pix-20250305.pdf" class="btn-primary"><i class="bi bi-download"></i> Download certificate</a>
                           <span class="cert-year">2025</span>
                         </div>
                         <div class="cert-item">
                            <span class="cert-name">Python Essentials 1</span>
-                          <a href="assets/pdf/Python_Essentials_1_certificate_yanni_delattrebalcer-ens-univ-artois-fr_e6ef381d-e548-45f5-90a5-058106e39b07.pdf" class="btn-primary"><i class="bi bi-download"></i> Download Certificate</a>
+                          <a href="assets/pdf-certif/Python_Essentials_1_certificate_yanni_delattrebalcer-ens-univ-artois-fr_e6ef381d-e548-45f5-90a5-058106e39b07.pdf" class="btn-primary"><i class="bi bi-download"></i> Download certificate</a>
                           <span class="cert-year">2025</span>
                         </div>
                         <div class="cert-item">
                           <span class="cert-name">Python Essentials 2</span>
-                          <a href="assets/pdf/Python_Essentials_2_certificate_yanni_delattrebalcer-ens-univ-artois-fr_51223ea2-42cb-4685-9687-3b9ffb284f8b.pdf" class="btn-primary"><i class="bi bi-download"></i> Download Certificate</a>
+                          <a href="assets/pdf-certif/Python_Essentials_2_certificate_yanni_delattrebalcer-ens-univ-artois-fr_51223ea2-42cb-4685-9687-3b9ffb284f8b.pdf" class="btn-primary"><i class="bi bi-download"></i> Download certificate</a>
                            <span class="cert-year">2025</span>
                         </div>
                         <div class="cert-item">
-                          <span class="cert-name">CCNA : Switching, Routing, and Wireless Essentials (SRWE) (In progress) </span>
+                          <span class="cert-name">CCNA: Switching, Routing, and Wireless Essentials (SRWE) (in progress)</span>
                           <span class="cert-year">2025</span>
                         </div>
                       </div>
@@ -303,12 +380,19 @@
         </div>
       </div>
     </section>
+    <!-- END EXPERIENCE & EDUCATION SECTION -->
 
-    <section id="Compétences" class="about section">
+    <!-- ========================================
+         SKILLS SECTION
+         ======================================== -->
+    <section id="Skills" class="about section">
+      <!-- Title and Introduction -->
       <div class="container section-title" data-aos="fade-up">
         <span class="subtitle text-center d-block">My Skills</span>
         <p class="text-center mx-auto" style="max-width: 900px;">
-          Currently a student in Networks and Telecommunications, I am developing technical skills in system administration, network architecture, and software development. The indicators below represent my current level of mastery based on my academic results.
+          Currently pursuing a Bachelor's in Networks & Telecommunications at IUT Béthune, I'm developing technical skills in system administration, network architecture, and software development. The indicators below represent my current proficiency level based on my academic performance. The 'EXC' mentions indicate modules whose evaluations are still in progress and for which no grade is yet calculable.
+          <br><br>
+          <em style="color: #ff4a4a;">💡 Tip: Some skills are clickable and redirect to associated projects in my portfolio.</em>
         </p>
       </div>
       
@@ -318,9 +402,12 @@
             <div class="content-wrapper">
               <div class="bio-section">
                 <div class="skills-showcase">
+                  
+                  <!-- Validated Skills -->
                   <div class="section-tag mb-4">Validated Skills:</div>
                   
                   <div class="skills-list skills-animation mb-5">
+                    <!-- Skill 1 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
                         <span class="skill-name">General and Technical English:</span>
@@ -331,9 +418,10 @@
                       </div>
                     </div>
 
+                    <!-- Skill 2 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Operating Systems Basics:</span>
+                        <span class="skill-name">Operating Systems Fundamentals:</span>
                         <span class="skill-percent">80%</span>
                       </div>
                       <div class="progress">
@@ -341,6 +429,7 @@
                       </div>
                     </div>
 
+                    <!-- Skill 3 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
                         <span class="skill-name">Programming Fundamentals:</span>
@@ -350,10 +439,16 @@
                         <div class="progress-bar" role="progressbar" style="width: 77%" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
-                    
+
+                    <!-- Skill 4 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Network Principles and Architecture:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-digital" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Network Principles and Architecture:
+                          </a>
+                        </span>
                         <span class="skill-percent">75%</span>
                       </div>
                       <div class="progress">
@@ -361,9 +456,10 @@
                       </div>
                     </div>
 
+                    <!-- Skill 5 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Signal Mathematics:</span>
+                        <span class="skill-name">Signal Processing Mathematics:</span>
                         <span class="skill-percent">72%</span>
                       </div>
                       <div class="progress">
@@ -371,9 +467,15 @@
                       </div>
                     </div>
 
+                    <!-- Skill 6 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Discovering a Transmission Device:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-creative" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Discovering Transmission Systems:
+                          </a>
+                        </span>
                         <span class="skill-percent">68%</span>
                       </div>
                       <div class="progress">
@@ -381,9 +483,10 @@
                       </div>
                     </div>
 
+                    <!-- Skill 7 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Fundamentals of Analog Electronics:</span>
+                        <span class="skill-name">Analog Electronics Fundamentals:</span>
                         <span class="skill-percent">64%</span>
                       </div>
                       <div class="progress">
@@ -391,9 +494,15 @@
                       </div>
                     </div>
 
+                    <!-- Skill 8 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Transmission Media:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-creative" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Transmission Media:
+                          </a>
+                        </span>
                         <span class="skill-percent">63%</span>
                       </div>
                       <div class="progress">
@@ -401,9 +510,15 @@
                       </div>
                     </div>
 
+                    <!-- Skill 9 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Introduction to Web Technologies:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-strategy" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Introduction to Web Technologies:
+                          </a>
+                        </span>
                         <span class="skill-percent">63%</span>
                       </div>
                       <div class="progress">
@@ -411,6 +526,7 @@
                       </div>
                     </div>
 
+                    <!-- Skill 10 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
                         <span class="skill-name">Digital Systems Architecture:</span>
@@ -421,6 +537,7 @@
                       </div>
                     </div>
 
+                    <!-- Skill 11 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
                         <span class="skill-name">Project Management:</span>
@@ -432,33 +549,48 @@
                     </div>
                   </div>
 
-                  <div class="section-tag mb-4">Skills in progress (EXC):</div>
+                  <!-- Skills Under Evaluation (EXC) -->
+                  <div class="section-tag mb-4">Skills Under Evaluation (EXC):</div>
                   
                   <div class="skills-list">
+                    <!-- EXC Skill 1 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Introduction to Computer Networks:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-digital" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Introduction to Computer Networks:
+                          </a>
+                        </span>
                         <span class="skill-percent">EXC</span>
                       </div>
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
                     </div>
 
+                    <!-- EXC Skill 2 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Computer Hygiene and Cybersecurity:</span>
+                        <span class="skill-name">IT Hygiene and Cybersecurity:</span>
                         <span class="skill-percent">EXC</span>
                       </div>
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
                     </div>
 
+                    <!-- EXC Skill 3 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Local Networks and Active Equipment:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-digital" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Local Networks and Active Equipment:
+                          </a>
+                        </span>
                         <span class="skill-percent">EXC</span>
                       </div>
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
                     </div>
 
+                    <!-- EXC Skill 4 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
                         <span class="skill-name">Personal and Professional Project:</span>
@@ -467,14 +599,16 @@
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
                     </div>
 
+                    <!-- EXC Skill 5 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Presenting Yourself on the Internet:</span>
+                        <span class="skill-name">Online Self-Presentation:</span>
                         <span class="skill-percent">EXC</span>
                       </div>
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
                     </div>
 
+                    <!-- EXC Skill 6 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
                         <span class="skill-name">Data Processing:</span>
@@ -483,9 +617,15 @@
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
                     </div>
 
+                    <!-- EXC Skill 7 -->
                     <div class="skill-item mb-3">
                       <div class="skill-info d-flex justify-content-between">
-                        <span class="skill-name">Initiating Computer Networks:</span>
+                        <span class="skill-name">
+                          <a href="#Portfolio" data-filter=".filter-digital" style="color: inherit; text-decoration: none; cursor: pointer;">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            Getting Started with Computer Networks:
+                          </a>
+                        </span>
                         <span class="skill-percent">EXC</span>
                       </div>
                       <div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"></div></div>
@@ -498,279 +638,351 @@
         </div>
       </div>
     </section>
+    <!-- END SKILLS SECTION -->
 
-    <section id="Portfolio" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Portfolio</span>
-        <h2>Portfolio</h2>
-        <p>Here is a selection of projects carried out in an academic and extra-curricular setting.</p>
-      </div>
+    <!-- ========================================
+     PORTFOLIO SECTION
+     ======================================== -->
+<section id="Portfolio" class="portfolio section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-            <li data-filter="*" class="filter-active">Show All</li>
-            <li data-filter=".filter-creative">Telecoms</li>
-            <li data-filter=".filter-digital">Python</li>
-            <li data-filter=".filter-strategy">HTML</li>
-            <li data-filter=".filter-development">Development</li>
-          </ul>
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span class="subtitle">Portfolio</span>
+    <h2>Portfolio</h2>
+    <p>Here's a selection of projects completed in academic and extracurricular contexts.</p>
+  </div>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                   <img src="assets/img/portfolio/portfolio-1.webp" alt="Creative Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">R&T Projects: Networks, Systems & Transmissions</span>
-                      <h4>Feasibility analysis and simulation (Matlab/LTspice) of a 75 Ω coaxial transmission line. Study of attenuation and propagation delay over 5m and 20m.</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/pdf/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf" class="portfolio-details"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      
+      <!-- Portfolio Filters -->
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+        <li data-filter="*" class="filter-active">Show All</li>
+        <li data-filter=".filter-creative">Telecommunications</li>
+        <li data-filter=".filter-digital">Networks</li>
+        <li data-filter=".filter-strategy">HTML</li>
+        <li data-filter=".filter-development">Other IT Projects</li>
+      </ul>
+
+      <!-- Project Grid -->
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+        
+        <!-- PROJECT 1 - Telecommunications -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
+          <div class="portfolio-card">
+            <div class="portfolio-image-container">
+               <img src="assets/img/portfolio/portfolio-1.webp" alt="Creative Project" class="img-fluid" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <span class="project-category">R&T Projects: Networks, Systems and Transmissions</span>
+                  <h4>(Completed) Feasibility analysis and simulation (Matlab/LTspice) of a 75 Ω coaxial transmission line. Study of attenuation and propagation delay over 5m and 20m.</h4>
                 </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Telecoms</span>
-                  </div>
-                  <div class="project-year">2025</div>
+                <div class="portfolio-actions">
+                  <a href="assets/partie-projet/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf" class="portfolio-details">
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div>
+            <div class="portfolio-meta">
+              <div class="project-tags">
+                <span class="tag">Telecommunications</span>
+              </div>
+              <div class="project-year">2025</div>
+            </div>
+          </div>
+        </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-2.webp" alt="Digital Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Digital Experience</span>
-                      <h4>Interactive Web Platform</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-2.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
+        <!-- PROJECT 2 - Networks -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
+          <div class="portfolio-card">
+            <div class="portfolio-image-container">
+              <img src="assets/img/portfolio/portfolio-2.webp" alt="Digital Project" class="img-fluid" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <span class="project-category">R&T Projects: Enterprise Network Design and Virtualization</span>
+                  <h4>(In Progress) I will design and deploy a complete network infrastructure, from planning (Gantt chart, equipment selection) to technical implementation. The project will include a simulation phase to validate configurations, followed by deployment on virtual machines with installation of critical services (Web, DHCP, DNS). Proper functioning will be validated through frame analysis and documented via Jupyter reports.</h4>
                 </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Web Design</span>
-                    <span class="tag">Development</span>
-                  </div>
-                  <div class="project-year">2024</div>
+                <div class="portfolio-actions">
                 </div>
               </div>
             </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-3.webp" alt="Strategy Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                        <span class="project-category">Projet personnel : Site web professionnel.</span>
-                      <h4>Market Positioning</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-3.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-               <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">HTML</span>
-                  </div>
-                  <div class="project-year">2025</div>
-                </div>
-               </div>
+            <div class="portfolio-meta">
+              <div class="project-tags">
+                <span class="tag">Networks</span>
+              </div>
+              <div class="project-year">2026</div>
             </div>
+          </div>
+        </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-4.webp" alt="Development Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Full Stack</span>
-                      <h4>Custom Application</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-4.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
+        <!-- PROJECT 3 - HTML -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
+          <div class="portfolio-card">
+            <div class="portfolio-image-container">
+              <img src="assets/img/portfolio/portfolio-3.webp" alt="Strategy Project" class="img-fluid" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                    <span class="project-category">Personal Project: Professional Website.</span>
+                  <h4>(In Progress) Creating a modern interface for this hair salon and beauty institute located in Loison-sous-Lens. The goal is to showcase their dual expertise (unisex hairdressing and aesthetic treatments) through an intuitive website facilitating access to pricing and practical information.</h4>
                 </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">React</span>
-                    <span class="tag">Node.js</span>
-                  </div>
-                  <div class="project-year">2024</div>
+                <div class="portfolio-actions">
+                  <a href="assets/partie-projet/index.html" class="portfolio-details">
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div>
+           <div class="portfolio-meta">
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+              </div>
+              <div class="project-year">2025</div>
+            </div>
+           </div>
+        </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-5.webp" alt="Creative Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Art Direction</span>
-                      <h4>Campaign Design</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-5.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
+        <!-- PROJECT 4 - Development -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+          <div class="portfolio-card">
+            <div class="portfolio-image-container">
+              <img src="assets/img/portfolio/portfolio-4.webp" alt="Development Project" class="img-fluid" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <span class="project-category">Personal Project: 3D Modeling</span>
+                  <h4>(Completed) I modeled a residence and its future extension using SketchUp and Sweet Home 3D. This work simulated the project integration for the city hall application, while providing homeowners with a concrete visualization of the final result. My plans then served as technical support for craftsmen during construction.</h4>
                 </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Creative</span>
-                    <span class="tag">Campaign</span>
-                  </div>
-                  <div class="project-year">2024</div>
+                <div class="portfolio-actions">
+                  <a href="assets/partie-projet/maison.html" class="portfolio-details">
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div>
+            <div class="portfolio-meta">
+              <div class="project-tags">
+                <span class="tag">Architecture</span>
+              </div>
+              <div class="project-year">2021</div>
+            </div>
+          </div>
+        </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-6.webp" alt="Digital Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Digital Product</span>
-                      <h4>Mobile Experience</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-6.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
+        <!-- PROJECT 5 - Creative -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
+          <div class="portfolio-card">
+            <div class="portfolio-image-container">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <span class="project-category">Upcoming Project</span>
+                  <h4></h4>
                 </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Mobile</span>
-                    <span class="tag">UI/UX</span>
-                  </div>
-                  <div class="project-year">2023</div>
+                <div class="portfolio-actions">
                 </div>
               </div>
             </div>
+            <div class="portfolio-meta">
+              <div class="project-tags">
+              </div>
+              <div class="project-year"></div>
+            </div>
+          </div>
+        </div>
 
+        <!-- PROJECT 6 - Digital -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
+          <div class="portfolio-card">
+            <div class="portfolio-image-container">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <span class="project-category">Upcoming Project</span>
+                  <h4></h4>
+                </div>
+                <div class="portfolio-actions">
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-meta">
+              <div class="project-tags">
+              </div>
+              <div class="project-year"></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<!-- END PORTFOLIO SECTION -->
 
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Contact</span>
-        <h2>Contact Me</h2>
-        <p>Feel free to send me a message for any questions regarding my background or internship opportunities.</p>
+<!-- ========================================
+     CONTACT SECTION
+     ======================================== -->
+<section id="contact" class="contact section">
+
+  <!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <span class="subtitle">Contact</span>
+  <h2>Get in Touch</h2>
+  <p>
+    Feel free to send me a message for any questions regarding my Bachelor's degree in Networking & Telecommunications or for internship opportunities.
+    <br><br>
+    <strong style="color: red; text-decoration: underline;">Important note:</strong> 
+    This form submission is protected by anti-spam security. After completing this security verification, don't forget to click the 'Send' button again. 
+    If successful, you'll see the following message on your screen: <strong>"Thank you! The form was submitted successfully."</strong> This confirms that your message has reached me.
+  </p>
+</div>
+  
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Contact Information (left column) -->
+      <div class="col-lg-4">
+        <!-- Location -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-wrapper">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>62 (Pas-de-Calais), France</p>
+          </div>
+        </div>
+        
+        <!-- Email -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-wrapper">
+            <i class="bi bi-envelope"></i>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <p>yannidelattrebalcer.artois@gmail.com</p>
+          </div>
+        </div>
       </div>
       
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon-wrapper"><i class="bi bi-geo-alt"></i></div>
-              <div><h3>Location</h3><p>France / 62 (Pas-de-Calais), France</p></div>
+      <!-- Contact Form (right column) -->
+      <div class="col-lg-8">
+        <form action="https://formspree.io/f/xkogwqpw" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="400">
+          <div class="row gy-4">
+            <!-- Name Field -->
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
             </div>
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon-wrapper"><i class="bi bi-envelope"></i></div>
-              <div><h3>Email</h3><p>yannidelattrebalcer.artois@gmail.com</p></div>
+            <!-- Email Field -->
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <!-- Subject Field -->
+            <div class="col-md-12">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            </div>
+            <!-- Message Field -->
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+            </div>
+            <!-- Submit Button -->
+            <div class="col-md-12 text-center">
+              <button type="submit" style="background: #ff4a4a; border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px; cursor: pointer;">Send Message</button>
             </div>
           </div>
-          
-          <div class="col-lg-8">
-            <form action="https://formspree.io/f/xkogwqpw" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="400">
-              <div class="row gy-4">
-                <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
-                <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
-                <div class="col-md-12"><input type="text" name="subject" class="form-control" placeholder="Subject" required></div>
-                <div class="col-md-12"><textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea></div>
-                <div class="col-md-12 text-center"><button type="submit" style="background: #ff4a4a; border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px; cursor: pointer;">Send Message</button></div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-  <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center"><span class="sitename">Yanni Delattre Balcer</span></a>
-          <p>Your strategic ally for digital solutions, network infrastructures, and communication systems.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/Yanni-Delattre-Balcer"><i class="bi bi-github"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>My Site</h4>
-          <ul>
-            <li><a href="#Acceuil">Home</a></li>
-            <li><a href="#Moi">About</a></li>
-            <li><a href="#Compétences">Skills</a></li>
-            <li><a href="#Portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Me:</h4>
-          <p><strong>Email :</strong> <span>yannidelattrebalcer.artois@gmail.com</span></p>
-          <p><strong>Or directly on this site</strong></p>
-        </div>
+        </form>
       </div>
     </div>
-    <div class="container copyright text-center mt-4">
-      <div class="credits"><a href="credits.html">Page Credits</a></div>
+  </div>
+</section>
+<!-- END CONTACT SECTION -->
+
+</main>
+<!-- END MAIN -->
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer id="footer" class="footer">
+
+  <!-- Main Footer Content -->
+  <div class="container footer-top">
+    <div class="row gy-4">
+      
+      <!-- Presentation (column 1) -->
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index_en.html" class="logo d-flex align-items-center">
+           <span class="sitename">Yanni Delattre Balcer</span>
+        </a>
+        <p>Your strategic partner for digital solutions, network infrastructure, and communication systems.</p>
+        
+        <!-- Footer Social Links -->
+        <div class="social-links d-flex mt-4">
+          <a href="https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/Yanni-Delattre-Balcer"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Site Links (column 2) -->
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>My Website</h4>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Skills">Skills</a></li>
+          <li><a href="#Portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- My Projects (column 3) -->
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>My Projects</h4>
+        <ul>
+          <li><a href="#Portfolio" data-filter=".filter-creative">Telecommunications</a></li>
+          <li><a href="#Portfolio" data-filter=".filter-digital">Networks</a></li>
+          <li><a href="#Portfolio" data-filter=".filter-strategy">HTML</a></li>
+          <li><a href="#Portfolio" data-filter=".filter-development">Other IT Projects</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Information (column 4) -->
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Me:</h4>
+        <p><strong>Email:</strong> <span>yannidelattrebalcer.artois@gmail.com</span></p>
+        <p><strong>Or directly on the website</strong></p>
+      </div>
     </div>
-  </footer>
+  </div>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
+  <!-- Copyright and Credits -->
+  <div class="container copyright text-center mt-4">
+    <div class="credits">
+    <a href="https://bootstrapmade.com/">Page Credits</a>
+    </div>
+  </div>
 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+</footer>
+<!-- END FOOTER -->
 
-  <script src="assets/js/main.js"></script>
+<!-- Scroll to Top Button -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader (loading animation) -->
+<div id="preloader"></div>
+
+<!-- ========================================
+     JAVASCRIPT SCRIPTS - LIBRARIES
+     ======================================== -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Main Script -->
+<script src="assets/js/main.js"></script>
 
 </body>
+<!-- END BODY -->
 </html>
