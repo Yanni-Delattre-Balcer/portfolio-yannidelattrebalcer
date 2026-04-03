@@ -4,9 +4,9 @@ portfolio_updater.py — Met à jour les fichiers du portfolio.
 
 Lit data/portfolio_data.json et :
   1. Valide le JSON
-  2. Génère Craftivo/assets/js/data.js (PORTFOLIO_DATA + LAST_UPDATED)
+  2. Génère assets/js/data.js (PORTFOLIO_DATA + LAST_UPDATED)
   3. Met à jour <meta name="last-updated"> dans index.html
-  4. Génère Craftivo/sitemap.xml avec la date du jour
+  4. Génère sitemap.xml avec la date du jour
   5. Log un résumé dans scripts/logs/update_history.log et history.json
 """
 
@@ -23,7 +23,7 @@ import pytz
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 DATA_DIR = PROJECT_ROOT / "data"
-CRAFTIVO_DIR = PROJECT_ROOT / "Craftivo"
+CRAFTIVO_DIR = PROJECT_ROOT
 JS_DIR = CRAFTIVO_DIR / "assets" / "js"
 LOG_DIR = SCRIPT_DIR / "logs"
 
@@ -103,7 +103,7 @@ def load_previous_data():
 
 
 def generate_data_js(data, date_str_fr):
-    """Génère Craftivo/assets/js/data.js."""
+    """Génère assets/js/data.js."""
     json_content = json.dumps(data, ensure_ascii=False, indent=2)
 
     js_content = f"""/**
