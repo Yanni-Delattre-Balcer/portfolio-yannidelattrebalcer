@@ -9,8 +9,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Site de Yanni Delattre Balcer</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description" content="Portfolio de Yanni Delattre Balcer — Étudiant BUT Réseaux et Télécommunications">
+  <meta name="keywords" content="portfolio, réseaux, télécommunications, cybersécurité, BUT R&T">
+  <meta name="last-updated" content="2026-04-02">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -41,6 +42,12 @@
 
 <body class="index-page">
 
+
+
+
+  <!-- Interactive Background Particles -->
+  <canvas id="particles-canvas"></canvas>
+
   <!-- ========================================
        HEADER - NAVIGATION PRINCIPALE
        ======================================== -->
@@ -58,7 +65,7 @@
           <li><a href="#hero" class="active"></a></li>
           <li><a href="#Accueil">Accueil</a></li>
           <li><a href="#Moi">Moi</a></li>
-          <li><a href="#Compétences">Compétences</a></li>
+          <li><a href="#Competences">Compétences</a></li>
           <li><a href="#Portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
 
@@ -437,7 +444,7 @@
     <!-- ========================================
          SECTION COMPÉTENCES
          ======================================== -->
-    <section id="Compétences" class="about section">
+    <section id="Competences" class="about section">
       <!-- Titre et introduction -->
       <div class="container section-title" data-aos="fade-up">
         <span class="subtitle text-center d-block">Mes compétences</span>
@@ -742,182 +749,74 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <h3 class="mb-4" style="color: var(--heading-color); font-weight: 700;">Mes Projets</h3>
 
-          <!-- Filtres du portfolio -->
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-            <li data-filter="*" class="filter-active">Tout afficher</li>
-            <li data-filter=".filter-creative">Télécoms</li>
-            <li data-filter=".filter-digital">Réseaux</li>
-            <li data-filter=".filter-strategy">HTML</li>
-            <li data-filter=".filter-development">Autres projets informatiques</li>
-          </ul>
+        <!-- NIVEAU 1 : BOUTONS -->
+        <div class="portfolio-competences">
+          <div class="btn-competence" id="btn-administrer" data-comp="administrer" style="--comp-color: #e74c3c;">
+            <h4><i class="bi bi-hdd-network"></i> ADMINISTRER</h4>
+            <p>Réseaux et internet</p>
+          </div>
+          <div class="btn-competence" id="btn-connecter" data-comp="connecter" style="--comp-color: #e67e22;">
+            <h4><i class="bi bi-diagram-3"></i> CONNECTER</h4>
+            <p>Entreprises et usagers</p>
+          </div>
+          <div class="btn-competence" id="btn-programmer" data-comp="programmer" style="--comp-color: #f39c12;">
+            <h4><i class="bi bi-code-slash"></i> PROGRAMMER</h4>
+            <p>Outils et applications</p>
+          </div>
+          <div class="btn-competence" id="btn-autres" data-comp="autres" style="--comp-color: #8e44ad;">
+            <h4><i class="bi bi-collection"></i> AUTRES</h4>
+            <p>Projets divers hors AC</p>
+          </div>
+        </div>
 
-          <!-- Grille de projets -->
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+        <!-- NIVEAU 2 : GRILLE AC (remplie via JS) -->
+        <div id="ac-grid-container" class="ac-grid-container">
+          <div id="ac-grid" class="ac-grid"></div>
+        </div>
 
-            <!-- PROJET 1 - Télécoms -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-1.webp" alt="Creative Project" class="img-fluid"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Projets R&T : Réseaux, Systèmes et Transmissions</span>
-                      <h4> (Terminé) Analyse de la faisabilité et simulation (Matlab/LTspice) d'une ligne de
-                        transmission coaxiale de 75 Ω. Étude de l'atténuation et du délai de propagation sur 5m et 20m.
-                        (Non traduit en Anglais)</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/partie-projet/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf"
-                        class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Télécoms</span>
-                  </div>
-                  <div class="project-year">2025</div>
-                </div>
-              </div>
+        <!-- NIVEAU 3 : DÉTAILS DE L'AC ET PROJETS (inline, pas de modale) -->
+        <div id="ac-traces-container" class="mb-5" style="display:none; animation: slideDown 0.4s ease-out;"></div>
+
+        <div id="ac-details-container" style="display:none; margin-top: 30px; animation: slideDown 0.4s ease-out;">
+          <div class="ac-modal-content" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <div class="ac-modal-header" style="background: color-mix(in srgb, var(--surface-color), transparent 50%); border-radius: 12px 12px 0 0;">
+              <h4><span id="acInlineId"></span> — <span id="acInlineIntitule"></span></h4>
             </div>
-
-            <!-- PROJET 2 - Réseaux -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-2.webp" alt="Digital Project" class="img-fluid"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Projets R&T : Conception et Virtualisation d'un Réseau
-                        d'Entreprise</span>
-                      <h4>(En cours) Je vais concevoir et déployer une infrastructure réseau complète, de la
-                        planification (Gantt, choix du matériel) à la mise en œuvre technique. Le projet comprendra une
-                        phase de simulation pour valider les configurations, puis un déploiement sur machines virtuelles
-                        avec l'installation de services critiques (Web, DHCP, DNS). Le bon fonctionnement sera validé
-                        par analyse de trames et documenté via des rapports Jupyter.</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Réseaux</span>
-                  </div>
-                  <div class="project-year">2026</div>
-                </div>
+            <div class="ac-modal-body">
+              <div class="ac-section">
+                <h5><i class="bi bi-check2-square"></i> CE QUE J'AI FAIT</h5>
+                <p id="acInlineFait"></p>
               </div>
-            </div>
-
-            <!-- PROJET 3 - HTML -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-3.webp" alt="Strategy Project" class="img-fluid"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Projet personnel : Site web professionnel.</span>
-                      <h4>(En cours) Création d'une interface moderne pour ce salon de coiffure et institut de beauté
-                        situé à Loison-sous-Lens. L'objectif est de valoriser leur double expertise (coiffure mixte et
-                        soins esthétiques) via un site intuitif facilitant l'accès aux tarifs et aux informations
-                        pratiques.</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/partie-projet/index.html" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">HTML</span>
-                  </div>
-                  <div class="project-year">2025</div>
-                </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-bullseye"></i> POURQUOI JE L'AI FAIT</h5>
+                <p id="acInlinePourquoi"></p>
               </div>
-            </div>
-
-            <!-- PROJET 4 - Development -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-4.webp" alt="Development Project" class="img-fluid"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Projet personnel : Modélisation 3D</span>
-                      <h4>(Terminé) J'ai modélisé une habitation et son futur agrandissement à l'aide de SketchUp et
-                        Sweet Home 3D. Ce travail a permis de simuler l'intégration du projet pour le dossier de mairie,
-                        tout en offrant aux propriétaires une visualisation concrète du résultat final. Mes plans ont
-                        ensuite servi de support technique aux artisans pour la mise en œuvre du chantier.</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/partie-projet/maison.html" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Architecture</span>
-                  </div>
-                  <div class="project-year">2021</div>
-                </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-gear-wide-connected"></i> COMMENT JE L'AI FAIT</h5>
+                <p id="acInlineComment"></p>
               </div>
-            </div>
-
-            <!-- PROJET 5 - Creative -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Projet à venir</span>
-                      <h4></h4>
-                    </div>
-                    <div class="portfolio-actions">
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                  </div>
-                  <div class="project-year"></div>
-                </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-exclamation-triangle"></i> MES DIFFICULTÉS</h5>
+                <p id="acInlineDifficultes"></p>
               </div>
-            </div>
-
-            <!-- PROJET 6 - Digital -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Projet à venir</span>
-                      <h4></h4>
-                    </div>
-                    <div class="portfolio-actions">
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                  </div>
-                  <div class="project-year"></div>
-                </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-lightbulb"></i> CE QUE J'EN AI APPRIS</h5>
+                <p id="acInlineAppris"></p>
+              </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-arrow-repeat"></i> CE QUE JE FERAIS AUTREMENT</h5>
+                <p id="acInlineAutrement"></p>
+              </div>
+              <div class="ac-section mb-0">
+                <h5><i class="bi bi-paperclip"></i> TRACES / PREUVES</h5>
+                <div id="acInlineTraces"></div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
     <!-- FIN SECTION PORTFOLIO -->
@@ -1071,6 +970,9 @@
       <div class="credits">
         <a href="page-credits.html">Crédits de la page</a>
       </div>
+      <div class="last-updated" style="margin-top: 8px; font-size: 0.85em; opacity: 0.7;">
+        <span id="last-updated-date"></span>
+      </div>
     </div>
 
   </footer>
@@ -1094,6 +996,12 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Données du portfolio (ACs) -->
+  <script src="assets/js/portfolio-competences.js"></script>
+
+  <!-- Données du portfolio (générées automatiquement) -->
+  <script src="assets/js/data.js"></script>
 
   <!-- Script principal -->
   <script src="assets/js/main.js"></script>

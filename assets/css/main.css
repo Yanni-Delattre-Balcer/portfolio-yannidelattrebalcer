@@ -50,6 +50,8 @@
   --accent-color: #ff4d4f; /* Couleur d'accentuation (marque) */
   --surface-color: #1c1c1c; /* Couleur de surface pour les cartes/blocs */
   --contrast-color: #ffffff; /* Couleur de contraste pour le texte */
+  --x: 50%;
+  --y: 50%;
 }
 
 /* Couleurs du Menu de Navigation */
@@ -722,9 +724,9 @@ section, .section {
 # 13. SECTION MOI (ABOUT SECTION)
 ==============================================================================*/
 
-/* Force la section MOI en noir pur */
+/* Force la section MOI en transparent pour voir les particules */
 #Moi, .about {
-    background-color: #040404 !important;
+    background-color: transparent !important;
     background-image: none !important;
     position: relative;
     z-index: 1;
@@ -1832,3 +1834,351 @@ html[lang="en"] .feedback-form .loading-text {
 /*==============================================================================
 # FIN DU FICHIER CSS
 ==============================================================================*/
+
+/*==============================================================================
+# NOUVEAU SYSTEME AC PORTFOLIO
+==============================================================================*/
+
+/* --- Niveau 1 : Boutons Compétences --- */
+.portfolio-competences {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+  .portfolio-competences {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-competences {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-competence {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-competence::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--comp-color, var(--accent-color));
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.btn-competence:hover, .btn-competence.active {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--comp-color, var(--accent-color)), transparent 60%);
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--comp-color, var(--accent-color)), transparent 85%);
+}
+
+.btn-competence:hover::before, .btn-competence.active::before {
+  opacity: 1;
+  box-shadow: 0 0 10px var(--comp-color, var(--accent-color));
+}
+
+.btn-competence.active {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--comp-color, var(--accent-color)), var(--surface-color) 95%), var(--surface-color));
+}
+
+.btn-competence h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-competence h4 i {
+  color: var(--comp-color, var(--accent-color));
+}
+
+.btn-competence p {
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin: 0;
+}
+
+/* --- Niveau 2 : Grille ACs --- */
+.ac-grid-container {
+  display: none;
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+.ac-grid-container.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.ac-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+  .ac-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .ac-grid { grid-template-columns: 1fr; }
+}
+
+.ac-card {
+  background: color-mix(in srgb, var(--surface-color), transparent 20%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-left: 3px solid var(--comp-color, var(--accent-color));
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ac-card:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--surface-color), transparent 0%);
+  border-color: color-mix(in srgb, var(--comp-color, var(--accent-color)), transparent 70%);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.ac-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ac-id {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--comp-color, var(--accent-color));
+}
+
+.ac-status {
+  font-size: 0.9rem;
+}
+
+.ac-status.valid {
+  color: #2ecc71;
+}
+
+.ac-status.en-cours {
+  color: #95a5a6;
+}
+
+.ac-title {
+  font-size: 0.95rem;
+  color: var(--heading-color);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* --- Niveau 3 : Modale Détail AC --- */
+.ac-modal-content {
+  background-color: var(--background-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 12px;
+}
+
+.ac-modal-header {
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ac-modal-header h4 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ac-modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.5;
+}
+
+.ac-modal-body {
+  padding: 24px;
+}
+
+.ac-section {
+  margin-bottom: 24px;
+}
+
+.ac-section:last-child {
+  margin-bottom: 0;
+}
+
+.ac-section h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ac-section h5 i {
+  color: var(--accent-color);
+}
+
+.ac-section p {
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background: var(--surface-color);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 95%);
+  margin: 0;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Trace Card (Projets / Portefolio) --- */
+.trace-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--surface-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.trace-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s;
+}
+.trace-card:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+.trace-card-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(14, 16, 18, 0.85); /* Dark background covering the image */
+  padding: 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.trace-card:hover .trace-card-info {
+  opacity: 1;
+}
+.trace-card-info h6 {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 5px;
+}
+.trace-card-info small {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+.trace-card-info .btn {
+  z-index: 2;
+  font-size: 1.2rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+/* --- Interactive Background Particles (THE STACKING FIX) --- */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important; /* Behind text, in front of background images */
+  background-color: transparent !important;
+  pointer-events: none;
+}
+
+/* Dim the Hero background with correctly ordered negative z-index */
+.hero img {
+  z-index: -3 !important; /* Deepest layer */
+}
+
+.hero:before {
+  z-index: -2 !important; /* Overlay layer to dim the red image */
+  /* Gradient to blend perfectly with the body background at the bottom */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 70%, #050505 100%) !important;
+}
+
+/* Ensure sections are transparent to show the particles behind them */
+section, .section, .main, #Accueil, #Moi, #Portfolio, #Contact, #Moi2, #Competences {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Cards are solid and stay in front naturally (z-index: auto or higher) */
+.profile-card, .exp-card, .detail-item, .timeline-content, .achievement, .certification-item, .portfolio-card, .info-item {
+  position: relative;
+  background-color: #121212 !important; /* Solid opaque color */
+  background-image: none !important;
+  z-index: 1; /* Ensure they are in front of the fixed background */
+}
+
+/* General Typography for absolute contrast */
+h1, h2, h3, h4, h5, h6, p, span, a, i, .btn {
+  position: relative;
+  z-index: 2;
+}
+
+body {
+  background-color: #050505 !important;
+}
