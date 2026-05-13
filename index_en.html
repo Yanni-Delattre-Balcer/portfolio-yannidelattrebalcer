@@ -7,13 +7,30 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Yanni Delattre Balcer's Website</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Yanni Delattre Balcer — Networking, Telecommunications & Cybersecurity Portfolio</title>
+  <meta name="description" content="Portfolio of Yanni Delattre Balcer, Networking & Telecommunications (R&T) student at IUT Béthune, France. Explore my projects in network administration, cybersecurity, and web development. Passionate about pentesting and IT security.">
+  <meta name="keywords" content="Yanni Delattre Balcer, portfolio, networking, telecommunications, cybersecurity, pentesting, web development, IUT Béthune, network administration">
+  <meta name="author" content="Yanni Delattre Balcer">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yanni Delattre Balcer — Networking & Cybersecurity Portfolio">
+  <meta property="og:description" content="Networking & Telecom student passionate about cybersecurity and pentesting. Discover my projects and skills.">
+  <meta property="og:image" content="https://yannidelattrebalcer.com/assets/img/favicon.png">
+  <meta property="og:url" content="https://yannidelattrebalcer.com/index_en.html">
+  <meta property="og:site_name" content="Yanni Delattre Balcer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yanni Delattre Balcer — Networking & Cybersecurity Portfolio">
+  <meta name="twitter:description" content="Networking & Telecom student passionate about cybersecurity and pentesting. Discover my projects and skills.">
+  <meta name="twitter:image" content="https://yannidelattrebalcer.com/assets/img/favicon.png">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -35,7 +52,13 @@
 <!-- ========================================
      BODY - MAIN CONTENT
      ======================================== -->
-<body class="index-page">  
+<body class="index-page">
+
+
+
+
+  <!-- Interactive Background Particles -->
+  <canvas id="particles-canvas"></canvas>
 
   <!-- ========================================
        HEADER - MAIN NAVIGATION
@@ -175,6 +198,8 @@
               <!-- Action Buttons -->
               <div class="profile-actions">
                  <a href="assets/CV/CV_Yanni_Delattre_Balcer.pdf" class="btn-primary" download><i class="bi bi-download"></i>Download my Resume</a>
+                <a href="assets/pdf-certif/Ecris%20r%C3%A9fl%C3%A9xif.pdf" class="btn-secondary" target="_blank"><i
+                    class="bi bi-file-text"></i> My Reflective Essay</a>
                 <a href="mailto:yannidelattrebalcer.artois@gmail.com" class="btn-secondary"><i class="bi bi-envelope"></i> Contact Me</a>
               </div>
 
@@ -503,178 +528,88 @@
     <!-- ========================================
      PORTFOLIO SECTION
      ======================================== -->
-<section id="Portfolio" class="portfolio section">
+    <section id="Portfolio" class="portfolio section">
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <span class="subtitle">Portfolio</span>
-    <h2>Portfolio</h2>
-    <p>Here's a selection of projects completed in academic and extracurricular contexts.</p>
-  </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-      
-      <!-- Portfolio Filters -->
-      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-        <li data-filter="*" class="filter-active">Show All</li>
-        <li data-filter=".filter-creative">Telecommunications</li>
-        <li data-filter=".filter-digital">Networks</li>
-        <li data-filter=".filter-strategy">HTML</li>
-        <li data-filter=".filter-development">Other IT Projects</li>
-      </ul>
-
-      <!-- Project Grid -->
-      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-        
-        <!-- PROJECT 1 - Telecommunications -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-          <div class="portfolio-card">
-            <div class="portfolio-image-container">
-               <img src="assets/img/portfolio/portfolio-1.webp" alt="Creative Project" class="img-fluid" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <span class="project-category">R&T Projects: Networks, Systems and Transmissions</span>
-                  <h4>(Completed) Feasibility analysis and simulation (Matlab/LTspice) of a 75 Ω coaxial transmission line. Study of attenuation and propagation delay over 5m and 20m. (Not translated into English)</h4>
-                </div>
-                <div class="portfolio-actions">
-                  <a href="assets/partie-projet/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf" class="portfolio-details">
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-meta">
-              <div class="project-tags">
-                <span class="tag">Telecommunications</span>
-              </div>
-              <div class="project-year">2025</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 2 - Networks -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
-          <div class="portfolio-card">
-            <div class="portfolio-image-container">
-              <img src="assets/img/portfolio/portfolio-2.webp" alt="Digital Project" class="img-fluid" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <span class="project-category">R&T Projects: Enterprise Network Design and Virtualization</span>
-                  <h4>(In Progress) I will design and deploy a complete network infrastructure, from planning (Gantt chart, equipment selection) to technical implementation. The project will include a simulation phase to validate configurations, followed by deployment on virtual machines with installation of critical services (Web, DHCP, DNS). Proper functioning will be validated through frame analysis and documented via Jupyter reports.</h4>
-                </div>
-                <div class="portfolio-actions">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-meta">
-              <div class="project-tags">
-                <span class="tag">Networks</span>
-              </div>
-              <div class="project-year">2026</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 3 - HTML -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-          <div class="portfolio-card">
-            <div class="portfolio-image-container">
-              <img src="assets/img/portfolio/portfolio-3.webp" alt="Strategy Project" class="img-fluid" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                    <span class="project-category">Personal Project: Professional Website.</span>
-                  <h4>(In Progress) Creating a modern interface for this hair salon and beauty institute located in Loison-sous-Lens. The goal is to showcase their dual expertise (unisex hairdressing and aesthetic treatments) through an intuitive website facilitating access to pricing and practical information.</h4>
-                </div>
-                <div class="portfolio-actions">
-                  <a href="assets/partie-projet/index_en.html" class="portfolio-details">
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-           <div class="portfolio-meta">
-              <div class="project-tags">
-                <span class="tag">HTML</span>
-              </div>
-              <div class="project-year">2025</div>
-            </div>
-           </div>
-        </div>
-
-        <!-- PROJECT 4 - Development -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-          <div class="portfolio-card">
-            <div class="portfolio-image-container">
-              <img src="assets/img/portfolio/portfolio-4.webp" alt="Development Project" class="img-fluid" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <span class="project-category">Personal Project: 3D Modeling</span>
-                  <h4>(Completed) I modeled a residence and its future extension using SketchUp and Sweet Home 3D. This work simulated the project integration for the city hall application, while providing homeowners with a concrete visualization of the final result. My plans then served as technical support for craftsmen during construction.</h4>
-                </div>
-                <div class="portfolio-actions">
-                  <a href="assets/partie-projet/maison_en.html" class="portfolio-details">
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-meta">
-              <div class="project-tags">
-                <span class="tag">Architecture</span>
-              </div>
-              <div class="project-year">2021</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 5 - Creative -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-          <div class="portfolio-card">
-            <div class="portfolio-image-container">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <span class="project-category">Upcoming Project</span>
-                  <h4></h4>
-                </div>
-                <div class="portfolio-actions">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-meta">
-              <div class="project-tags">
-              </div>
-              <div class="project-year"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 6 - Digital -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-          <div class="portfolio-card">
-            <div class="portfolio-image-container">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <span class="project-category">Upcoming Project</span>
-                  <h4></h4>
-                </div>
-                <div class="portfolio-actions">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-meta">
-              <div class="project-tags">
-              </div>
-              <div class="project-year"></div>
-            </div>
-          </div>
-        </div>
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Portfolio</span>
+        <h2>Portfolio</h2>
+        <p>Here's a selection of projects completed in academic and extracurricular contexts.</p>
       </div>
-    </div>
-  </div>
-</section>
-<!-- END PORTFOLIO SECTION -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <h3 class="mb-4" style="color: var(--heading-color); font-weight: 700;">My Projects</h3>
+
+        <!-- LEVEL 1: BUTTONS -->
+        <div class="portfolio-competences">
+          <div class="btn-competence" id="btn-administrer" data-comp="administrer" style="--comp-color: #e74c3c;">
+            <h4><i class="bi bi-hdd-network"></i> ADMINISTER</h4>
+            <p>Networks and Internet</p>
+          </div>
+          <div class="btn-competence" id="btn-connecter" data-comp="connecter" style="--comp-color: #e67e22;">
+            <h4><i class="bi bi-diagram-3"></i> CONNECT</h4>
+            <p>Enterprises and Users</p>
+          </div>
+          <div class="btn-competence" id="btn-programmer" data-comp="programmer" style="--comp-color: #f39c12;">
+            <h4><i class="bi bi-code-slash"></i> PROGRAM</h4>
+            <p>Tools and Applications</p>
+          </div>
+          <div class="btn-competence" id="btn-autres" data-comp="autres" style="--comp-color: #8e44ad;">
+            <h4><i class="bi bi-collection"></i> OTHER</h4>
+            <p>Miscellaneous Projects</p>
+          </div>
+        </div>
+
+        <!-- LEVEL 2: AC GRID (filled via JS) -->
+        <div id="ac-grid-container" class="ac-grid-container">
+          <div id="ac-grid" class="ac-grid"></div>
+        </div>
+
+        <!-- LEVEL 3: AC DETAILS AND PROJECTS (inline, no modal) -->
+        <div id="ac-traces-container" class="mb-5" style="display:none; animation: slideDown 0.4s ease-out;"></div>
+
+        <div id="ac-details-container" style="display:none; margin-top: 30px; animation: slideDown 0.4s ease-out;">
+          <div class="ac-modal-content" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <div class="ac-modal-header" style="background: color-mix(in srgb, var(--surface-color), transparent 50%); border-radius: 12px 12px 0 0;">
+              <h4><span id="acInlineId"></span> — <span id="acInlineIntitule"></span></h4>
+            </div>
+            <div class="ac-modal-body">
+              <div class="ac-section">
+                <h5><i class="bi bi-check2-square"></i> WHAT I DID</h5>
+                <p id="acInlineFait"></p>
+              </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-bullseye"></i> WHY I DID IT</h5>
+                <p id="acInlinePourquoi"></p>
+              </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-gear-wide-connected"></i> HOW I DID IT</h5>
+                <p id="acInlineComment"></p>
+              </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-exclamation-triangle"></i> MY DIFFICULTIES</h5>
+                <p id="acInlineDifficultes"></p>
+              </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-lightbulb"></i> WHAT I LEARNED</h5>
+                <p id="acInlineAppris"></p>
+              </div>
+              <div class="ac-section">
+                <h5><i class="bi bi-arrow-repeat"></i> WHAT I WOULD DO DIFFERENTLY</h5>
+                <p id="acInlineAutrement"></p>
+              </div>
+              <div class="ac-section mb-0">
+                <h5><i class="bi bi-paperclip"></i> EVIDENCE / PROOF</h5>
+                <div id="acInlineTraces"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- END PORTFOLIO SECTION -->
 
 <!-- ========================================
      CONTACT SECTION
@@ -817,6 +752,9 @@
     <div class="credits">
     <a href="page-crédits_en.html">Page Credits</a>
     </div>
+    <div class="last-updated" style="margin-top: 8px; font-size: 0.85em; opacity: 0.7;">
+      <span id="last-updated-date"></span>
+    </div>
   </div>
 
 </footer>
@@ -839,6 +777,12 @@
 <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Portfolio data (ACs) -->
+<script src="assets/js/portfolio-competences.js"></script>
+
+<!-- Portfolio data (auto-generated) -->
+<script src="assets/js/data.js"></script>
 
 <!-- Main Script -->
 <script src="assets/js/main.js"></script>
