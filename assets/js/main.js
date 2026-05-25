@@ -369,6 +369,18 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("acInlineId").style.color = color;
       document.getElementById("acInlineIntitule").textContent = ac.intitule;
       
+      // Gestion du Logo dans le Header
+      const logoContainer = document.getElementById("acInlineLogoContainer");
+      const activeTrace = traceClicked || (hasTraces ? d.traces[0] : null);
+      if (logoContainer) {
+        if (activeTrace && activeTrace.logo) {
+          logoContainer.innerHTML = `<img src="${activeTrace.logo}" alt="Logo" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid ${color}; background-color: var(--surface-color);">`;
+          logoContainer.style.display = "block";
+        } else {
+          logoContainer.style.display = "none";
+        }
+      }
+
       document.getElementById("acInlineFait").textContent = d.ce_que_jai_fait || "À compléter";
       document.getElementById("acInlinePourquoi").textContent = d.pourquoi || "À compléter";
       document.getElementById("acInlineComment").textContent = d.comment || "À compléter";
@@ -410,9 +422,10 @@ document.addEventListener("DOMContentLoaded", function() {
               <div class="trace-card" data-idx="${idx}">
                 <img src="${t.image || 'assets/img/portfolio/portfolio-default.jpg'}" alt="${t.title}" class="img-fluid w-100">
                 <div class="trace-card-info">
+                  ${t.logo ? `<img src="${t.logo}" alt="Logo" class="rounded-circle mb-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid rgba(255,255,255,0.8); background-color: var(--surface-color);">` : ''}
                   <div>
                     <h6 class="mb-2 fw-bold px-3 lh-base">${t.title}</h6>
-                    <small class="text-white-50">${t.category} - ${t.year}</small>
+                    <small class="text-white-50 d-block mb-3">${t.category} - ${t.year}</small>
                   </div>
                   <button class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-link-45deg"></i></button>
                 </div>

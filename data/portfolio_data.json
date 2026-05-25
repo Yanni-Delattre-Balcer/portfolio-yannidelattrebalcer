@@ -21,7 +21,7 @@
       "description": "Analyse de la faisabilité et simulation (Matlab/LTspice) d'une ligne de transmission coaxiale de 75 Ω. Étude de l'atténuation et du délai de propagation sur 5m et 20m.",
       "stack": ["Matlab", "LTspice"],
       "github_url": null,
-      "image": "assets/img/portfolio/portfolio-1.webp",
+      "image": "assets/img/portfolio/electricity_dark.png",
       "details_url": "assets/partie-projet/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf",
       "last_updated": "2025-01-01",
       "source": "manual"
@@ -36,7 +36,7 @@
       "description": "Concevoir et déployer une infrastructure réseau complète, de la planification (Gantt, choix du matériel) à la mise en œuvre technique. Le projet comprendra une phase de simulation pour valider les configurations, puis un déploiement sur machines virtuelles avec l'installation de services critiques (Web, DHCP, DNS). Le bon fonctionnement sera validé par analyse de trames et documenté via des rapports Jupyter.",
       "stack": ["Virtualisation", "DHCP", "DNS", "Web", "Jupyter"],
       "github_url": null,
-      "image": "assets/img/portfolio/portfolio-2.webp",
+      "image": "assets/img/portfolio/wireshark_dark.png",
       "details_url": null,
       "last_updated": "2026-01-01",
       "source": "manual"
@@ -209,10 +209,24 @@
   ],
   "certifications": [
     {
-      "name": "CCNA : Switching, Routing, and Wireless Essentials (SRWE)",
+      "name": "CCNA : Introduction aux réseaux (ITN)",
       "issuer": "Cisco",
-      "date": "2025",
-      "status": "en_cours",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
+    },
+    {
+      "name": "CCNA : Notions essentielles de commutation, de routage et de réseau sans fil (SRWE)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
+    },
+    {
+      "name": "CCNA : Réseaux d'entreprise, sécurité et automatisation (ENSA)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
       "pdf_url": null
     },
     {

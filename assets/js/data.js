@@ -29,7 +29,7 @@ const PORTFOLIO_DATA = {
         "LTspice"
       ],
       "github_url": null,
-      "image": "assets/img/portfolio/portfolio-1.webp",
+      "image": "assets/img/portfolio/electricity_dark.png",
       "details_url": "assets/partie-projet/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf",
       "last_updated": "2025-01-01",
       "source": "manual"
@@ -50,27 +50,29 @@ const PORTFOLIO_DATA = {
         "Jupyter"
       ],
       "github_url": null,
-      "image": "assets/img/portfolio/portfolio-2.webp",
+      "image": "assets/img/portfolio/wireshark_dark.png",
       "details_url": null,
       "last_updated": "2026-01-01",
       "source": "manual"
     },
     {
-      "id": "site-coiffure",
-      "title": "Site web professionnel — Salon de coiffure",
+      "id": "heryze-pos",
+      "title": "Heryze — Caisse enregistreuse nouvelle génération",
       "category": "Web",
       "filter_class": "filter-strategy",
       "status": "en_cours",
       "year": 2025,
-      "description": "Création d'une interface moderne pour ce salon de coiffure et institut de beauté situé à Loison-sous-Lens. L'objectif est de valoriser leur double expertise (coiffure mixte et soins esthétiques) via un site intuitif facilitant l'accès aux tarifs et aux informations pratiques.",
+      "description": "Application web PWA de caisse enregistreuse nouvelle génération pour commerçants et CHR. Système POS complet, dashboard analytique, inventaire, plan de salle, scanner mobile WebRTC et journal Z-Caisse conforme NF525. Architecture offline-first avec Service Workers.",
       "stack": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "JavaScript",
+        "Tailwind CSS",
+        "PWA",
+        "WebRTC",
+        "Service Workers"
       ],
       "github_url": null,
-      "image": "assets/img/portfolio/portfolio-3.webp",
-      "details_url": "assets/partie-projet/index.html",
+      "image": "assets/img/portfolio/python_flask_dark.png",
+      "details_url": "https://heryze.com",
       "last_updated": "2025-01-01",
       "source": "manual"
     },
@@ -90,6 +92,46 @@ const PORTFOLIO_DATA = {
       "image": "assets/img/portfolio/portfolio-4.webp",
       "details_url": "assets/partie-projet/maison.html",
       "last_updated": "2021-01-01",
+      "source": "manual"
+    },
+    {
+      "id": "kdufoot",
+      "title": "Kdufoot — Plateforme de matchs amicaux de football",
+      "category": "Web",
+      "filter_class": "filter-strategy",
+      "status": "en_cours",
+      "year": 2025,
+      "description": "Plateforme web communautaire pour coachs de football amateur. Recherche et publication de matchs amicaux et tournois filtrés par catégorie, niveau et distance. Dashboard personnel, favoris, authentification Auth0, base Cloudflare D1, conformité RGPD complète.",
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Auth0",
+        "Cloudflare D1"
+      ],
+      "github_url": null,
+      "image": "assets/img/portfolio/portfolio-5.webp",
+      "details_url": "https://kdufoot.com",
+      "last_updated": "2025-01-01",
+      "source": "manual"
+    },
+    {
+      "id": "site-coiffure",
+      "title": "Site web professionnel — Salon de coiffure",
+      "category": "Web",
+      "filter_class": "filter-strategy",
+      "status": "terminé",
+      "year": 2025,
+      "description": "Création d'une interface moderne pour ce salon de coiffure et institut de beauté situé à Loison-sous-Lens. L'objectif est de valoriser leur double expertise (coiffure mixte et soins esthétiques) via un site vitrine intuitif facilitant l'accès aux tarifs et aux informations pratiques.",
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "github_url": null,
+      "image": "assets/img/portfolio/portfolio-3.webp",
+      "details_url": "assets/partie-projet/index.html",
+      "last_updated": "2025-01-01",
       "source": "manual"
     }
   ],
@@ -158,7 +200,7 @@ const PORTFOLIO_DATA = {
       "score": 63,
       "domain": "Web",
       "status": "validated",
-      "linked_project_id": "site-coiffure",
+      "linked_project_id": "heryze-pos",
       "filter_link": ".filter-strategy"
     },
     {
@@ -230,10 +272,24 @@ const PORTFOLIO_DATA = {
   ],
   "certifications": [
     {
-      "name": "CCNA : Switching, Routing, and Wireless Essentials (SRWE)",
+      "name": "CCNA : Introduction aux réseaux (ITN)",
       "issuer": "Cisco",
-      "date": "2025",
-      "status": "en_cours",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
+    },
+    {
+      "name": "CCNA : Notions essentielles de commutation, de routage et de réseau sans fil (SRWE)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
+    },
+    {
+      "name": "CCNA : Réseaux d'entreprise, sécurité et automatisation (ENSA)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
       "pdf_url": null
     },
     {
