@@ -41,21 +41,12 @@ const COMPETENCES = {
           ferais_autrement: "I would document my scripts in more detail from the start and try to simulate these equations under Logisim-evolution to have a better visual representation of the hardware circuits.",
           traces: [
             {
-              title: "R1.06 - Programming and Digital Systems Logic (S1)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/digital_arch_dark.png",
-              logo: "assets/img/portfolio/logo-3d.webp",
-              url: null,
-              tags: ["Python", "Binary", "XOR Encryption", "Adder", "Bit Shifts"],
-              year: 2025
-            },
-            {
-              title: "R1.06 - Logic Circuit Design (S1)",
+              title: "R1.06 — Programming, Logic & Digital Design (S1)",
               category: "R&T Lab",
               image: "assets/img/portfolio/logic_gates_dark.png",
               logo: "assets/img/portfolio/logo-3d.webp",
               url: null,
-              tags: ["Logisim", "Boolean Algebra", "Binary", "Hexadecimal", "Karnaugh"],
+              tags: ["Python", "Logisim", "Binary", "Boolean Algebra", "XOR Encryption"],
               year: 2025
             }
           ]
@@ -74,30 +65,12 @@ const COMPETENCES = {
           ferais_autrement: "I would document my network topologies in Draw.io in even greater detail from the design phase, specifying all IP addresses associated with each port, to expedite troubleshooting during real laboratory sessions.",
           traces: [
             {
-              title: "SAÉ 1.02 - Corporate Network Design and Prototyping (S1)",
-              category: "BUT Project",
-              image: "assets/img/portfolio/wireshark_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["VLANs", "DHCP", "Apache", "Cisco 2960", "Cisco 800", "Draw.io"],
-              year: 2025
-            },
-            {
-              title: "R1.01 - Packet Tracer Simulation and CLI Console Routing (S1)",
-              category: "R&T Lab",
+              title: "R1.01 & SAÉ1.02 — Local Network Design, Simulation and Patching (S1)",
+              category: "R&T Project & Lab",
               image: "assets/img/portfolio/cisco_topology_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["Packet Tracer", "CLI Cisco", "Static Routing", "ICMP"],
-              year: 2025
-            },
-            {
-              title: "R1.01 - Physical Local Network Construction in Laboratory (S1)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/cabling_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Patch Panel", "Subnets /18", "VLSM", "DHCP", "VLAN 800"],
+              tags: ["Cisco IOS", "Packet Tracer", "VLANs", "DHCP", "Static Routing", "Physical Patching"],
               year: 2025
             }
           ]
@@ -116,22 +89,13 @@ const COMPETENCES = {
           ferais_autrement: "I would like to deepen my Bash scripting skills to write more advanced scripts to automate post-installation configuration of my laboratory VMs.",
           traces: [
             {
-              title: "Systems Virtualization and VM Administration (VirtualBox & VMware ESXi) (S1/S2)",
+              title: "R1.08 & R2.02 — Systems Administration, Virtualization (ESXi/VirtualBox) & Docker (S1/S2)",
               category: "R&T Lab",
               image: "assets/img/portfolio/virtualization_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["VirtualBox", "VMware ESXi", "VBoxManage", "Snapshots", "Bridge Network", "fstab"],
+              tags: ["VirtualBox", "VMware ESXi", "Docker", "VBoxManage", "Linux CLI", "Snapshots"],
               year: 2025
-            },
-            {
-              title: "Application Containerization and Docker Administration (Debian/Ubuntu) (S2)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/git_docker_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["Docker", "docker.io", "Systemd Proxy", "Container Lifecycle", "docker diff", "Bridge Network"],
-              year: 2026
             }
           ]
         }
@@ -149,21 +113,12 @@ const COMPETENCES = {
           ferais_autrement: "I would compile a short checklist of common network errors to help me be even more efficient during future diagnostic tasks.",
           traces: [
             {
-              title: "R1.01 - Network Diagnostics and Wireshark Packet Capture (S1)",
+              title: "R1.01 — Network Diagnostics, Wireshark Packet Capture & Protocol Audit (S1)",
               category: "R&T Lab",
               image: "assets/img/portfolio/wireshark_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["Wireshark", "DHCP DORA", "APIPA", "Ping ICMP", "Firewall"],
-              year: 2025
-            },
-            {
-              title: "R1.01 - DNS Resolution and Routing Audit (S1)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/linux_os_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["nslookup", "host", "ip route", "route print", "netstat"],
+              tags: ["Wireshark", "DHCP DORA", "APIPA", "Ping ICMP", "nslookup", "ip route"],
               year: 2025
             }
           ]
@@ -182,21 +137,12 @@ const COMPETENCES = {
           ferais_autrement: "I would like to discover automated OS deployment tools (such as PXE or MDT) to understand how to accelerate the initial setup of workstation parks.",
           traces: [
             {
-              title: "Windows Server 2016 Domain Controller Installation and Configuration (S2)",
+              title: "R2.01 & R2.02 — Windows Server 2016 Administration & PowerShell Automation (S2)",
               category: "R&T Lab",
               image: "assets/img/portfolio/active_directory_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["Windows Server 2016", "Active Directory", "DHCP Server", "GPOs", "Roaming Profiles", "NTFS ACLs"],
-              year: 2026
-            },
-            {
-              title: "Automating Active Directory Administration with PowerShell (S2)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/powershell_script_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["PowerShell", "AD Cmdlets", "icacls", "New-SmbShare", "Scripting"],
+              tags: ["Active Directory", "PowerShell", "Windows Server", "GPOs", "NTFS Permissions"],
               year: 2026
             }
           ]
@@ -222,21 +168,12 @@ const COMPETENCES = {
           ferais_autrement: "I would spend more time doing prior manual calculations on the first few harmonics to better anticipate the spectral lines observed during measurements.",
           traces: [
             {
-              title: "SAÉ2.02 - Spectral Analysis Tools and FFT (S2)",
-              category: "BUT Project",
-              image: "assets/img/portfolio/electricity_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Oscilloscope", "FFT", "Signals", "Analog Discovery Studio", "Waveforms"],
-              year: 2026
-            },
-            {
-              title: "R2.05 - Spectral Analysis and Fourier Synthesis under MATLAB (S2)",
-              category: "R&T Lab",
+              title: "R2.05 & SAÉ2.02 — FFT Spectral Analysis & Fourier Synthesis under MATLAB (S2)",
+              category: "R&T Project & Lab",
               image: "assets/img/portfolio/fourier_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
               url: null,
-              tags: ["Fourier", "Spectrum", "Fourier Synthesis", "MATLAB", "Simulink"],
+              tags: ["Oscilloscope", "FFT", "Fourier Series", "MATLAB", "Waveforms", "Simulink"],
               year: 2026
             }
           ]
@@ -255,21 +192,12 @@ const COMPETENCES = {
           ferais_autrement: "I would make more precise wiring diagrams on paper before laboratory sessions to avoid minor connection mistakes on the breadboard.",
           traces: [
             {
-              title: "R1.05 - Transmission Line Characterization and Time-Domain Reflectometry (S1)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/cabling_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Transmission Line", "Primary Parameters", "Time-Domain Reflectometry (TDR)", "RLC Bridge", "VDV II Pro"],
-              year: 2025
-            },
-            {
-              title: "R2.05 - Passive Filters Design and Characterization (Low-Pass, High-Pass, Band-Pass) (S2)",
+              title: "R1.05 & R2.05 — Transmission Lines Characterization & Analog Filters (S1/S2)",
               category: "R&T Lab",
               image: "assets/img/portfolio/bode_plot_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
               url: null,
-              tags: ["Passive Filters", "Bode Diagram", "Cutoff Frequency", "Harmonic Excitation", "Signal Distortion"],
+              tags: ["Reflectometry (TDR)", "Bode Diagram", "Passive Filters", "RLC Bridge", "Oscilloscope"],
               year: 2026
             }
           ]
@@ -288,21 +216,12 @@ const COMPETENCES = {
           ferais_autrement: "I would practice fiber optic cleaving more to gain better speed and precision in my movements.",
           traces: [
             {
-              title: "SAÉ1.03 - Discovering a Transmission Device (S1)",
-              category: "BUT Project",
-              image: "assets/img/portfolio/cabling_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Fiber Optics", "RJ45", "OTDR", "Cabling", "Crimping"],
-              year: 2025
-            },
-            {
-              title: "R1.05 - Transmission Media for Networks (S1)",
-              category: "R&T Lab",
+              title: "R1.05 & SAÉ1.03 — Physical Deployment, RJ45 Crimping and Optical Fiber Measurements (S1)",
+              category: "R&T Project & Lab",
               image: "assets/img/portfolio/fiber_optic_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
               url: null,
-              tags: ["Cat5e", "Cat6", "TIA-568", "Cable Tester", "Fluke Networks"],
+              tags: ["Multimode/Monomode Fiber", "RJ45 Crimping", "OTDR", "Copper Cabling", "Fluke Networks"],
               year: 2025
             }
           ]
@@ -346,7 +265,7 @@ const COMPETENCES = {
           traces: [
             {
               title: "SAÉ2.04 - Integrative Project (S2)",
-              category: "BUT Project",
+              category: "R&T Project",
               image: "assets/img/portfolio/project_management_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
@@ -400,22 +319,13 @@ const COMPETENCES = {
           ferais_autrement: "I would use more clear debug prints or logs in my scripts from the start to better visualize my variables' state during execution.",
           traces: [
             {
-              title: "Web Debugging and Securing (Python / Flask / MVC) (S2)",
+              title: "R1.07 & R2.09 — Code Reading, Debugging & Securing Python / Flask Scripts (S1/S2)",
               category: "R&T Lab",
               image: "assets/img/portfolio/python_flask_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
               url: null,
-              tags: ["Python Web", "Flask MVC", "Debugging", "SQL Injections", "XSS Vulnerabilities", "VS Code"],
+              tags: ["Python Web", "Flask MVC", "Debugging", "SQL Injections", "Traceback", "VS Code"],
               year: 2026
-            },
-            {
-              title: "Analysis and Debugging of System Scripts (Python TPs 1-10) (S1)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/python_debugging_dark.png",
-              logo: "assets/img/portfolio/logo-heryze.webp",
-              url: null,
-              tags: ["Algorithms", "Debugging", "Complex Collections", "Flow Control", "Thonny"],
-              year: 2025
             }
           ]
         }
@@ -433,22 +343,13 @@ const COMPETENCES = {
           ferais_autrement: "I would split my functions more into smaller independent blocks to make my code more readable and simpler to step-debug.",
           traces: [
             {
-              title: "SAÉ2.03 - IT Solution for the Enterprise (Flask/Docker) (S2)",
-              category: "BUT Project",
+              title: "R1.07 & SAÉ2.03 — Algorithms, CLI Administration Scripts & Database Interfacing (S1/S2)",
+              category: "R&T Project & Lab",
               image: "assets/img/portfolio/database_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
               url: null,
-              tags: ["Python Web", "Flask MVC", "Docker Stack", "PostgreSQL", "MySQL", "SQL Relational"],
+              tags: ["Python CLI", "argparse", "Regex re", "Docker Stack", "Databases", "MySQL/PostgreSQL"],
               year: 2026
-            },
-            {
-              title: "CLI Administration Scripts, Regex Log Parsing & Networking (R107 TPs) (S1)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/python_cli_dark.png",
-              logo: "assets/img/portfolio/logo-heryze.webp",
-              url: null,
-              tags: ["Python CLI", "argparse", "subprocess", "re Regex", "requests HTTP", "os / shutil"],
-              year: 2025
             }
           ]
         }
@@ -515,7 +416,7 @@ const COMPETENCES = {
           traces: [
             {
               title: "SAÉ2.03 - IT Solution and Orchestration (Flask/Docker/Git/Portainer) (S2)",
-              category: "BUT Project",
+              category: "R&T Project",
               image: "assets/img/portfolio/git_docker_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
               url: null,

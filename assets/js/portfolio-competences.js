@@ -41,21 +41,12 @@ const COMPETENCES = {
           ferais_autrement: "Je documenterais mes scripts plus en détail dès le départ et j'essaierais de simuler ces équations sous le logiciel Logisim-evolution pour avoir une meilleure visualisation visuelle des circuits matériels.",
           traces: [
             {
-              title: "R1.06 - Programmation et Logique des Systèmes Numériques (S1)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/digital_arch_dark.png",
-              logo: "assets/img/portfolio/logo-3d.webp",
-              url: null,
-              tags: ["Python", "Binaire", "XOR Chiffrement", "Additionneur", "Bit Shifts"],
-              year: 2025
-            },
-            {
-              title: "R1.06 - Conception de circuits logiques",
+              title: "R1.06 — Programmation, Logique & Conception Numérique (S1)",
               category: "TP R&T",
               image: "assets/img/portfolio/logic_gates_dark.png",
               logo: "assets/img/portfolio/logo-3d.webp",
               url: null,
-              tags: ["Logisim", "Algèbre de Boole", "Binaire", "Hexadécimal", "Karnaugh"],
+              tags: ["Python", "Logisim", "Binaire", "Algèbre de Boole", "Chiffrement XOR"],
               year: 2025
             }
           ]
@@ -74,30 +65,12 @@ const COMPETENCES = {
           ferais_autrement: "Je documenterais mes schémas réseau dès la phase d'étude sous Draw.io de manière encore plus détaillée, en y indiquant toutes les adresses IP associées à chaque port, afin d'accélérer le diagnostic de câblage ou de configuration lors des séances pratiques.",
           traces: [
             {
-              title: "SAÉ 1.02 - Conception et Maquettage d'un Réseau PME (S1)",
-              category: "Projet BUT",
-              image: "assets/img/portfolio/wireshark_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["VLANs", "DHCP", "Apache", "Cisco 2960", "Cisco 800", "Draw.io"],
-              year: 2025
-            },
-            {
-              title: "R1.01 - Simulation Packet Tracer et Routage Console (S1)",
-              category: "TP R&T",
+              title: "R1.01 & SAÉ1.02 — Conception, Simulation et Maquettage de Réseaux Locaux (S1)",
+              category: "Projet & TP R&T",
               image: "assets/img/portfolio/cisco_topology_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["Packet Tracer", "CLI Cisco", "Routage statique", "ICMP"],
-              year: 2025
-            },
-            {
-              title: "R1.01 - Construction de Réseau Local Réel en Laboratoire (S1)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/cabling_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Baie de brassage", "Sous-réseaux /18", "VLSM", "DHCP", "VLAN 800"],
+              tags: ["Cisco IOS", "Packet Tracer", "VLANs", "DHCP", "Routage statique", "Brassage physique"],
               year: 2025
             }
           ]
@@ -111,27 +84,18 @@ const COMPETENCES = {
           ce_que_jai_fait: "Dans le cadre des modules de systèmes d'exploitation (R1.08, R2.02), j'ai été initié à l'administration de systèmes physiques, virtualisés et conteneurisés. En premier lieu (CLI Linux), j'ai appris les commandes de base d'introspection matérielle (lscpu, free -h, lsblk, df -h), la gestion des permissions Unix (chmod, chown), les redirections de flux simples (>, >>) et l'utilisation de filtres de base (grep, head, tail, cut). En second lieu (Virtualisation Type 2 - VirtualBox), j'ai créé et configuré des machines virtuelles Ubuntu simples, en étudiant le rôle des fichiers de configuration (.vbox, disques virtuels .vdi), en installant les Additions Invité pour le partage de presse-papier/dossiers (/etc/fstab), et en découvrant les bases de la gestion de snapshots de sécurité et des modes réseau (NAT, Pont/Bridge). En troisième lieu (Virtualisation Type 1 - VMware ESXi), j'ai découvert l'environnement d'un hyperviseur bare-metal à travers son interface web pour provisionner des machines virtuelles simples. En dernier lieu (Conteneurisation - Docker), j'ai appris à installer Docker, à configurer le proxy universitaire, et à gérer le cycle de vie de conteneurs isolés simples (docker run, docker ps).",
           pourquoi: "La compréhension des systèmes d'exploitation et de l'initiation aux concepts de virtualisation et de conteneurisation est essentielle pour un futur technicien réseau. Cela permet d'assimiler comment les ressources physiques sont partagées et comment déployer des serveurs et applications de manière isolée et sécurisée.",
           comment: "J'ai configuré et exploité des machines virtuelles sous l'hyperviseur de type 2 VirtualBox, et découvert l'hyperviseur de type 1 VMware ESXi. Pour la conteneurisation, j'ai été initié à Docker sous Linux. Les scripts et configurations de base ont été écrits en Bash.",
-          difficultes: "La principale difficulté a été de configurer correctement les dossiers partagés permanents sous VirtualBox et de comprendre la gestion des droits d'écriture. J'ai surmonté cela en apprenant à paramétrer proprement le fichier /etc/fstab et en ajoutant l'utilisateur au groupe système vboxsf.",
+          difficultes: "La principale difficulté a été de configurer correctement les dossiers partagés permanents sous VirtualBox et de comprendre la gestion des droits d'écriture. J'ai surmonté cela en apprenant à paramétrer proprement le fichier /etc/fstab and en ajoutant l'utilisateur au groupe système vboxsf.",
           appris: "J'ai appris à installer, configurer et administrer sous supervision des machines virtuelles (VirtualBox, ESXi) et des conteneurs basiques (Docker). J'ai assimilé les notions clés d'allocation de ressources, d'instantanés (snapshots), de types de réseaux virtuels et de gestion des pilotes d'intégration.",
           ferais_autrement: "J'aimerais approfondir mes compétences d'écriture de scripts Bash complexes afin d'automatiser davantage la configuration post-installation de mes machines virtuelles de TP.",
           traces: [
             {
-              title: "Virtualisation de Systèmes et Administration de VMs (VirtualBox & VMware ESXi) (S1/S2)",
+              title: "R1.08 & R2.02 — Administration Système, Virtualisation (ESXi/VirtualBox) & Docker (S1/S2)",
               category: "TP R&T",
               image: "assets/img/portfolio/virtualization_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["VirtualBox", "VMware ESXi", "VBoxManage", "Snapshots", "Bridge Network", "fstab"],
+              tags: ["VirtualBox", "VMware ESXi", "Docker", "VBoxManage", "Linux CLI", "Snapshots"],
               year: 2025
-            },
-            {
-              title: "Conteneurisation Applicative et Administration Docker (Debian/Ubuntu) (S2)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/git_docker_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["Docker", "docker.io", "Systemd Proxy", "Container Lifecycle", "docker diff", "Bridge Network"],
-              year: 2026
             }
           ]
         }
@@ -149,21 +113,12 @@ const COMPETENCES = {
           ferais_autrement: "Je rédigerais un petit guide récapitulatif des pannes les plus courantes pour m'aider à être encore plus efficace lors de mes futures séances de diagnostic.",
           traces: [
             {
-              title: "R1.01 - Diagnostic Réseau et Capture de Trames Wireshark (S1)",
+              title: "R1.01 — Diagnostic Réseau, Analyse Wireshark & Audit de protocoles (S1)",
               category: "TP R&T",
               image: "assets/img/portfolio/wireshark_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["Wireshark", "DHCP DORA", "APIPA", "Ping ICMP", "Pare-feu"],
-              year: 2025
-            },
-            {
-              title: "R1.01 - Audit de Résolution DNS et de Routage (S1)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/linux_os_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["nslookup", "host", "ip route", "route print", "netstat"],
+              tags: ["Wireshark", "DHCP DORA", "APIPA", "Ping ICMP", "nslookup", "ip route"],
               year: 2025
             }
           ]
@@ -182,21 +137,12 @@ const COMPETENCES = {
           ferais_autrement: "J'aimerais découvrir des solutions de déploiement automatisé d'OS (type PXE ou MDT) pour comprendre comment accélérer l'installation initiale de parcs de machines.",
           traces: [
             {
-              title: "Installation et Configuration de Contrôleur de Domaine Windows Server 2016 (S2)",
+              title: "R2.01 & R2.02 — Administration Windows Server 2016 & Automatisation PowerShell (S2)",
               category: "TP R&T",
               image: "assets/img/portfolio/active_directory_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
               url: null,
-              tags: ["Windows Server 2016", "Active Directory", "DHCP Server", "GPOs", "Roaming Profiles", "NTFS ACLs"],
-              year: 2026
-            },
-            {
-              title: "Automatisation de l'Administration Active Directory en PowerShell (S2)",
-              category: "R&T Lab",
-              image: "assets/img/portfolio/powershell_script_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
-              tags: ["PowerShell", "AD Cmdlets", "icacls", "New-SmbShare", "Scripting"],
+              tags: ["Active Directory", "PowerShell", "Windows Server", "GPOs", "Permissions NTFS"],
               year: 2026
             }
           ]
@@ -222,21 +168,12 @@ const COMPETENCES = {
           ferais_autrement: "Je passerai plus de temps à faire des calculs manuels préalables sur les premiers harmoniques pour mieux anticiper les raies spectrales observées lors des mesures.",
           traces: [
             {
-              title: "SAÉ2.02 - Outils pour l'analyse spectrale et FFT (S2)",
-              category: "Projet BUT",
-              image: "assets/img/portfolio/electricity_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Oscilloscope", "FFT", "Signaux", "Analog Discovery Studio", "Waveforms"],
-              year: 2026
-            },
-            {
-              title: "R2.05 - Analyse spectrale et synthèse de Fourier sous MATLAB (S2)",
-              category: "TP R&T",
+              title: "R2.05 & SAÉ2.02 — Analyse Spectrale FFT & Synthèse de Fourier sous MATLAB (S2)",
+              category: "Projet & TP R&T",
               image: "assets/img/portfolio/fourier_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
               url: null,
-              tags: ["Fourier", "Spectre", "Synthèse de Fourier", "MATLAB", "Simulink"],
+              tags: ["Oscilloscope", "FFT", "Séries de Fourier", "MATLAB", "Waveforms", "Simulink"],
               year: 2026
             }
           ]
@@ -248,28 +185,19 @@ const COMPETENCES = {
         statut: "valide",
         detail: {
           ce_que_jai_fait: "Dans le cadre du module R1.05 (Ligne de Transmission) et R2.05 (Filtrage), j'ai réalisé des travaux pratiques d'introduction à la caractérisation de lignes physiques (câble torsadé) et de circuits de filtrage analogique simples. J'ai mesuré les paramètres primaires linéiques (r, l, c) d'un câble court à l'aide d'un pont RLC de précision, et j'ai été initié aux mesures de réflectométrie temporelle (TDR) sur oscilloscope pour calculer la vitesse de propagation et localiser une coupure de ligne. D'autre part, j'ai câblé et caractérisé des filtres passifs du 1er ordre simples (passe-bas, passe-haut) en relevant expérimentalement leurs courbes de gain et de phase (diagrammes de Bode) de 100 Hz à 100 kHz.",
-          pourquoi: "Comprendre les bases physiques des supports de transmission et le rôle des filtres analogiques simples est indispensable pour tout technicien R&T afin d'éviter les perturbations sur les lignes physiques et d'assurer une bonne qualité de transmission.",
+          pourquoi: "Comprendre les bases physiques des supports de transmission et le rôle des filtres analogiques simples is indispensable pour tout technicien R&T afin d'éviter les perturbations sur les lignes physiques et d'assurer une bonne qualité de transmission.",
           comment: "J'ai utilisé un pont RLC pour les mesures primaires et un oscilloscope relié par Té BNC à un générateur de fonctions pour la réflectométrie. Pour les filtres, j'ai câblé les composants passifs (résistances, condensateurs) sur platine d'essai.",
           difficultes: "La principale difficulté a été d'interpréter les échos d'impulsions sur l'oscilloscope lors des manipulations de réflectométrie temporelle, ainsi que de stabiliser les relevés de phase aux basses fréquences.",
           appris: "J'ai appris à mesurer les caractéristiques physiques de base d'une ligne, à localiser un défaut par réflectométrie simple et à câbler et tester des filtres passifs en traçant leurs réponses en fréquence (Bode).",
           ferais_autrement: "Je ferais des schémas de câblage plus précis sur papier avant les manipulations pratiques pour éviter les petites erreurs de connexion sur la plaque d'essai.",
           traces: [
             {
-              title: "R1.05 - Caractérisation de Ligne de Transmission et Réflectométrie (S1)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/cabling_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Ligne de transmission", "Paramètres primaires", "Réflectométrie (TDR)", "Pont RLC", "VDV II Pro"],
-              year: 2025
-            },
-            {
-              title: "R2.05 - Conception et caractérisation de Filtres Passifs (Passe-Bas, Passe-Haut, Passe-Bande) (S2)",
+              title: "R1.05 & R2.05 — Caractérisation de Lignes de Transmission & Filtres Analogiques (S1/S2)",
               category: "TP R&T",
               image: "assets/img/portfolio/bode_plot_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
               url: null,
-              tags: ["Filtres Passifs", "Diagramme de Bode", "Fréquence de coupure", "Excitation harmonique", "Déformation de signal"],
+              tags: ["Réflectométrie (TDR)", "Diagramme de Bode", "Filtres Passifs", "RLC Bridge", "Oscilloscope"],
               year: 2026
             }
           ]
@@ -288,21 +216,12 @@ const COMPETENCES = {
           ferais_autrement: "Je m'exercerais davantage sur le geste technique du clivage mécanique de la fibre afin d'acquérir une meilleure rapidité et précision.",
           traces: [
             {
-              title: "SAÉ1.03 - Découvrir un dispositif de transmission (S1)",
-              category: "Projet BUT",
-              image: "assets/img/portfolio/cabling_dark.png",
-              logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
-              tags: ["Fibre optique", "RJ45", "OTDR", "Câblage", "Sertissage"],
-              year: 2025
-            },
-            {
-              title: "R1.05 - Supports de transmission pour les réseaux (S1)",
-              category: "TP R&T",
+              title: "R1.05 & SAÉ1.03 — Déploiement physique, Sertissage RJ45 et Mesures Fibres Optiques (S1)",
+              category: "Projet & TP R&T",
               image: "assets/img/portfolio/fiber_optic_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
               url: null,
-              tags: ["Cat5e", "Cat6", "TIA-568", "Testeur de câble", "Fluke Networks"],
+              tags: ["Fibre optique multimode/monomode", "Sertissage RJ45", "OTDR", "Câblage cuivre", "Fluke Networks"],
               year: 2025
             }
           ]
@@ -314,7 +233,7 @@ const COMPETENCES = {
         statut: "valide",
         detail: {
           ce_que_jai_fait: "Dans le cadre du module R2.04 - Initiation à la téléphonie d'entreprise (S2), j'ai découvert et configuré sous supervision des architectures de téléphonie sur IP (ToIP/VoIP). J'ai étudié les bases du protocole SIP (méthodes REGISTER, INVITE, BYE), configuré un serveur IPBX Asterisk basique sur une machine virtuelle Debian, créé des extensions simples et un plan de numérotation dans extensions.conf, et passé des appels de test entre deux softphones Linphone virtuels en analysant les flux SIP/RTP sous Wireshark.",
-          pourquoi: "Découvrir la ToIP est essentiel car cette technologie est omniprésente en entreprise. Comprendre comment configurer un service de téléphonie de base et analyser les flux de signalisation permet de se familiariser avec les architectures VoIP modernes.",
+          pourquoi: "Découvrir la ToIP is essentiel car cette technologie est omniprésente en entreprise. Comprendre comment configurer un service de téléphonie de base et analyser les flux de signalisation permet de se familiariser avec les architectures VoIP modernes.",
           comment: "Les TPs ont été menés sur des machines virtuelles VirtualBox Debian 12 avec Asterisk 20 LTS en éditant les fichiers de configuration sip.conf et extensions.conf. Linphone a été utilisé comme terminal d'appel et Wireshark pour l'observation des paquets.",
           difficultes: "La principale difficulté a été de comprendre la syntaxe spécifique des fichiers de configuration Asterisk et de résoudre des problèmes d'enregistrement SIP de base (liés à des erreurs de mot de passe ou de paramétrage de domaines).",
           appris: "J'ai appris à configurer des comptes SIP et des plans de numérotation simples sur Asterisk, à installer et connecter un softphone Linphone, et à identifier le rôle des flux de signalisation SIP (port 5060) et média RTP.",
@@ -342,7 +261,7 @@ const COMPETENCES = {
           comment: "Pour le projet SAÉ2.04, nous avons préparé des diaporamas de présentation et effectué des démonstrations en direct devant un jury d'enseignants. Les documentations techniques ont été rédigées avec soin pour être claires et structurées.",
           difficultes: "Le plus difficile a été d'apprendre à doser la technicité du discours face à des profils non techniques, et à gérer le stress inhérent aux soutenances et aux séances de questions-réponses en direct.",
           appris: "J'ai appris à rédiger un rapport technique structuré, à vulgariser des concepts complexes, et à m'exprimer de manière plus calme et ordonnée lors d'une soutenance orale collective.",
-          ferais_autrement: "Je ferais plus de répétitions chronométrées en groupe pour mieux équilibrer le temps de parole entre chaque membre de l'équipe lors des présentations orales.",
+          ferais_autrement: "Je ferais plus d'affichages de répétitions chronométrées en groupe pour mieux équilibrer le temps de parole entre chaque membre de l'équipe lors des présentations orales.",
           traces: [
             {
               title: "SAÉ2.04 - Projet intégratif (S2)",
@@ -369,7 +288,7 @@ const COMPETENCES = {
         statut: "valide",
         detail: {
           ce_que_jai_fait: "Dans le cadre des modules R1.01 (Initiation Réseaux) et R1.07 (Programmation), j'ai appris à configurer et utiliser mon poste de travail sous Linux Ubuntu et Windows à l'IUT. J'ai pris en main l'interface en ligne de commande (CLI) de Linux pour naviguer, gérer les répertoires, éditer des fichiers texte simples avec `nano` et paramétrer les permissions de base des fichiers (`chmod`). J'ai également été initié au contrôle de version en apprenant les commandes de base de Git et GitLab (clone, add, commit, push) pour archiver mes codes pratiques.",
-          pourquoi: "Maîtriser les commandes de base de Linux et l'outil Git est indispensable pour un futur professionnel. La majorité des équipements réseau et serveurs s'administrent via le terminal de commandes, et Git est le standard de l'industrie pour collaborer sur le code.",
+          pourquoi: "Maîtriser les commandes de base de Linux et l'outil Git is indispensable pour un futur professionnel. La majorité des équipements réseau et serveurs s'administrent via le terminal de commandes, et Git est le standard de l'industrie pour collaborer sur le code.",
           comment: "J'ai configuré mon terminal avec le proxy universitaire pour accéder à GitLab. J'ai structuré mes répertoires de TP et versionné mes codes de manière ordonnée.",
           difficultes: "La principale difficulté a été de m'adapter à la rigueur de la syntaxe de la ligne de commande et de comprendre le fonctionnement des permissions de fichiers (rwx).",
           appris: "J'ai appris à manipuler les commandes système Linux essentielles, à gérer des dépôts Git personnels et à configurer un environnement de développement simple.",
@@ -400,22 +319,13 @@ const COMPETENCES = {
           ferais_autrement: "Je ferais plus d'affichages de débogage clairs (print ou traces) dès le départ dans mes scripts pour mieux visualiser l'état de mes variables en cours d'exécution.",
           traces: [
             {
-              title: "Débogage et Sécurisation Web (Python / Flask / MVC) (S2)",
+              title: "R1.07 & R2.09 — Lecture, Débogage et Sécurisation de Scripts Python / Flask (S1/S2)",
               category: "TP R&T",
               image: "assets/img/portfolio/python_flask_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
               url: null,
-              tags: ["Python Web", "Flask MVC", "Débogage", "Injections SQL", "Failles XSS", "VS Code"],
+              tags: ["Python Web", "Flask MVC", "Débogage", "Injections SQL", "Traceback", "VS Code"],
               year: 2026
-            },
-            {
-              title: "Analyse et Débogage de Scripts Système (Python TPs 1-10) (S1)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/python_debugging_dark.png",
-              logo: "assets/img/portfolio/logo-heryze.webp",
-              url: null,
-              tags: ["Algorithmique", "Débogage", "Collections complexes", "Contrôle de Flux", "Thonny"],
-              year: 2025
             }
           ]
         }
@@ -433,22 +343,13 @@ const COMPETENCES = {
           ferais_autrement: "Je découperais davantage mes fonctions en petites unités indépendantes pour rendre mon code plus lisible et plus simple à déboguer pas-à-pas.",
           traces: [
             {
-              title: "SAÉ2.03 - Solution informatique pour l'entreprise (Flask/Docker) (S2)",
-              category: "Projet BUT",
+              title: "R1.07 & SAÉ2.03 — Algorithmique, Scripts d'Administration CLI & Interfaçage de Bases de Données (S1/S2)",
+              category: "Projet & TP R&T",
               image: "assets/img/portfolio/database_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
               url: null,
-              tags: ["Python Web", "Flask MVC", "Docker Stack", "PostgreSQL", "MySQL", "SQL relational"],
+              tags: ["Python CLI", "argparse", "Regex re", "Docker Stack", "Bases de Données", "MySQL/PostgreSQL"],
               year: 2026
-            },
-            {
-              title: "Scripts d'Administration CLI, Parsing Log Regex et Réseau (R107 TPs) (S1)",
-              category: "TP R&T",
-              image: "assets/img/portfolio/python_cli_dark.png",
-              logo: "assets/img/portfolio/logo-heryze.webp",
-              url: null,
-              tags: ["Python CLI", "argparse", "subprocess", "re Regex", "requests HTTP", "os / shutil"],
-              year: 2025
             }
           ]
         }
