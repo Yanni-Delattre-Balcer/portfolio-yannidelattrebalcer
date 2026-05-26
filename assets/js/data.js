@@ -1,7 +1,7 @@
 /**
  * data.js — Données du portfolio générées automatiquement.
  * NE PAS MODIFIER MANUELLEMENT — ce fichier est écrasé chaque dimanche.
- * Dernière mise à jour : Vendredi 3 avril 2026
+ * Dernière mise à jour : Mardi 26 mai 2026
  */
 const PORTFOLIO_DATA = {
   "last_updated": "2026-04-02T09:10:00",
@@ -369,4 +369,5 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-const LAST_UPDATED = "Vendredi 3 avril 2026";
+const LAST_UPDATED = "Mardi 26 mai 2026";
+const LAST_UPDATED_EN = "Tuesday, May 26, 2026";

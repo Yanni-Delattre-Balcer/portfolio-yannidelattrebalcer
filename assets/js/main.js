@@ -451,12 +451,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /**
- * Affichage de la date de dernière mise à jour dans le footer.
+ * Affichage de la date de dernière mise à jour dans le footer (Français et Anglais).
  */
 document.addEventListener('DOMContentLoaded', function() {
   const el = document.getElementById('last-updated-date');
   if (el && typeof LAST_UPDATED !== 'undefined' && LAST_UPDATED) {
-    el.textContent = 'Mis à jour le ' + LAST_UPDATED;
+    const isEn = document.documentElement.lang === 'en';
+    if (isEn) {
+      const enDate = typeof LAST_UPDATED_EN !== 'undefined' ? LAST_UPDATED_EN : 'Tuesday, May 26, 2026';
+      el.textContent = 'Last updated on ' + enDate;
+    } else {
+      el.textContent = 'Mis à jour le ' + LAST_UPDATED;
+    }
   }
 });
 
