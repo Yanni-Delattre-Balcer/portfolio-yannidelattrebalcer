@@ -45,7 +45,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/logic_gates_dark.png",
               logo: "assets/img/portfolio/logo-3d.webp",
-              url: null,
+              url: "assets/preuves/AC11.02/TP_binaire.ipynb",
               tags: ["Python", "Logisim", "Binaire", "Algèbre de Boole", "Chiffrement XOR"],
               year: 2025
             }
@@ -69,7 +69,7 @@ const COMPETENCES = {
               category: "Projet & TP R&T",
               image: "assets/img/portfolio/cisco_topology_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
+              url: "assets/preuves/AC11.03/R101_TP4_reseau_local.pdf",
               tags: ["Cisco IOS", "Packet Tracer", "VLANs", "DHCP", "Routage statique", "Brassage physique"],
               year: 2025
             }
@@ -93,7 +93,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/virtualization_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
+              url: "assets/preuves/AC11.04/R202_TP4_VirtualBox.pdf",
               tags: ["VirtualBox", "VMware ESXi", "Docker", "VBoxManage", "Linux CLI", "Snapshots"],
               year: 2025
             }
@@ -117,7 +117,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/wireshark_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
+              url: "assets/preuves/AC11.05/R101_TP6_diagnostic.pdf",
               tags: ["Wireshark", "DHCP DORA", "APIPA", "Ping ICMP", "nslookup", "ip route"],
               year: 2025
             }
@@ -141,7 +141,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/active_directory_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
+              url: "assets/preuves/AC11.06/R201_CR_TP8_NAT.pdf",
               tags: ["Active Directory", "PowerShell", "Windows Server", "GPOs", "Permissions NTFS"],
               year: 2026
             }
@@ -196,7 +196,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/bode_plot_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
+              url: "assets/preuves/AC12.02/R105_TP1_lignes_transmission.pdf",
               tags: ["Réflectométrie (TDR)", "Diagramme de Bode", "Filtres Passifs", "RLC Bridge", "Oscilloscope"],
               year: 2026
             }
@@ -220,7 +220,7 @@ const COMPETENCES = {
               category: "Projet & TP R&T",
               image: "assets/img/portfolio/fiber_optic_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: null,
+              url: "assets/preuves/AC12.03/SAE13_seance5.pdf",
               tags: ["Fibre optique multimode/monomode", "Sertissage RJ45", "OTDR", "Câblage cuivre", "Fluke Networks"],
               year: 2025
             }
@@ -244,7 +244,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/voip_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
+              url: "assets/preuves/AC12.04/R204_CR_telephonie_ToIP.pdf",
               tags: ["VoIP", "ToIP", "Asterisk", "SIP", "Linphone", "RTP"],
               year: 2026
             }
@@ -299,7 +299,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/git_docker_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: null,
+              url: "assets/preuves/AC13.01/R107_TP8.ipynb",
               tags: ["Linux CLI", "GitLab", "Bash Terminal", "Permissions chmod", "Network Proxy"],
               year: 2025
             }
@@ -323,7 +323,7 @@ const COMPETENCES = {
               category: "TP R&T",
               image: "assets/img/portfolio/python_flask_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
-              url: null,
+              url: "assets/preuves/AC13.02/R209_TP2_Flask.pdf",
               tags: ["Python Web", "Flask MVC", "Débogage", "Injections SQL", "Traceback", "VS Code"],
               year: 2026
             }
