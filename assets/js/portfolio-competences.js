@@ -63,21 +63,12 @@ const COMPETENCES = {
           difficultes: "La principale difficulté a été de déterminer mathématiquement le plus petit masque de sous-réseau (CIDR le plus grand) permettant d'intégrer toutes les adresses d'étudiants pour les faire communiquer. J'ai résolu cela en convertissant les adresses en binaire pour repérer le premier bit de divergence (18e bit), me permettant d'identifier le masque /18 avec certitude.",
           appris: "J'ai appris à concevoir un plan d'adressage IP simple (VLSM), à brasser physiquement des câbles RJ45 dans une baie réseau, à configurer des interfaces routeur et commutateur en mode console CLI (Cisco IOS), et à mettre en œuvre une table de routage statique. J'ai également assimilé la structure de base des VLANs et la configuration de serveurs DHCP.",
           ferais_autrement: "Je documenterais mes schémas réseau dès la phase d'étude sous Draw.io de manière encore plus détaillée, en y indiquant toutes les adresses IP associées à chaque port, afin d'accélérer le diagnostic de câblage ou de configuration lors des séances pratiques.",
-          traces: [
-            {
-              title: "R1.01 & SAÉ1.02 — Conception, Simulation et Maquettage de Réseaux Locaux (S1)",
-              category: "Projet & TP R&T",
-              image: "assets/img/portfolio/cisco_topology_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC11.03/R101_TP4_reseau_local.pdf",
-              tags: ["Cisco IOS", "Packet Tracer", "VLANs", "DHCP", "Routage statique", "Brassage physique"],
-              year: 2025
-            }
-          ]
+          traces: []
         }
       },
       {
         id: "AC11.04",
+        oralReady: true,
         intitule: "Maîtriser les rôles des systèmes d'exploitation",
         statut: "valide",
         detail: {
@@ -102,6 +93,7 @@ const COMPETENCES = {
       },
       {
         id: "AC11.05",
+        oralReady: true,
         intitule: "Identifier les dysfonctionnements du réseau local",
         statut: "valide",
         detail: {
@@ -205,6 +197,7 @@ const COMPETENCES = {
       },
       {
         id: "AC12.03",
+        oralReady: true,
         intitule: "Déployer des supports de transmission",
         statut: "valide",
         detail: {
@@ -229,6 +222,7 @@ const COMPETENCES = {
       },
       {
         id: "AC12.04",
+        oralReady: true,
         intitule: "Connecter les systèmes de ToIP",
         statut: "valide",
         detail: {
@@ -356,6 +350,7 @@ const COMPETENCES = {
       },
       {
         id: "AC13.04",
+        oralReady: true,
         intitule: "Connaître l'architecture et les technologies d'un site Web",
         statut: "valide",
         detail: {
@@ -380,6 +375,7 @@ const COMPETENCES = {
       },
       {
         id: "AC13.05",
+        oralReady: true,
         intitule: "Choisir les mécanismes de gestion de données adaptés",
         statut: "valide",
         detail: {

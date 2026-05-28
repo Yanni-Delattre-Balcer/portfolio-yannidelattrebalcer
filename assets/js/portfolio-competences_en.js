@@ -63,21 +63,12 @@ const COMPETENCES = {
           difficultes: "The main difficulty was mathematically determining the smallest subnet mask (largest CIDR) that could integrate all student team addresses to allow communication. I resolved this by converting the addresses to binary to locate the first bit of divergence (18th bit), allowing me to identify the /18 mask with certainty.",
           appris: "I learned to design a simple IP addressing plan (VLSM), to physically patch RJ45 cables in a laboratory rack, to configure switch and router interfaces in CLI console mode (Cisco IOS), and to implement static routing tables. I also assimilated the basic structure of VLANs and DHCP server configuration.",
           ferais_autrement: "I would document my network topologies in Draw.io in even greater detail from the design phase, specifying all IP addresses associated with each port, to expedite troubleshooting during real laboratory sessions.",
-          traces: [
-            {
-              title: "R1.01 & SAÉ1.02 — Local Network Design, Simulation and Patching (S1)",
-              category: "R&T Project & Lab",
-              image: "assets/img/portfolio/cisco_topology_dark.png",
-              logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC11.03/R101_TP4_reseau_local.pdf",
-              tags: ["Cisco IOS", "Packet Tracer", "VLANs", "DHCP", "Static Routing", "Physical Patching"],
-              year: 2025
-            }
-          ]
+          traces: []
         }
       },
       {
         id: "AC11.04",
+        oralReady: true,
         intitule: "Master operating system roles",
         statut: "valide",
         detail: {
@@ -102,6 +93,7 @@ const COMPETENCES = {
       },
       {
         id: "AC11.05",
+        oralReady: true,
         intitule: "Identify local area network malfunctions",
         statut: "valide",
         detail: {
@@ -205,6 +197,7 @@ const COMPETENCES = {
       },
       {
         id: "AC12.03",
+        oralReady: true,
         intitule: "Deploy transmission media",
         statut: "valide",
         detail: {
@@ -229,6 +222,7 @@ const COMPETENCES = {
       },
       {
         id: "AC12.04",
+        oralReady: true,
         intitule: "Connect ToIP systems",
         statut: "valide",
         detail: {
@@ -356,6 +350,7 @@ const COMPETENCES = {
       },
       {
         id: "AC13.04",
+        oralReady: true,
         intitule: "Know the architecture and technologies of a website",
         statut: "valide",
         detail: {
@@ -380,6 +375,7 @@ const COMPETENCES = {
       },
       {
         id: "AC13.05",
+        oralReady: true,
         intitule: "Choose appropriate data management mechanisms",
         statut: "valide",
         detail: {

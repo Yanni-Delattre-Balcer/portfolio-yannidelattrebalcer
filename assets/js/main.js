@@ -304,10 +304,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const card = document.createElement("div");
         card.className = "ac-card";
+        if (ac.oralReady) {
+          card.classList.add("ac-card-oral");
+        }
         card.style.setProperty("--comp-color", data.color);
         
         card.innerHTML = `
-          <div class="ac-card-header">
+          <div class="ac-card-header d-flex justify-content-between align-items-center">
             <span class="ac-id">${ac.id}</span>
             <span class="ac-status">${statutsMap[ac.statut] || ''}</span>
           </div>

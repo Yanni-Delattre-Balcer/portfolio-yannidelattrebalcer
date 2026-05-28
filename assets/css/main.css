@@ -2182,3 +2182,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, i, .btn {
 body {
   background-color: #050505 !important;
 }
+
+/* --- Highlighting for oral recommended ACs ONLY ON HOVER --- */
+.ac-card.ac-card-oral:hover {
+  border-color: #ffd700 !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.18) !important;
+}
