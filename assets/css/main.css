@@ -2275,3 +2275,52 @@ body {
   gap: 5px;
   font-style: italic;
 }
+
+
+/*==============================================================================
+   GLOBAL PREMIUM UX HOVER EFFECTS (Added for beautiful interactive cards)
+==============================================================================*/
+.detail-item, .info-item, .trace-card--clean, .exp-card, .timeline-content {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  will-change: transform, box-shadow;
+}
+
+.detail-item:hover, .info-item:hover, .trace-card--clean:hover, .exp-card:hover, .timeline-content:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background-color: #1a1a1a !important; /* Slightly lighter than #121212 */
+}
+
+/* Make cert-items inside timeline slightly interactive too */
+.cert-item {
+  transition: all 0.3s ease;
+  padding: 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+}
+.cert-item:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  transform: translateX(5px);
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(100, 100, 120, 0.5);
+  color: #fff;
+}
