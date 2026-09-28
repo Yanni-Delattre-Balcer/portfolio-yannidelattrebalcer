@@ -9,3 +9,15 @@
 2026-04-02 09:19:29,186 [INFO] ✓ 4 entrées de parcours validées
 2026-04-02 09:19:29,186 [INFO] ----------------------------------------
 2026-04-02 09:19:29,186 [INFO] ✓ VALIDATION RÉUSSIE — aucune erreur, aucun avertissement
+2026-09-28 19:13:27,467 [INFO] ============================================================
+2026-09-28 19:13:27,468 [INFO] Démarrage du scraper GitHub
+2026-09-28 19:13:27,468 [INFO] ============================================================
+2026-09-28 19:13:27,469 [ERROR] Erreur GitHub API : No module named 'github'
+2026-09-28 19:13:27,469 [WARNING] Aucune donnée existante — écriture d'un fichier vide
+2026-09-28 19:13:27,470 [INFO] Scraper GitHub terminé
+2026-09-28 19:13:41,865 [INFO] ============================================================
+2026-09-28 19:13:41,865 [INFO] Démarrage du scraper LinkedIn
+2026-09-28 19:13:41,865 [INFO] ============================================================
+2026-09-28 19:13:41,866 [INFO] Niveau 1 — Tentative 1/3
+2026-09-28 19:13:41,866 [WARNING] LI_USERNAME ou LI_PASSWORD non définis — skip niveau 1
+2026-09-28 19:13:41,866 [INFO] Attente de 30s avant nouvelle tentative...

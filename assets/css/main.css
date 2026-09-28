@@ -1,4 +1,4 @@
-/**
+﻿/**
 * Template Name: Craftivo
 * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
 * Updated: Oct 04 2025 with Bootstrap v5.3.8
@@ -47,7 +47,7 @@
   --background-color: #141414; /* Couleur de fond du site */
   --default-color: #d9d9d9; /* Couleur du texte par défaut */
   --heading-color: #ededed; /* Couleur des titres */
-  --accent-color: #ff4d4f; /* Couleur d'accentuation (marque) */
+  --accent-color: #4a4a5a; /* Couleur d'accentuation (marque) */
   --surface-color: #1c1c1c; /* Couleur de surface pour les cartes/blocs */
   --contrast-color: #ffffff; /* Couleur de contraste pour le texte */
   --x: 50%;
@@ -57,11 +57,11 @@
 /* Couleurs du Menu de Navigation */
 :root {
   --nav-color: #d9d9d9;
-  --nav-hover-color: #ff4d4f;
+  --nav-hover-color: #c0c0cc;
   --nav-mobile-background-color: #2e2e2e;
   --nav-dropdown-background-color: #2e2e2e;
   --nav-dropdown-color: #d9d9d9;
-  --nav-dropdown-hover-color: #ff4d4f;
+  --nav-dropdown-hover-color: #c0c0cc;
 }
 
 /* Presets de Couleurs (Themes clair/sombre) */
@@ -782,7 +782,7 @@ section, .section {
   position: relative;
   border-radius: 50%;
   padding: 6px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b9d 50%));
+  background: linear-gradient(135deg, var(--accent-color), #6a6a7a);
 }
 
 .about .profile-card .profile-header .profile-avatar img {
@@ -1041,7 +1041,7 @@ overflow: hidden;
 .about .content-wrapper .skills-showcase .skills-list .skill-item .progress .progress-bar {
 width: 0;
 height: 100%;
-background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b9d 50%));
+background: linear-gradient(90deg, var(--accent-color), #6a6a7a);
 border-radius: 10px;
 transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
 position: relative;
@@ -1702,10 +1702,10 @@ transform: translateY(-2px);
 }
 
 .custom-btn:hover {
-    background: #ff4b2b !important;
-    border-color: #ff4b2b !important;
+    background: #4a4a5a !important;
+    border-color: #4a4a5a !important;
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255, 75, 43, 0.5);
+    box-shadow: 0 5px 20px rgba(120, 120, 130, 0.5);
 }
 
 .custom-btn:hover #h-icon { 
@@ -1713,15 +1713,15 @@ transform: translateY(-2px);
 }
 
 .custom-btn.is-liked {
-    background: rgba(255, 75, 43, 0.15) !important;
-    border-color: #ff4b2b !important;
+    background: rgba(120, 120, 130, 0.15) !important;
+    border-color: #4a4a5a !important;
     cursor: default !important;
     transform: none !important;
     box-shadow: none !important;
 }
 
 .custom-btn.is-liked #h-icon { 
-    color: #ff4b2b; 
+    color: #4a4a5a; 
 }
 
 /* ========== Gestion du texte du bouton Like via CSS ========== */
@@ -1767,7 +1767,7 @@ html[lang="en"] .feedback-form .loading-text {
     background: #1a1a1a;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid #ff4b2b;
+    border: 1px solid #4a4a5a;
     width: 100%;
     max-width: 450px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -1808,7 +1808,7 @@ html[lang="en"] .feedback-form .loading-text {
 }
 
 #submit-btn {
-    background: #ff4b2b;
+    background: #4a4a5a;
     color: white;
     border: none;
     padding: 14px;
@@ -2187,4 +2187,91 @@ body {
 .ac-card.ac-card-oral:hover {
   border-color: #ffd700 !important;
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.18) !important;
+}
+
+/* ================================================================
+   TRACE CARDS — Affichage épuré (sans images IA)
+   ================================================================ */
+.trace-card--clean {
+  background: var(--surface-color);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.trace-card--clean:hover {
+  border-color: rgba(255,255,255,0.22);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.trace-card-clean-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.trace-cat {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.trace-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e8e8ed;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.trace-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.trace-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  color: #aaa;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.trace-link-hint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #a0a0b8;
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+
+.trace-card--clean:hover .trace-link-hint {
+  color: #d0d0e0;
+}
+
+.trace-no-link {
+  font-size: 11px;
+  color: #555;
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-style: italic;
 }

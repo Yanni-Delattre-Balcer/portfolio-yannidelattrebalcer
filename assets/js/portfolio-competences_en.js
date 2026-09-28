@@ -1,8 +1,8 @@
-const COMPETENCES = {
+﻿const COMPETENCES = {
   administrer: {
     label: "Administer",
     description: "Administer networks and the internet",
-    color: "#e74c3c", // Red
+    color: "#888888", // Red
     apprentissages: [
       {
         id: "AC11.01",
@@ -45,7 +45,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/logic_gates_dark.png",
               logo: "assets/img/portfolio/logo-3d.webp",
-              url: "assets/preuves/AC11.02/TP_binaire.ipynb",
+              url: "assets/docs/preuves/AC11.02/TP_binaire.ipynb",
               tags: ["Python", "Logisim", "Binary", "Boolean Algebra", "XOR Encryption"],
               year: 2025
             }
@@ -84,7 +84,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/virtualization_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC11.04/R202_TP4_VirtualBox.pdf",
+              url: "assets/docs/preuves/AC11.04/R202_TP4_VirtualBox.pdf",
               tags: ["VirtualBox", "VMware ESXi", "Docker", "VBoxManage", "Linux CLI", "Snapshots"],
               year: 2025
             }
@@ -109,7 +109,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/wireshark_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC11.05/R101_TP6_diagnostic.pdf",
+              url: "assets/docs/preuves/AC11.05/R101_TP6_diagnostic.pdf",
               tags: ["Wireshark", "DHCP DORA", "APIPA", "Ping ICMP", "nslookup", "ip route"],
               year: 2025
             }
@@ -133,7 +133,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/active_directory_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC11.06/R201_CR_TP8_NAT.pdf",
+              url: "assets/docs/preuves/AC11.06/R201_CR_TP8_NAT.pdf",
               tags: ["Active Directory", "PowerShell", "Windows Server", "GPOs", "NTFS Permissions"],
               year: 2026
             }
@@ -145,7 +145,7 @@ const COMPETENCES = {
   connecter: {
     label: "Connect",
     description: "Connect enterprises and users",
-    color: "#e67e22", // Orange
+    color: "#666666", // Orange
     apprentissages: [
       {
         id: "AC12.01",
@@ -188,7 +188,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/bode_plot_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: "assets/preuves/AC12.02/R105_TP1_lignes_transmission.pdf",
+              url: "assets/docs/preuves/AC12.02/R105_TP1_lignes_transmission.pdf",
               tags: ["Reflectometry (TDR)", "Bode Diagram", "Passive Filters", "RLC Bridge", "Oscilloscope"],
               year: 2026
             }
@@ -213,7 +213,7 @@ const COMPETENCES = {
               category: "R&T Project & Lab",
               image: "assets/img/portfolio/fiber_optic_dark.png",
               logo: "assets/img/portfolio/logo-telecoms.webp",
-              url: "assets/preuves/AC12.03/SAE13_seance5.pdf",
+              url: "assets/docs/preuves/AC12.03/SAE13_seance5.pdf",
               tags: ["Multimode/Monomode Fiber", "RJ45 Crimping", "OTDR", "Copper Cabling", "Fluke Networks"],
               year: 2025
             }
@@ -238,7 +238,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/voip_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC12.04/R204_CR_telephonie_ToIP.pdf",
+              url: "assets/docs/preuves/AC12.04/R204_CR_telephonie_ToIP.pdf",
               tags: ["VoIP", "ToIP", "Asterisk", "SIP", "Linphone", "RTP"],
               year: 2026
             }
@@ -274,7 +274,7 @@ const COMPETENCES = {
   programmer: {
     label: "Program",
     description: "Create computer tools and applications",
-    color: "#f39c12", // Gold
+    color: "#444444", // Gold
     apprentissages: [
       {
         id: "AC13.01",
@@ -293,7 +293,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/git_docker_dark.png",
               logo: "assets/img/portfolio/logo-reseau.webp",
-              url: "assets/preuves/AC13.01/R107_TP8.ipynb",
+              url: "assets/docs/preuves/AC13.01/R107_TP8.ipynb",
               tags: ["Linux CLI", "GitLab", "Bash Terminal", "Permissions chmod", "Network Proxy"],
               year: 2025
             }
@@ -317,7 +317,7 @@ const COMPETENCES = {
               category: "R&T Lab",
               image: "assets/img/portfolio/python_flask_dark.png",
               logo: "assets/img/portfolio/logo-heryze.webp",
-              url: "assets/preuves/AC13.02/R209_TP2_Flask.pdf",
+              url: "assets/docs/preuves/AC13.02/R209_TP2_Flask.pdf",
               tags: ["Python Web", "Flask MVC", "Debugging", "SQL Injections", "Traceback", "VS Code"],
               year: 2026
             }
@@ -427,7 +427,7 @@ const COMPETENCES = {
   autres: {
     label: "Others",
     description: "Diverse projects outside the BUT R&T curriculum",
-    color: "#8e44ad", // Purple
+    color: "#333333", // Purple
     apprentissages: [
       {
         id: "PERSO.01",
@@ -455,7 +455,7 @@ const COMPETENCES = {
               category: "Professional Project",
               image: "assets/img/portfolio/portfolio-3.webp",
               logo: "assets/img/portfolio/logo-coiffure.webp",
-              url: "assets/partie-projet/index.html",
+              url: "assets/projets/index.html",
               tags: ["HTML", "CSS", "JS"],
               year: 2025
             },
@@ -464,7 +464,7 @@ const COMPETENCES = {
               category: "Personal Project",
               image: "assets/img/portfolio/portfolio-4.webp",
               logo: "assets/img/portfolio/logo-3d.webp",
-              url: "assets/partie-projet/maison.html",
+              url: "assets/projets/maison.html",
               tags: ["Architecture", "SketchUp"],
               year: 2021
             }

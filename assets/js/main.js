@@ -419,18 +419,17 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       // Y a des projets -> on affiche d'abord la grille de "petites cases"
       let tracesHtml = `
-        <div class="row g-4 justify-content-center">
+        <div class="row g-3 justify-content-center">
           ${d.traces.map((t, idx) => `
             <div class="col-md-6 col-lg-4">
-              <div class="trace-card" data-idx="${idx}">
-                <img src="${t.image || 'assets/img/portfolio/portfolio-default.jpg'}" alt="${t.title}" class="img-fluid w-100">
-                <div class="trace-card-info">
-                  ${t.logo ? `<img src="${t.logo}" alt="Logo" class="rounded-circle mb-3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid rgba(255,255,255,0.8); background-color: var(--surface-color);">` : ''}
-                  <div>
-                    <h6 class="mb-2 fw-bold px-3 lh-base">${t.title}</h6>
-                    <small class="text-white-50 d-block mb-3">${t.category} - ${t.year}</small>
+              <div class="trace-card trace-card--clean" data-idx="${idx}" ${t.url ? `data-url="${t.url}"` : ''} style="cursor:${t.url ? 'pointer' : 'default'}">
+                <div class="trace-card-clean-body">
+                  <span class="trace-cat">${t.category} · ${t.year}</span>
+                  <h6 class="trace-title">${t.title}</h6>
+                  <div class="trace-tags">
+                    ${(t.tags || []).map(tag => `<span class="trace-tag">${tag}</span>`).join('')}
                   </div>
-                  <button class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-link-45deg"></i></button>
+                  ${t.url ? `<span class="trace-link-hint"><i class="bi bi-arrow-up-right"></i> Voir le document</span>` : `<span class="trace-no-link"><i class="bi bi-lock"></i> Document non disponible</span>`}
                 </div>
               </div>
             </div>
@@ -441,14 +440,20 @@ document.addEventListener("DOMContentLoaded", function() {
       tracesContainer.style.display = "block";
       tracesContainer.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      // Écouteur de clic sur chaque petite case pour révéler le pavé
-      const traceCards = tracesContainer.querySelectorAll('.trace-card');
+      // Clic sur une carte → ouvrir le document ou afficher les détails
+      const traceCards = tracesContainer.querySelectorAll('.trace-card--clean');
       traceCards.forEach(card => {
-        card.addEventListener('click', (e) => {
+        card.addEventListener('click', () => {
+          const url = card.getAttribute('data-url');
           const idx = card.getAttribute('data-idx');
-          showMassiveDetailsBlock(d.traces[idx]);
+          if (url) {
+            window.open(url, '_blank', 'noopener');
+          } else {
+            showMassiveDetailsBlock(d.traces[idx]);
+          }
         });
       });
+
     }
   }
 });
@@ -477,7 +482,7 @@ function initCustomInteractions() {
   const canvas = document.getElementById("particles-canvas");
   const ctx = canvas.getContext("2d");
   let particlesArray = [];
-  const mouse = { x: undefined, y: undefined, radius: 150 };
+  const mouse = { x: undefined, y: undefined, radius: 80 }; // Rayon d'interaction réduit
 
   if (!canvas) return;
 
@@ -497,9 +502,9 @@ function initCustomInteractions() {
     constructor() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 1;
-      this.speedX = (Math.random() - 0.5) * 1.2;
-      this.speedY = (Math.random() - 0.5) * 1.2;
+      this.size = Math.random() * 1.5 + 0.5; // Plus petits
+      this.speedX = (Math.random() - 0.5) * 0.4; // Plus lents
+      this.speedY = (Math.random() - 0.5) * 0.4;
     }
     update() {
       this.x += this.speedX;
@@ -510,32 +515,32 @@ function initCustomInteractions() {
       if (this.y > canvas.height) this.y = 0;
       else if (this.y < 0) this.y = canvas.height;
 
+      // Interaction souris très très légère
       if (mouse.x !== undefined && mouse.y !== undefined) {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < mouse.radius) {
-          if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 1;
-          if (mouse.x > this.x && this.x > this.size * 10) this.x -= 1;
-          if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 1;
-          if (mouse.y > this.y && this.y > this.size * 10) this.y -= 1;
+          if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 0.15;
+          if (mouse.x > this.x && this.x > this.size * 10) this.x -= 0.15;
+          if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 0.15;
+          if (mouse.y > this.y && this.y > this.size * 10) this.y -= 0.15;
         }
       }
     }
     draw() {
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = "rgba(255, 255, 255, 0.8)";
-      ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+      // Pas de shadow (glow) pour que ça reste très discret
+      ctx.fillStyle = "rgba(180, 190, 210, 0.3)";
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
-      ctx.shadowBlur = 0;
     }
   }
 
   function initParticles() {
     particlesArray = [];
-    let numberOfParticles = (canvas.width * canvas.height) / 10000;
+    // Densité très réduite (divisé par 35000 au lieu de 10000)
+    let numberOfParticles = (canvas.width * canvas.height) / 35000;
     for (let i = 0; i < numberOfParticles; i++) {
       particlesArray.push(new Particle());
     }
@@ -550,10 +555,11 @@ function initCustomInteractions() {
         let dy = particlesArray[a].y - particlesArray[b].y;
         let distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < 150) {
-          opacityValue = 1 - distance / 150;
-          ctx.strokeStyle = `rgba(255, 77, 79, ${opacityValue * 0.4})`;
-          ctx.lineWidth = 0.8;
+        // Distance de connexion plus courte (120 au lieu de 150)
+        if (distance < 120) {
+          opacityValue = 1 - distance / 120;
+          ctx.strokeStyle = `rgba(130, 140, 160, ${opacityValue * 0.12})`;
+          ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
           ctx.lineTo(particlesArray[b].x, particlesArray[b].y);

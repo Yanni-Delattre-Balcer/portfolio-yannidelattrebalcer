@@ -1,7 +1,7 @@
-/**
+﻿/**
  * data.js — Données du portfolio générées automatiquement.
  * NE PAS MODIFIER MANUELLEMENT — ce fichier est écrasé chaque dimanche.
- * Dernière mise à jour : Mardi 26 mai 2026
+ * Dernière mise à jour : Lundi 28 septembre 2026
  */
 const PORTFOLIO_DATA = {
   "last_updated": "2026-04-02T09:10:00",
@@ -56,23 +56,21 @@ const PORTFOLIO_DATA = {
       "source": "manual"
     },
     {
-      "id": "heryze-pos",
-      "title": "Heryze — Caisse enregistreuse nouvelle génération",
+      "id": "site-coiffure",
+      "title": "Site web professionnel — Salon de coiffure",
       "category": "Web",
       "filter_class": "filter-strategy",
       "status": "en_cours",
       "year": 2025,
-      "description": "Application web PWA de caisse enregistreuse nouvelle génération pour commerçants et CHR. Système POS complet, dashboard analytique, inventaire, plan de salle, scanner mobile WebRTC et journal Z-Caisse conforme NF525. Architecture offline-first avec Service Workers.",
+      "description": "Création d'une interface moderne pour ce salon de coiffure et institut de beauté situé à Loison-sous-Lens. L'objectif est de valoriser leur double expertise (coiffure mixte et soins esthétiques) via un site intuitif facilitant l'accès aux tarifs et aux informations pratiques.",
       "stack": [
-        "JavaScript",
-        "Tailwind CSS",
-        "PWA",
-        "WebRTC",
-        "Service Workers"
+        "HTML",
+        "CSS",
+        "JavaScript"
       ],
       "github_url": null,
-      "image": "assets/img/portfolio/python_flask_dark.png",
-      "details_url": "https://heryze.com",
+      "image": "assets/img/portfolio/portfolio-3.webp",
+      "details_url": "assets/partie-projet/index.html",
       "last_updated": "2025-01-01",
       "source": "manual"
     },
@@ -92,46 +90,6 @@ const PORTFOLIO_DATA = {
       "image": "assets/img/portfolio/portfolio-4.webp",
       "details_url": "assets/partie-projet/maison.html",
       "last_updated": "2021-01-01",
-      "source": "manual"
-    },
-    {
-      "id": "kdufoot",
-      "title": "Kdufoot — Plateforme de matchs amicaux de football",
-      "category": "Web",
-      "filter_class": "filter-strategy",
-      "status": "en_cours",
-      "year": 2025,
-      "description": "Plateforme web communautaire pour coachs de football amateur. Recherche et publication de matchs amicaux et tournois filtrés par catégorie, niveau et distance. Dashboard personnel, favoris, authentification Auth0, base Cloudflare D1, conformité RGPD complète.",
-      "stack": [
-        "React",
-        "Vite",
-        "Tailwind CSS",
-        "Auth0",
-        "Cloudflare D1"
-      ],
-      "github_url": null,
-      "image": "assets/img/portfolio/portfolio-5.webp",
-      "details_url": "https://kdufoot.com",
-      "last_updated": "2025-01-01",
-      "source": "manual"
-    },
-    {
-      "id": "site-coiffure",
-      "title": "Site web professionnel — Salon de coiffure",
-      "category": "Web",
-      "filter_class": "filter-strategy",
-      "status": "terminé",
-      "year": 2025,
-      "description": "Création d'une interface moderne pour ce salon de coiffure et institut de beauté situé à Loison-sous-Lens. L'objectif est de valoriser leur double expertise (coiffure mixte et soins esthétiques) via un site vitrine intuitif facilitant l'accès aux tarifs et aux informations pratiques.",
-      "stack": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "github_url": null,
-      "image": "assets/img/portfolio/portfolio-3.webp",
-      "details_url": "assets/partie-projet/index.html",
-      "last_updated": "2025-01-01",
       "source": "manual"
     }
   ],
@@ -200,7 +158,7 @@ const PORTFOLIO_DATA = {
       "score": 63,
       "domain": "Web",
       "status": "validated",
-      "linked_project_id": "heryze-pos",
+      "linked_project_id": "site-coiffure",
       "filter_link": ".filter-strategy"
     },
     {
@@ -272,25 +230,13 @@ const PORTFOLIO_DATA = {
   ],
   "certifications": [
     {
-      "name": "CCNA : Introduction aux réseaux (ITN)",
-      "issuer": "Cisco",
-      "date": "2026",
-      "status": "obtenu",
-      "pdf_url": null
+      "name": "CCNA : Introduction aux réseaux (ITN)",`n      "issuer": "Cisco",`n      "date": "2026",`n      "status": "obtenu",`n      "pdf_url": "assets/docs/certifications/CCNA-_Introduction_to_Networks_certificate_yanni_delattrebalcer-ens-univ-artois-fr_a954de55-9cf7-4d9c-bd59-bb70e7f8c65e.pdf"
     },
     {
-      "name": "CCNA : Notions essentielles de commutation, de routage et de réseau sans fil (SRWE)",
-      "issuer": "Cisco",
-      "date": "2026",
-      "status": "obtenu",
-      "pdf_url": null
+      "name": "CCNA : Notions essentielles de commutation, de routage et de réseau sans fil (SRWE)",`n      "issuer": "Cisco",`n      "date": "2026",`n      "status": "obtenu",`n      "pdf_url": "assets/docs/certifications/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_yanni_delattrebalcer-ens-univ-artois-fr_9c5c8bec-0fb4-43dd-8f3d-3ad5e4dff946.pdf"
     },
     {
-      "name": "CCNA : Réseaux d'entreprise, sécurité et automatisation (ENSA)",
-      "issuer": "Cisco",
-      "date": "2026",
-      "status": "obtenu",
-      "pdf_url": null
+      "name": "CCNA : Réseaux d'entreprise, sécurité et automatisation (ENSA)",`n      "issuer": "Cisco",`n      "date": "2026",`n      "status": "obtenu",`n      "pdf_url": "assets/docs/certifications/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_yanni_delattrebalcer-ens-univ-artois-fr_7bc40df0-e195-40ab-b81c-ef0fb219a20d.pdf"
     },
     {
       "name": "Python Essentials 2",
@@ -369,5 +315,4 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-const LAST_UPDATED = "Mardi 26 mai 2026";
-const LAST_UPDATED_EN = "Tuesday, May 26, 2026";
+const LAST_UPDATED = "Lundi 28 septembre 2026";

@@ -22,3 +22,15 @@
 2026-04-03 21:53:12,392 [INFO] Historique mis à jour : C:\Users\yanni\Desktop\Development\Mon site perso\scripts\logs\update_history.log
 2026-04-03 21:53:12,394 [INFO] Historique JSON mis à jour : C:\Users\yanni\Desktop\Development\Mon site perso\scripts\logs\history.json
 2026-04-03 21:53:12,394 [INFO] Portfolio updater terminé avec succès
+2026-09-28 19:13:21,551 [INFO] ============================================================
+2026-09-28 19:13:21,551 [INFO] Démarrage du portfolio updater
+2026-09-28 19:13:21,551 [INFO] ============================================================
+2026-09-28 19:13:21,556 [INFO] portfolio_data.json chargé et valide
+2026-09-28 19:13:21,748 [INFO] Date : Lundi 28 septembre 2026 (2026-09-28)
+2026-09-28 19:13:21,750 [INFO] data.js généré : C:\Users\yanni\Desktop\Development\Mon site perso\assets\js\data.js
+2026-09-28 19:13:21,751 [INFO] Meta last-updated mise à jour dans index.html
+2026-09-28 19:13:21,753 [WARNING] Meta last-updated non trouvée dans index_en.html
+2026-09-28 19:13:21,755 [INFO] sitemap.xml généré : C:\Users\yanni\Desktop\Development\Mon site perso\sitemap.xml
+2026-09-28 19:13:21,756 [INFO] Historique mis à jour : C:\Users\yanni\Desktop\Development\Mon site perso\scripts\logs\update_history.log
+2026-09-28 19:13:21,760 [INFO] Historique JSON mis à jour : C:\Users\yanni\Desktop\Development\Mon site perso\scripts\logs\history.json
+2026-09-28 19:13:21,760 [INFO] Portfolio updater terminé avec succès
