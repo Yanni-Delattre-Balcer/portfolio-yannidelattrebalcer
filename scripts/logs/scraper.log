@@ -116,3 +116,72 @@
 2026-09-29 23:15:39,077 [INFO] ✓ 4 entrées de parcours validées
 2026-09-29 23:15:39,077 [INFO] ----------------------------------------
 2026-09-29 23:15:39,077 [INFO] ✓ VALIDATION RÉUSSIE — aucune erreur, aucun avertissement
+2026-09-29 21:54:10,334 [INFO] ============================================================
+2026-09-29 21:54:10,334 [INFO] Démarrage du scraper LinkedIn
+2026-09-29 21:54:10,334 [INFO] ============================================================
+2026-09-29 21:54:10,335 [INFO] Niveau 1 — Tentative 1/3
+2026-09-29 21:54:10,335 [INFO] Niveau 1 : Tentative de connexion via linkedin-api...
+2026-09-29 21:54:10,969 [ERROR] Niveau 1 échoué : CHALLENGE
+2026-09-29 21:54:10,970 [INFO] Attente de 30s avant nouvelle tentative...
+2026-09-29 21:54:40,970 [INFO] Niveau 1 — Tentative 2/3
+2026-09-29 21:54:40,971 [INFO] Niveau 1 : Tentative de connexion via linkedin-api...
+2026-09-29 21:54:41,247 [ERROR] Niveau 1 échoué : CHALLENGE
+2026-09-29 21:54:41,248 [INFO] Attente de 30s avant nouvelle tentative...
+2026-09-29 21:55:11,249 [INFO] Niveau 1 — Tentative 3/3
+2026-09-29 21:55:11,249 [INFO] Niveau 1 : Tentative de connexion via linkedin-api...
+2026-09-29 21:55:11,539 [ERROR] Niveau 1 échoué : CHALLENGE
+2026-09-29 21:55:11,540 [INFO] Niveau 1 épuisé — passage au niveau 2
+2026-09-29 21:55:11,541 [INFO] Niveau 2 — Tentative 1/3
+2026-09-29 21:55:11,541 [INFO] Niveau 2 : Tentative de scraping du profil public...
+2026-09-29 21:55:12,248 [WARNING] Niveau 2 : HTTP 999 — profil public inaccessible
+2026-09-29 21:55:12,249 [INFO] Attente de 30s avant nouvelle tentative...
+2026-09-29 21:55:42,249 [INFO] Niveau 2 — Tentative 2/3
+2026-09-29 21:55:42,249 [INFO] Niveau 2 : Tentative de scraping du profil public...
+2026-09-29 21:55:42,955 [WARNING] Niveau 2 : HTTP 999 — profil public inaccessible
+2026-09-29 21:55:42,955 [INFO] Attente de 30s avant nouvelle tentative...
+2026-09-29 21:56:12,956 [INFO] Niveau 2 — Tentative 3/3
+2026-09-29 21:56:12,956 [INFO] Niveau 2 : Tentative de scraping du profil public...
+2026-09-29 21:56:13,647 [WARNING] Niveau 2 : HTTP 999 — profil public inaccessible
+2026-09-29 21:56:13,648 [INFO] Niveaux 1 et 2 épuisés — passage au niveau 3 (fallback)
+2026-09-29 21:56:13,648 [INFO] Niveau 3 : Conservation des données existantes
+2026-09-29 21:56:13,648 [WARNING] Niveau 3 : Aucune donnée existante disponible
+2026-09-29 21:56:13,648 [INFO] Données sauvegardées dans /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/data/linkedin_raw.json
+2026-09-29 21:56:13,648 [INFO] Scraper LinkedIn terminé
+2026-09-29 21:56:13,722 [INFO] ============================================================
+2026-09-29 21:56:13,722 [INFO] Démarrage du scraper GitHub
+2026-09-29 21:56:13,722 [INFO] ============================================================
+2026-09-29 21:56:13,869 [INFO] Authentification via GITHUB_TOKEN
+2026-09-29 21:56:14,075 [INFO] Profil trouvé : Yanni-Delattre-Balcer (5 repos publics)
+2026-09-29 21:56:14,537 [INFO]   Exclu (nom contient 'portfolio') : portfolio-yannidelattrebalcer
+2026-09-29 21:56:16,323 [INFO]   [OK] Cadenceur-couleurs - HTML - 2 commits - maj 2026-09-02 14:41:08+00:00
+2026-09-29 21:56:16,324 [INFO]   Exclu (nom contient 'yanni-delattre-balcer') : Yanni-Delattre-Balcer
+2026-09-29 21:56:17,986 [INFO]   [OK] caisse_automatique_2026 - JavaScript - 25 commits - maj 2026-04-25 07:48:57+00:00
+2026-09-29 21:56:19,730 [INFO]   [OK] KduFoot - TypeScript - 438 commits - maj 2026-04-23 13:02:55+00:00
+2026-09-29 21:56:20,170 [INFO] Données sauvegardées dans /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/data/github_raw.json
+2026-09-29 21:56:20,170 [INFO] Résumé : 3 repos retenus, 8 langages détectés
+2026-09-29 21:56:20,171 [INFO] Scraper GitHub terminé
+2026-09-29 21:56:20,252 [INFO] ============================================================
+2026-09-29 21:56:20,252 [INFO] Démarrage du processeur de données
+2026-09-29 21:56:20,252 [INFO] ============================================================
+2026-09-29 21:56:20,253 [INFO] Match trouvé : repo 'Cadenceur-couleurs' → projet 'Cadenceur-couleurs'
+2026-09-29 21:56:20,254 [INFO] Nouveau projet GitHub ajouté : 'caisse_automatique_2026'
+2026-09-29 21:56:20,254 [INFO] Match trouvé : repo 'KduFoot' → projet 'KduFoot'
+2026-09-29 21:56:20,254 [INFO] Projets : 9 -> 10 (+1 nouveaux)
+2026-09-29 21:56:20,254 [INFO] Competences : 26 -> 26
+2026-09-29 21:56:20,255 [INFO] Certifications : 7 -> 7
+2026-09-29 21:56:20,255 [INFO] Parcours : 4 -> 4
+2026-09-29 21:56:20,255 [INFO] Posts LinkedIn : pas de nouveaux (conserve 3 existants)
+2026-09-29 21:56:20,256 [INFO] portfolio_data.json mis à jour avec succès
+2026-09-29 21:56:20,256 [INFO] Résumé des changements : Projets: +1 · Compétences: 0 mises à jour · Certifications: 0 changement(s) · Parcours: 0 changement(s)
+2026-09-29 21:56:20,256 [INFO] Processeur de données terminé
+2026-09-29 21:56:20,381 [INFO] ============================================================
+2026-09-29 21:56:20,381 [INFO] Démarrage de la validation
+2026-09-29 21:56:20,381 [INFO] ============================================================
+2026-09-29 21:56:20,381 [INFO] ✓ JSON valide
+2026-09-29 21:56:20,381 [INFO] ✓ Profil validé
+2026-09-29 21:56:20,381 [INFO] ✓ 10 projets validés
+2026-09-29 21:56:20,382 [INFO] ✓ 26 compétences validées
+2026-09-29 21:56:20,382 [INFO] ✓ 7 certifications validées
+2026-09-29 21:56:20,382 [INFO] ✓ 4 entrées de parcours validées
+2026-09-29 21:56:20,382 [INFO] ----------------------------------------
+2026-09-29 21:56:20,382 [INFO] ✓ VALIDATION RÉUSSIE — aucune erreur, aucun avertissement
