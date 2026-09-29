@@ -118,8 +118,8 @@ def scrape_level1():
             cookie_dir.mkdir(parents=True, exist_ok=True)
             
             jar = requests.cookies.RequestsCookieJar()
-            jar.set("li_at", li_at, domain=".www.linkedin.com", path="/", secure=True)
-            jar.set("JSESSIONID", '"ajax:1234567890"', domain=".www.linkedin.com", path="/", secure=True)
+            jar.set("li_at", li_at, domain=".linkedin.com", path="/", secure=True)
+            jar.set("JSESSIONID", '"ajax:1234567890"', domain=".linkedin.com", path="/", secure=True)
             # linkedin-api attend un fichier pickle avec le jar
             with open(cookie_dir / f"{fake_user}.cookie", "wb") as f:
                 pickle.dump(jar, f)
