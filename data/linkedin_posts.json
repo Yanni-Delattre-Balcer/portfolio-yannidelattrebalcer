@@ -1,0 +1,29 @@
+{
+  "updated_at": "2026-09-29",
+  "posts": [
+    {
+      "id": "post-001",
+      "date": "2026-09-28",
+      "text": "Je viens de terminer ma première année de BUT R&T à l'IUT de Béthune ! Une année intense entre réseaux, systèmes, télécoms et développement. Hâte d'attaquer la spécialisation Cybersécurité en 2ème année 🔐",
+      "tags": ["BUT R&T", "Cybersécurité", "IUT Béthune"],
+      "emoji": "🎓",
+      "url": "https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"
+    },
+    {
+      "id": "post-002",
+      "date": "2026-09-02",
+      "text": "Nouveau projet open source disponible ! Cadenceur de couleurs — une petite app web pour s'entraîner à reconnaître les couleurs rapidement. Simple, efficace, entièrement en HTML/CSS/JS natif.",
+      "tags": ["OpenSource", "HTML", "JavaScript", "ProjetPerso"],
+      "emoji": "🎨",
+      "url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs"
+    },
+    {
+      "id": "post-003",
+      "date": "2026-04-23",
+      "text": "KduFoot passe la barre des 400 commits ! L'application pour les entraîneurs de football amateur continue de grandir. Système de matchs amicaux, Auth0, Cloudflare D1... un vrai projet fullstack.",
+      "tags": ["KduFoot", "React", "TypeScript", "Fullstack"],
+      "emoji": "⚽",
+      "url": "https://kdufoot.com"
+    }
+  ]
+}

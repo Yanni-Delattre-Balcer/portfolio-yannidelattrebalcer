@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Template Name: Craftivo
 * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
 * Updated: Oct 04 2025 with Bootstrap v5.3.8
@@ -2323,4 +2323,182 @@ body {
 ::selection {
   background: rgba(100, 100, 120, 0.5);
   color: #fff;
+}
+
+/*==============================================================================
+# 18. SECTION ACTUALITÉS LINKEDIN
+==============================================================================*/
+
+.actualites.section {
+  padding: 80px 0;
+}
+
+/* ── Grille ── */
+.linkedin-posts-grid {
+  margin-top: 20px;
+}
+
+/* ── Loading spinner ── */
+.linkedin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 0;
+  color: var(--default-color);
+  opacity: 0.5;
+}
+.linkedin-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top-color: #0a66c2;
+  border-radius: 50%;
+  animation: li-spin 0.8s linear infinite;
+}
+@keyframes li-spin { to { transform: rotate(360deg); } }
+
+/* ── Vide ── */
+.linkedin-empty {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--default-color);
+  opacity: 0.4;
+}
+.linkedin-empty i {
+  font-size: 3rem;
+  color: #0a66c2;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ── Card Premium Noir Mat ── */
+.li-card-premium {
+  background: #111111; /* Noir très profond */
+  border: 1px solid #222222; /* Bordure très discrète */
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.li-card-clickable {
+  cursor: pointer;
+}
+
+.li-card-clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(10, 102, 194, 0.08);
+  border-color: #333333;
+}
+
+.li-card-clickable:focus {
+  outline: 2px solid #0a66c2;
+  outline-offset: 3px;
+}
+
+/* ── Header ── */
+.li-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222222;
+  padding-bottom: 12px;
+}
+
+.li-icon-wrapper i {
+  color: #0a66c2;
+  font-size: 1.3rem;
+}
+
+.li-date {
+  font-size: 0.75rem;
+  color: #888888;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Corps ── */
+.li-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.li-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d9d9d9;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Hashtags en bleu LinkedIn */
+.li-hashtag {
+  color: #4a9bde;
+  font-weight: 500;
+}
+
+/* ── Tags pills ── */
+.li-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.li-tag {
+  font-size: 0.75rem;
+  color: #888888;
+  background: #1a1a1a;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid #2a2a2a;
+  transition: color 0.2s, border-color 0.2s;
+}
+.li-card-clickable:hover .li-tag {
+  color: #bbbbbb;
+  border-color: #444444;
+}
+
+/* ── Footer ── */
+.li-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+}
+.li-read-more {
+  font-size: 0.8rem;
+  color: #0a66c2;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s ease;
+}
+.li-card-clickable:hover .li-read-more {
+  gap: 10px;
+}
+
+/* ── Bouton CTA LinkedIn ── */
+.linkedin-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0a66c2, #0d4f9e);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(10, 102, 194, 0.3);
+}
+.linkedin-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(10, 102, 194, 0.45);
 }

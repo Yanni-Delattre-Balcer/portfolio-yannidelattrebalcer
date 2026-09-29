@@ -29,6 +29,10 @@ LOG_FILE = LOG_DIR / "scraper.log"
 # ─── Logging ──────────────────────────────────────────────────────────────────
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+# Forcer UTF-8 sur stdout (Windows cp1252 ne supporte pas ✓ → etc.)
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -415,7 +419,7 @@ def main():
     portfolio_data["projects"] = match_projects(existing_projects, github_repos)
     after_count = len(portfolio_data["projects"])
     changes["projects"] = after_count - before_count
-    logger.info(f"Projets : {before_count} → {after_count} (+{changes['projects']} nouveaux)")
+    logger.info(f"Projets : {before_count} -> {after_count} (+{changes['projects']} nouveaux)")
 
     # ─── Fusion des compétences ───────────────────────────────────────────
     existing_skills = portfolio_data.get("skills", [])
@@ -425,7 +429,7 @@ def main():
     before_count = len(existing_skills)
     portfolio_data["skills"] = merge_skills(existing_skills, linkedin_skills, github_languages)
     changes["skills"] = len(portfolio_data["skills"]) - before_count
-    logger.info(f"Compétences : {before_count} → {len(portfolio_data['skills'])}")
+    logger.info(f"Competences : {before_count} -> {len(portfolio_data['skills'])}")
 
     # ─── Fusion des certifications ────────────────────────────────────────
     existing_certs = portfolio_data.get("certifications", [])
@@ -434,7 +438,7 @@ def main():
     before_count = len(existing_certs)
     portfolio_data["certifications"] = merge_certifications(existing_certs, linkedin_certs)
     changes["certifications"] = len(portfolio_data["certifications"]) - before_count
-    logger.info(f"Certifications : {before_count} → {len(portfolio_data['certifications'])}")
+    logger.info(f"Certifications : {before_count} -> {len(portfolio_data['certifications'])}")
 
     # ─── Fusion du parcours ───────────────────────────────────────────────
     existing_timeline = portfolio_data.get("timeline", [])
@@ -446,7 +450,32 @@ def main():
         existing_timeline, linkedin_experiences, linkedin_education
     )
     changes["timeline"] = len(portfolio_data["timeline"]) - before_count
-    logger.info(f"Parcours : {before_count} → {len(portfolio_data['timeline'])}")
+    logger.info(f"Parcours : {before_count} -> {len(portfolio_data['timeline'])}")
+
+    # ─── Fusion des posts LinkedIn ────────────────────────────────────────
+    linkedin_posts = linkedin_data.get("posts", []) if linkedin_data else []
+    if linkedin_posts:
+        existing_posts = portfolio_data.get("linkedin_posts", [])
+        existing_ids = {p.get("id") for p in existing_posts}
+        new_posts = [p for p in linkedin_posts if p.get("id") not in existing_ids]
+
+        # Fusionner : nouveaux posts en tête, garder les anciens
+        all_posts = new_posts + existing_posts
+
+        # Garder uniquement les 20 derniers posts (les plus récents)
+        all_posts = sorted(
+            all_posts,
+            key=lambda p: p.get("date") or "0000-00-00",
+            reverse=True
+        )[:20]
+
+        portfolio_data["linkedin_posts"] = all_posts
+        logger.info(f"Posts LinkedIn : {len(new_posts)} nouveau(x), {len(all_posts)} au total")
+    else:
+        # Garder les posts existants si aucun nouveau n'est récupéré
+        if "linkedin_posts" not in portfolio_data:
+            portfolio_data["linkedin_posts"] = []
+        logger.info(f"Posts LinkedIn : pas de nouveaux (conserve {len(portfolio_data['linkedin_posts'])} existants)")
 
     # ─── Mise à jour de la date ───────────────────────────────────────────
     portfolio_data["last_updated"] = datetime.now().isoformat()
@@ -469,6 +498,7 @@ def main():
     )
 
     logger.info("Processeur de données terminé")
+
 
 
 if __name__ == "__main__":

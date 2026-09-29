@@ -32,6 +32,10 @@ LOG_FILE = LOG_DIR / "scraper.log"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
+# Forcer UTF-8 sur stdout (Windows cp1252 ne supporte pas ✓ → etc.)
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -44,7 +48,7 @@ logger = logging.getLogger("scraper_github")
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 GITHUB_USERNAME = "Yanni-Delattre-Balcer"
-EXCLUDED_NAME_PATTERNS = ["test", "demo"]
+EXCLUDED_NAME_PATTERNS = ["test", "demo", "portfolio", "yanni-delattre-balcer"]
 
 
 def load_existing_data():
@@ -159,22 +163,30 @@ def main():
 
             # Langages avec pourcentages
             try:
-                languages = repo.get_languages()
+                languages_raw = repo.get_languages()
+                # Normaliser en dict {str: int} quelle que soit la version de PyGithub
+                languages = {}
+                for lang, val in (languages_raw.items() if hasattr(languages_raw, 'items') else languages_raw):
+                    try:
+                        languages[lang] = int(val)
+                    except (TypeError, ValueError):
+                        pass
                 total_bytes = sum(languages.values()) if languages else 0
                 languages_pct = {}
                 if total_bytes > 0:
-                    for lang, bytes_count in languages.items():
-                        pct = round((bytes_count / total_bytes) * 100, 1)
+                    for lang, bytes_int in languages.items():
+                        pct = round((bytes_int / total_bytes) * 100, 1)
                         languages_pct[lang] = pct
 
-                        # Agrégation globale
+                        # Aggregation globale
                         if lang in languages_global:
-                            languages_global[lang] += bytes_count
+                            languages_global[lang] += bytes_int
                         else:
-                            languages_global[lang] = bytes_count
+                            languages_global[lang] = bytes_int
             except Exception as e:
                 logger.warning(f"Erreur langages pour {repo.name} : {e}")
                 languages_pct = {}
+
 
             # Topics
             try:
@@ -202,8 +214,8 @@ def main():
 
             all_repos.append(repo_data)
             logger.info(
-                f"  ✓ {repo.name} — {repo.language or 'N/A'} — "
-                f"{commit_count} commits — maj {repo.updated_at}"
+                f"  [OK] {repo.name} - {repo.language or 'N/A'} - "
+                f"{commit_count} commits - maj {repo.updated_at}"
             )
 
         # ─── Calculer les langages globaux en pourcentages ────────────────

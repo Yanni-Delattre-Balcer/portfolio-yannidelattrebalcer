@@ -1,10 +1,10 @@
-﻿/**
+/**
  * data.js — Données du portfolio générées automatiquement.
  * NE PAS MODIFIER MANUELLEMENT — ce fichier est écrasé chaque dimanche.
- * Dernière mise à jour : Lundi 28 septembre 2026
+ * Dernière mise à jour : Mardi 29 septembre 2026
  */
 const PORTFOLIO_DATA = {
-  "last_updated": "2026-04-02T09:10:00",
+  "last_updated": "2026-09-29T23:15:38.866419",
   "profile": {
     "name": "Yanni Delattre Balcer",
     "title": "Étudiant BUT R&T",
@@ -91,6 +91,111 @@ const PORTFOLIO_DATA = {
       "details_url": "assets/partie-projet/maison.html",
       "last_updated": "2021-01-01",
       "source": "manual"
+    },
+    {
+      "id": "github-cadenceurcouleurs",
+      "title": "Cadenceur-couleurs",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Application web d'entraînement à la reconnaissance rapide des couleurs, avec cadence réglable et mode plein écran pour mobile.",
+      "stack": [
+        "HTML"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs",
+      "last_updated": "2026-09-02",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
+      "source": "github"
+    },
+    {
+      "id": "github-kdufoot",
+      "title": "KduFoot",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "J'ai créé Kdufoot pour aider les entraîneurs de football à gagner du temps.",
+      "stack": [
+        "JavaScript",
+        "CSS",
+        "TypeScript",
+        "Shell",
+        "HTML",
+        "Python"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
+      "last_updated": "2026-04-23",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
+      "source": "github"
     }
   ],
   "skills": [
@@ -226,17 +331,85 @@ const PORTFOLIO_DATA = {
       "status": "exc",
       "linked_project_id": "reseaux-entreprise",
       "filter_link": ".filter-digital"
+    },
+    {
+      "name": "TypeScript",
+      "score": 58,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "JavaScript",
+      "score": 25,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "HTML",
+      "score": 12,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "Python",
+      "score": 3,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "Shell",
+      "score": 1,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "PLpgSQL",
+      "score": 0,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "CSS",
+      "score": 0,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "Batchfile",
+      "score": 0,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
     }
   ],
   "certifications": [
     {
-      "name": "CCNA : Introduction aux réseaux (ITN)",`n      "issuer": "Cisco",`n      "date": "2026",`n      "status": "obtenu",`n      "pdf_url": "assets/docs/certifications/CCNA-_Introduction_to_Networks_certificate_yanni_delattrebalcer-ens-univ-artois-fr_a954de55-9cf7-4d9c-bd59-bb70e7f8c65e.pdf"
+      "name": "CCNA : Introduction aux réseaux (ITN)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
     },
     {
-      "name": "CCNA : Notions essentielles de commutation, de routage et de réseau sans fil (SRWE)",`n      "issuer": "Cisco",`n      "date": "2026",`n      "status": "obtenu",`n      "pdf_url": "assets/docs/certifications/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_yanni_delattrebalcer-ens-univ-artois-fr_9c5c8bec-0fb4-43dd-8f3d-3ad5e4dff946.pdf"
+      "name": "CCNA : Notions essentielles de commutation, de routage et de réseau sans fil (SRWE)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
     },
     {
-      "name": "CCNA : Réseaux d'entreprise, sécurité et automatisation (ENSA)",`n      "issuer": "Cisco",`n      "date": "2026",`n      "status": "obtenu",`n      "pdf_url": "assets/docs/certifications/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_yanni_delattrebalcer-ens-univ-artois-fr_7bc40df0-e195-40ab-b81c-ef0fb219a20d.pdf"
+      "name": "CCNA : Réseaux d'entreprise, sécurité et automatisation (ENSA)",
+      "issuer": "Cisco",
+      "date": "2026",
+      "status": "obtenu",
+      "pdf_url": null
     },
     {
       "name": "Python Essentials 2",
@@ -312,7 +485,47 @@ const PORTFOLIO_DATA = {
       "status": "terminé",
       "description": "Lors de mon année de troisième, j'ai effectué un stage d'observation au sein du service informatique de la mairie de Loison-sous-Lens. Cette expérience m'a permis de découvrir l'organisation d'une collectivité et la gestion opérationnelle d'un parc informatique (résolution d'incidents, assistance aux utilisateurs). Cette première immersion a été déterminante et a consolidé mon choix de m'orienter vers la spécialité NSI au lycée."
     }
+  ],
+  "linkedin_posts": [
+    {
+      "id": "post-001",
+      "date": "2026-09-28",
+      "text": "Je viens de terminer ma première année de BUT R&T à l'IUT de Béthune ! Une année intense entre réseaux, systèmes, télécoms et développement. Hâte d'attaquer la spécialisation Cybersécurité en 2ème année 🔐",
+      "tags": [
+        "BUT R&T",
+        "Cybersécurité",
+        "IUT Béthune"
+      ],
+      "emoji": "🎓",
+      "url": "https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"
+    },
+    {
+      "id": "post-002",
+      "date": "2026-09-02",
+      "text": "Nouveau projet open source disponible ! Cadenceur de couleurs — une petite app web pour s'entraîner à reconnaître les couleurs rapidement. Simple, efficace, entièrement en HTML/CSS/JS natif.",
+      "tags": [
+        "OpenSource",
+        "HTML",
+        "JavaScript",
+        "ProjetPerso"
+      ],
+      "emoji": "🎨",
+      "url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs"
+    },
+    {
+      "id": "post-003",
+      "date": "2026-04-23",
+      "text": "KduFoot passe la barre des 400 commits ! L'application pour les entraîneurs de football amateur continue de grandir. Système de matchs amicaux, Auth0, Cloudflare D1... un vrai projet fullstack.",
+      "tags": [
+        "KduFoot",
+        "React",
+        "TypeScript",
+        "Fullstack"
+      ],
+      "emoji": "⚽",
+      "url": "https://kdufoot.com"
+    }
   ]
 };
 
-const LAST_UPDATED = "Lundi 28 septembre 2026";
+const LAST_UPDATED = "Mardi 29 septembre 2026";

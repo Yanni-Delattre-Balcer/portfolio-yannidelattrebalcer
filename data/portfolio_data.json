@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02T09:10:00",
+  "last_updated": "2026-09-29T23:15:38.866419",
   "profile": {
     "name": "Yanni Delattre Balcer",
     "title": "Étudiant BUT R&T",
@@ -19,7 +19,10 @@
       "status": "terminé",
       "year": 2025,
       "description": "Analyse de la faisabilité et simulation (Matlab/LTspice) d'une ligne de transmission coaxiale de 75 Ω. Étude de l'atténuation et du délai de propagation sur 5m et 20m.",
-      "stack": ["Matlab", "LTspice"],
+      "stack": [
+        "Matlab",
+        "LTspice"
+      ],
       "github_url": null,
       "image": "assets/img/portfolio/electricity_dark.png",
       "details_url": "assets/partie-projet/Analyse de la réponse fréquentielle et de l'atténuation d'un câble coaxial.pdf",
@@ -34,7 +37,13 @@
       "status": "en_cours",
       "year": 2026,
       "description": "Concevoir et déployer une infrastructure réseau complète, de la planification (Gantt, choix du matériel) à la mise en œuvre technique. Le projet comprendra une phase de simulation pour valider les configurations, puis un déploiement sur machines virtuelles avec l'installation de services critiques (Web, DHCP, DNS). Le bon fonctionnement sera validé par analyse de trames et documenté via des rapports Jupyter.",
-      "stack": ["Virtualisation", "DHCP", "DNS", "Web", "Jupyter"],
+      "stack": [
+        "Virtualisation",
+        "DHCP",
+        "DNS",
+        "Web",
+        "Jupyter"
+      ],
       "github_url": null,
       "image": "assets/img/portfolio/wireshark_dark.png",
       "details_url": null,
@@ -49,7 +58,11 @@
       "status": "en_cours",
       "year": 2025,
       "description": "Création d'une interface moderne pour ce salon de coiffure et institut de beauté situé à Loison-sous-Lens. L'objectif est de valoriser leur double expertise (coiffure mixte et soins esthétiques) via un site intuitif facilitant l'accès aux tarifs et aux informations pratiques.",
-      "stack": ["HTML", "CSS", "JavaScript"],
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "github_url": null,
       "image": "assets/img/portfolio/portfolio-3.webp",
       "details_url": "assets/partie-projet/index.html",
@@ -64,12 +77,120 @@
       "status": "terminé",
       "year": 2021,
       "description": "Modélisation d'une habitation et son futur agrandissement à l'aide de SketchUp et Sweet Home 3D. Ce travail a permis de simuler l'intégration du projet pour le dossier de mairie, tout en offrant aux propriétaires une visualisation concrète du résultat final. Les plans ont ensuite servi de support technique aux artisans pour la mise en œuvre du chantier.",
-      "stack": ["SketchUp", "Sweet Home 3D"],
+      "stack": [
+        "SketchUp",
+        "Sweet Home 3D"
+      ],
       "github_url": null,
       "image": "assets/img/portfolio/portfolio-4.webp",
       "details_url": "assets/partie-projet/maison.html",
       "last_updated": "2021-01-01",
       "source": "manual"
+    },
+    {
+      "id": "github-cadenceurcouleurs",
+      "title": "Cadenceur-couleurs",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Application web d'entraînement à la reconnaissance rapide des couleurs, avec cadence réglable et mode plein écran pour mobile.",
+      "stack": [
+        "HTML"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs",
+      "last_updated": "2026-09-02",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
+      "source": "github"
+    },
+    {
+      "id": "github-kdufoot",
+      "title": "KduFoot",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "J'ai créé Kdufoot pour aider les entraîneurs de football à gagner du temps.",
+      "stack": [
+        "JavaScript",
+        "CSS",
+        "TypeScript",
+        "Shell",
+        "HTML",
+        "Python"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
+      "last_updated": "2026-04-23",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
+      "source": "github"
     }
   ],
   "skills": [
@@ -205,6 +326,62 @@
       "status": "exc",
       "linked_project_id": "reseaux-entreprise",
       "filter_link": ".filter-digital"
+    },
+    {
+      "name": "TypeScript",
+      "score": 58,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "JavaScript",
+      "score": 25,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "HTML",
+      "score": 12,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "Python",
+      "score": 3,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "Shell",
+      "score": 1,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "PLpgSQL",
+      "score": 0,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "CSS",
+      "score": 0,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
+    },
+    {
+      "name": "Batchfile",
+      "score": 0,
+      "domain": "Développement",
+      "status": "validated",
+      "linked_project_id": null
     }
   ],
   "certifications": [
@@ -302,6 +479,46 @@
       "end": "2021",
       "status": "terminé",
       "description": "Lors de mon année de troisième, j'ai effectué un stage d'observation au sein du service informatique de la mairie de Loison-sous-Lens. Cette expérience m'a permis de découvrir l'organisation d'une collectivité et la gestion opérationnelle d'un parc informatique (résolution d'incidents, assistance aux utilisateurs). Cette première immersion a été déterminante et a consolidé mon choix de m'orienter vers la spécialité NSI au lycée."
+    }
+  ],
+  "linkedin_posts": [
+    {
+      "id": "post-001",
+      "date": "2026-09-28",
+      "text": "Je viens de terminer ma première année de BUT R&T à l'IUT de Béthune ! Une année intense entre réseaux, systèmes, télécoms et développement. Hâte d'attaquer la spécialisation Cybersécurité en 2ème année 🔐",
+      "tags": [
+        "BUT R&T",
+        "Cybersécurité",
+        "IUT Béthune"
+      ],
+      "emoji": "🎓",
+      "url": "https://www.linkedin.com/in/yanni-delattre-balcer-73bb573a3/"
+    },
+    {
+      "id": "post-002",
+      "date": "2026-09-02",
+      "text": "Nouveau projet open source disponible ! Cadenceur de couleurs — une petite app web pour s'entraîner à reconnaître les couleurs rapidement. Simple, efficace, entièrement en HTML/CSS/JS natif.",
+      "tags": [
+        "OpenSource",
+        "HTML",
+        "JavaScript",
+        "ProjetPerso"
+      ],
+      "emoji": "🎨",
+      "url": "https://github.com/Yanni-Delattre-Balcer/Cadenceur-couleurs"
+    },
+    {
+      "id": "post-003",
+      "date": "2026-04-23",
+      "text": "KduFoot passe la barre des 400 commits ! L'application pour les entraîneurs de football amateur continue de grandir. Système de matchs amicaux, Auth0, Cloudflare D1... un vrai projet fullstack.",
+      "tags": [
+        "KduFoot",
+        "React",
+        "TypeScript",
+        "Fullstack"
+      ],
+      "emoji": "⚽",
+      "url": "https://kdufoot.com"
     }
   ]
 }

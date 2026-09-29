@@ -158,6 +158,60 @@ def scrape_level1():
         except Exception as e:
             logger.warning(f"Erreur lors de la récupération des compétences : {e}")
 
+        # ─── Posts récents ───────────────────────────────────────────────────
+        posts = []
+        try:
+            raw_posts = api.get_profile_posts(public_id=LINKEDIN_PROFILE_ID, post_count=10)
+            for p in (raw_posts or []):
+                # Extraire le texte du post
+                commentary = safe_get(p, "commentary") or safe_get(p, "specificContent", "com.linkedin.ugc.ShareContent", "shareCommentaryV2", "text") or ""
+                # Parfois le texte est dans un objet avec .text
+                if isinstance(commentary, dict):
+                    commentary = commentary.get("text", "")
+
+                if not commentary:
+                    continue
+
+                # Extraire les hashtags
+                import re
+                hashtags = re.findall(r'#(\w+)', commentary)
+
+                # Date de publication
+                created_at = safe_get(p, "created", "time") or safe_get(p, "createdAt")
+                if created_at:
+                    try:
+                        from datetime import datetime as dt
+                        # LinkedIn renvoie un timestamp en millisecondes
+                        ts = int(created_at) / 1000
+                        date_str = dt.fromtimestamp(ts).strftime("%Y-%m-%d")
+                    except (ValueError, TypeError, OSError):
+                        date_str = None
+                else:
+                    date_str = None
+
+                # URL du post
+                post_url = None
+                try:
+                    share_id = safe_get(p, "entityUrn", default="")
+                    if share_id:
+                        # Extraire l'identifiant numérique depuis urn:li:share:XXXXXXXXX
+                        match = re.search(r':(\d+)$', str(share_id))
+                        if match:
+                            post_url = f"https://www.linkedin.com/feed/update/{share_id}/"
+                except Exception:
+                    pass
+
+                posts.append({
+                    "id": safe_get(p, "entityUrn", default=f"post-{len(posts)}"),
+                    "date": date_str,
+                    "text": commentary.strip()[:500],   # Tronquer à 500 chars
+                    "tags": hashtags[:5],               # Max 5 hashtags
+                    "url": post_url,
+                    "emoji": None,
+                })
+        except Exception as e:
+            logger.warning(f"Erreur récupération posts LinkedIn : {e}")
+
         result = {
             "scraped_at": datetime.now().isoformat(),
             "source": "linkedin-api",
@@ -165,6 +219,7 @@ def scrape_level1():
             "education": education,
             "certifications": certifications,
             "skills": skills,
+            "posts": posts,
         }
 
         logger.info(

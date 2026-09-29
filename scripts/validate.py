@@ -24,6 +24,10 @@ LOG_FILE = LOG_DIR / "scraper.log"
 # ─── Logging ──────────────────────────────────────────────────────────────────
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+# Forcer UTF-8 sur stdout (Windows cp1252 ne supporte pas ✓ → etc.)
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
