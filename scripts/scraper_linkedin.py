@@ -91,12 +91,13 @@ def format_date(date_dict):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def scrape_level1():
-    """Scraping via linkedin-api avec authentification."""
+    """Scraping via linkedin-api avec authentification ou LI_AT."""
+    li_at = os.environ.get("LI_AT")
     username = os.environ.get("LI_USERNAME")
     password = os.environ.get("LI_PASSWORD")
 
-    if not username or not password:
-        logger.warning("LI_USERNAME ou LI_PASSWORD non définis — skip niveau 1")
+    if not li_at and (not username or not password):
+        logger.warning("Aucun identifiant (LI_AT ou LI_USERNAME/PASSWORD) défini — skip niveau 1")
         return None
 
     logger.info("Niveau 1 : Tentative de connexion via linkedin-api...")
@@ -104,7 +105,30 @@ def scrape_level1():
     try:
         from linkedin_api import Linkedin
 
-        api = Linkedin(username, password)
+        if li_at:
+            logger.info("Utilisation du cookie de session LI_AT...")
+            # On injecte le cookie manuellement pour la librairie linkedin-api
+            import pickle
+            from pathlib import Path
+            import requests
+            
+            # Nom d'utilisateur factice pour stocker le fichier cookie
+            fake_user = "li_at_user"
+            cookie_dir = Path.home() / ".linkedin_api" / "cookies"
+            cookie_dir.mkdir(parents=True, exist_ok=True)
+            
+            jar = requests.cookies.RequestsCookieJar()
+            jar.set("li_at", li_at, domain=".www.linkedin.com", path="/", secure=True)
+            jar.set("JSESSIONID", '"ajax:1234567890"', domain=".www.linkedin.com", path="/", secure=True)
+            # linkedin-api attend un fichier pickle avec le jar
+            with open(cookie_dir / f"{fake_user}.cookie", "wb") as f:
+                pickle.dump(jar, f)
+            
+            # Initialise l'API avec le faux user, elle lira le fichier cookie sans se connecter
+            api = Linkedin(fake_user, "dummy_password")
+        else:
+            api = Linkedin(username, password)
+            
         profile = api.get_profile(LINKEDIN_PROFILE_ID)
 
         if not profile:
