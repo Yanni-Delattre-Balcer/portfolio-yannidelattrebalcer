@@ -1946,31 +1946,34 @@ html[lang="en"] .feedback-form .loading-text {
 }
 
 .ac-card {
-  background: color-mix(in srgb, var(--surface-color), transparent 20%);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-left: 3px solid var(--comp-color, var(--accent-color));
-  border-radius: 8px;
-  padding: 16px;
+  background: #111111; /* Noir très profond */
+  border: 1px solid #222222; /* Bordure très discrète */
+  border-left: 4px solid var(--comp-color, var(--accent-color));
+  border-radius: 12px;
+  padding: 24px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 }
 
 .ac-card:hover {
-  transform: translateY(-2px);
-  background: color-mix(in srgb, var(--surface-color), transparent 0%);
-  border-color: color-mix(in srgb, var(--comp-color, var(--accent-color)), transparent 70%);
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--default-color), transparent 95%);
+  transform: translateY(-4px);
+  background: #151515;
+  border-color: #333333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px color-mix(in srgb, var(--comp-color), transparent 80%);
 }
 
 .ac-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #222222;
 }
 
 .ac-id {
@@ -2193,18 +2196,18 @@ body {
    TRACE CARDS — Affichage épuré (sans images IA)
    ================================================================ */
 .trace-card--clean {
-  background: var(--surface-color);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 12px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
   height: 100%;
 }
 
 .trace-card--clean:hover {
-  border-color: rgba(255,255,255,0.22);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  border-color: #333333;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
 .trace-card-clean-body {
@@ -2501,4 +2504,26 @@ body {
 .linkedin-cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(10, 102, 194, 0.45);
+}
+
+/* ── Couleurs de Marques (Logos) ── */
+.bi-linkedin {
+  color: #0a66c2 !important;
+  transition: filter 0.2s ease;
+}
+.bi-linkedin:hover {
+  filter: brightness(1.2);
+}
+
+.bi-github {
+  color: #ffffff !important;
+  transition: opacity 0.2s ease;
+}
+.bi-github:hover {
+  opacity: 0.8;
+}
+
+.social-links a:hover, .social-connect a:hover {
+  border-color: transparent !important;
+  background: rgba(255, 255, 255, 0.05);
 }
