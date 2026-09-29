@@ -83,6 +83,10 @@ jobs:
       # ─── Scraping ───────────────────────────────────────────────────────
       - name: Scrape LinkedIn
         if: steps.dedup.outputs.skip != 'true'
+        env:
+          LI_AT: ${{ secrets.LI_AT }}
+          LI_USERNAME: ${{ secrets.LI_USERNAME }}
+          LI_PASSWORD: ${{ secrets.LI_PASSWORD }}
         run: python scripts/scraper_linkedin.py
 
       - name: Scrape GitHub

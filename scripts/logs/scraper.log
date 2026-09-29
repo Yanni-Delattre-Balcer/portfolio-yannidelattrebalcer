@@ -185,3 +185,10 @@
 2026-09-29 21:56:20,382 [INFO] ✓ 4 entrées de parcours validées
 2026-09-29 21:56:20,382 [INFO] ----------------------------------------
 2026-09-29 21:56:20,382 [INFO] ✓ VALIDATION RÉUSSIE — aucune erreur, aucun avertissement
+2026-09-30 00:07:07,478 [INFO] ============================================================
+2026-09-30 00:07:07,479 [INFO] Démarrage du scraper LinkedIn
+2026-09-30 00:07:07,479 [INFO] ============================================================
+2026-09-30 00:07:07,479 [INFO] Niveau 1 — Tentative 1/3
+2026-09-30 00:07:07,479 [INFO] Niveau 1 : Tentative de connexion via linkedin-api...
+2026-09-30 00:07:07,479 [ERROR] Niveau 1 échoué : No module named 'linkedin_api'
+2026-09-30 00:07:07,480 [INFO] Attente de 30s avant nouvelle tentative...
