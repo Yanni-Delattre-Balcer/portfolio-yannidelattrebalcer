@@ -2291,7 +2291,6 @@ body {
 .detail-item:hover, .info-item:hover, .trace-card--clean:hover, .exp-card:hover, .timeline-content:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
   background-color: #1a1a1a !important; /* Slightly lighter than #121212 */
 }
 
@@ -2526,4 +2525,46 @@ body {
 .social-links a:hover, .social-connect a:hover {
   border-color: transparent !important;
   background: rgba(255, 255, 255, 0.05);
+}
+
+/*==============================================================================
+   EFFETS DE SURVOL INTERACTIFS (Boutons et Titres)
+==============================================================================*/
+/* Boutons (CV, Écrit Réflexif, Like, etc.) */
+.about .profile-card .profile-actions a.btn-primary,
+.about .profile-card .profile-actions a.btn-secondary,
+#btn-like-action {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.about .profile-card .profile-actions a.btn-primary:hover,
+.about .profile-card .profile-actions a.btn-secondary:hover,
+#btn-like-action:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  z-index: 2;
+}
+
+/* Titres, Textes et Navbar */
+.welcome-title, 
+.section-title h2, 
+.section-header h2,
+.profile-header h3,
+.navmenu a,
+p, li {
+  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease !important;
+  will-change: transform, text-shadow;
+}
+
+.welcome-title:hover, 
+.section-title h2:hover, 
+.section-header h2:hover,
+.profile-header h3:hover,
+.navmenu a:hover,
+p:hover, li:hover {
+  transform: scale(1.02) !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 }

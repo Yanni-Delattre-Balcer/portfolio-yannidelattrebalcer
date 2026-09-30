@@ -591,3 +591,83 @@ if (document.readyState === "loading") {
 } else {
   initCustomInteractions();
 }
+
+/**
+ * Effet 3D Tilt & Surbrillance (Glare) sur les cartes
+ */
+function applyTiltEffect(card) {
+  if (card.dataset.tiltApplied === "true") return;
+  card.dataset.tiltApplied = "true";
+
+  if (window.getComputedStyle(card).position === 'static') {
+    card.style.position = 'relative';
+  }
+  card.style.overflow = 'hidden';
+
+  const glare = document.createElement('div');
+  glare.classList.add('tilt-glare');
+  glare.style.position = 'absolute';
+  glare.style.top = '0';
+  glare.style.left = '0';
+  glare.style.width = '100%';
+  glare.style.height = '100%';
+  glare.style.pointerEvents = 'none';
+  glare.style.borderRadius = window.getComputedStyle(card).borderRadius;
+  glare.style.opacity = '0';
+  glare.style.transition = 'opacity 0.3s ease';
+  glare.style.zIndex = '10';
+  glare.style.background = 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%)';
+  
+  card.appendChild(glare);
+
+  card.style.transformStyle = "preserve-3d";
+  card.style.willChange = "transform";
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+
+    card.style.setProperty('transform', `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1, 1, 1)`, 'important');
+    card.style.setProperty('transition', 'transform 0.1s ease-out', 'important');
+    
+    glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%)`;
+    glare.style.opacity = '1';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.setProperty('transform', 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)', 'important');
+    card.style.setProperty('transition', 'transform 0.5s ease-out', 'important');
+    glare.style.opacity = '0';
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const cardSelector = '.profile-card, .exp-card, .ac-card, .trace-card, .trace-card--clean, .project-card, .portfolio-card, .service-item, .info-item, .contact-card, .btn-competence, .detail-item, .timeline-content';
+  
+  // Appliquer aux cartes existantes
+  document.querySelectorAll(cardSelector).forEach(applyTiltEffect);
+
+  // Observer pour les cartes ajoutées dynamiquement
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) { 
+          if (node.matches && node.matches(cardSelector)) {
+            applyTiltEffect(node);
+          }
+          const childCards = node.querySelectorAll ? node.querySelectorAll(cardSelector) : [];
+          childCards.forEach(applyTiltEffect);
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
