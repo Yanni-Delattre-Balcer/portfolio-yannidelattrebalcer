@@ -82,3 +82,15 @@
 2026-09-29 21:56:20,326 [INFO] Historique mis à jour : /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/scripts/logs/update_history.log
 2026-09-29 21:56:20,327 [INFO] Historique JSON mis à jour : /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/scripts/logs/history.json
 2026-09-29 21:56:20,327 [INFO] Portfolio updater terminé avec succès
+2026-10-04 20:52:53,036 [INFO] ============================================================
+2026-10-04 20:52:53,036 [INFO] Démarrage du portfolio updater
+2026-10-04 20:52:53,036 [INFO] ============================================================
+2026-10-04 20:52:53,036 [INFO] portfolio_data.json chargé et valide
+2026-10-04 20:52:53,045 [INFO] Date : Dimanche 4 octobre 2026 (2026-10-04)
+2026-10-04 20:52:53,046 [INFO] data.js généré : /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/assets/js/data.js
+2026-10-04 20:52:53,047 [INFO] Meta last-updated mise à jour dans index.html
+2026-10-04 20:52:53,047 [INFO] Meta last-updated mise à jour dans index_en.html
+2026-10-04 20:52:53,048 [INFO] sitemap.xml généré : /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/sitemap.xml
+2026-10-04 20:52:53,048 [INFO] Historique mis à jour : /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/scripts/logs/update_history.log
+2026-10-04 20:52:53,049 [INFO] Historique JSON mis à jour : /home/runner/work/portfolio-yannidelattrebalcer/portfolio-yannidelattrebalcer/scripts/logs/history.json
+2026-10-04 20:52:53,049 [INFO] Portfolio updater terminé avec succès
