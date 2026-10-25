@@ -1,10 +1,10 @@
 /**
  * data.js — Données du portfolio générées automatiquement.
  * NE PAS MODIFIER MANUELLEMENT — ce fichier est écrasé chaque dimanche.
- * Dernière mise à jour : Dimanche 18 octobre 2026
+ * Dernière mise à jour : Dimanche 25 octobre 2026
  */
 const PORTFOLIO_DATA = {
-  "last_updated": "2026-10-18T20:06:15.776411",
+  "last_updated": "2026-10-25T20:23:45.096435",
   "profile": {
     "name": "Yanni Delattre Balcer",
     "title": "Étudiant BUT R&T",
@@ -141,16 +141,38 @@ const PORTFOLIO_DATA = {
       "description": "J'ai créé Kdufoot pour aider les entraîneurs de football à gagner du temps.",
       "stack": [
         "JavaScript",
-        "Python",
+        "HTML",
+        "Shell",
         "TypeScript",
         "CSS",
-        "HTML",
-        "Shell"
+        "Python"
       ],
       "github_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
       "image": null,
       "details_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
       "last_updated": "2026-04-23",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
       "source": "github"
     },
     {
@@ -616,4 +638,4 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-const LAST_UPDATED = "Dimanche 18 octobre 2026";
+const LAST_UPDATED = "Dimanche 25 octobre 2026";
