@@ -1,10 +1,10 @@
 /**
  * data.js — Données du portfolio générées automatiquement.
  * NE PAS MODIFIER MANUELLEMENT — ce fichier est écrasé chaque dimanche.
- * Dernière mise à jour : Dimanche 1 novembre 2026
+ * Dernière mise à jour : Dimanche 8 novembre 2026
  */
 const PORTFOLIO_DATA = {
-  "last_updated": "2026-11-01T21:42:09.484688",
+  "last_updated": "2026-11-08T21:41:38.188698",
   "profile": {
     "name": "Yanni Delattre Balcer",
     "title": "Étudiant BUT R&T",
@@ -140,17 +140,39 @@ const PORTFOLIO_DATA = {
       "year": 2026,
       "description": "J'ai créé Kdufoot pour aider les entraîneurs de football à gagner du temps.",
       "stack": [
-        "TypeScript",
-        "Python",
-        "HTML",
-        "CSS",
         "Shell",
-        "JavaScript"
+        "CSS",
+        "JavaScript",
+        "Python",
+        "TypeScript",
+        "HTML"
       ],
       "github_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
       "image": null,
       "details_url": "https://github.com/Yanni-Delattre-Balcer/KduFoot",
       "last_updated": "2026-04-23",
+      "source": "github"
+    },
+    {
+      "id": "github-caisseautomatique2026",
+      "title": "caisse_automatique_2026",
+      "category": "Web",
+      "filter_class": "filter-development",
+      "status": "en_cours",
+      "year": 2026,
+      "description": "Bienvenue sur le projet **Caisse Automatique Universelle 2026** ! Il s'agit d'une application de point de vente (POS) ultra-moderne, conçue pour offrir une expérience \"Apple-Grade\", robuste, réactive, et capable de fonctionner en mode hors-ligne.",
+      "stack": [
+        "JavaScript",
+        "TypeScript",
+        "PLpgSQL",
+        "HTML",
+        "Batchfile",
+        "CSS"
+      ],
+      "github_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "image": null,
+      "details_url": "https://github.com/Yanni-Delattre-Balcer/caisse_automatique_2026",
+      "last_updated": "2026-04-25",
       "source": "github"
     },
     {
@@ -660,4 +682,4 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-const LAST_UPDATED = "Dimanche 1 novembre 2026";
+const LAST_UPDATED = "Dimanche 8 novembre 2026";
