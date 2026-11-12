@@ -424,6 +424,68 @@
       }
     ]
   },
+  securiser: {
+    label: "Sécuriser",
+    description: "Administrer un système d'information sécurisé",
+    color: "#777777",
+    apprentissages: [
+      {
+        id: "AC24.01Cyber",
+        intitule: "Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.02Cyber",
+        intitule: "Mettre en œuvre les outils fondamentaux de sécurisation d'une infrastructure du réseau",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.03Cyber",
+        intitule: "Sécuriser les services",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.04Cyber",
+        intitule: "Choisir les outils cryptographiques adaptés au besoin fonctionnel du système d'information",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.05Cyber",
+        intitule: "Connaître les différents types d'attaque",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.06Cyber",
+        intitule: "Comprendre des documents techniques en anglais",
+        statut: "en_cours",
+        detail: { traces: [] }
+      }
+    ]
+  },
+  surveiller: {
+    label: "Surveiller",
+    description: "Surveiller un système d'information sécurisé",
+    color: "#555555",
+    apprentissages: [
+      {
+        id: "AC25.01Cyber",
+        intitule: "Administrer les protections contre les logiciels malveillants",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC25.02Cyber",
+        intitule: "Prendre en main des outils de test de pénétration réseau/système",
+        statut: "en_cours",
+        detail: { traces: [] }
+      }
+    ]
+  },
   autres: {
     label: "Autres",
     description: "Projets divers hors référentiel BUT R&T",

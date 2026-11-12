@@ -424,6 +424,68 @@
       }
     ]
   },
+  securiser: {
+    label: "Secure",
+    description: "Administer a secure information system",
+    color: "#777777",
+    apprentissages: [
+      {
+        id: "AC24.01Cyber",
+        intitule: "Know and use cybersecurity best practices and recommendations",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.02Cyber",
+        intitule: "Implement the fundamental tools for securing a network infrastructure",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.03Cyber",
+        intitule: "Secure services",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.04Cyber",
+        intitule: "Choose the cryptographic tools suited to the information system's functional needs",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.05Cyber",
+        intitule: "Know the different types of attacks",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC24.06Cyber",
+        intitule: "Understand technical documents in English",
+        statut: "en_cours",
+        detail: { traces: [] }
+      }
+    ]
+  },
+  surveiller: {
+    label: "Monitor",
+    description: "Monitor a secure information system",
+    color: "#555555",
+    apprentissages: [
+      {
+        id: "AC25.01Cyber",
+        intitule: "Administer protections against malware",
+        statut: "en_cours",
+        detail: { traces: [] }
+      },
+      {
+        id: "AC25.02Cyber",
+        intitule: "Get hands-on with network/system penetration testing tools",
+        statut: "en_cours",
+        detail: { traces: [] }
+      }
+    ]
+  },
   autres: {
     label: "Others",
     description: "Diverse projects outside the BUT R&T curriculum",

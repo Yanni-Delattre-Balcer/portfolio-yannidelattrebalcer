@@ -1842,7 +1842,7 @@ html[lang="en"] .feedback-form .loading-text {
 /* --- Niveau 1 : Boutons Compétences --- */
 .portfolio-competences {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 40px;
 }
