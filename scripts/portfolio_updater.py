@@ -61,7 +61,7 @@ MOIS_FR = {
     9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre",
 }
 
-SITE_URL = "https://yanni-delattre-balcer.github.io/portfolio-yannidelattrebalcer"
+SITE_URL = "https://yannidelattrebalcer.com"
 
 
 def format_date_french_full(dt):
@@ -154,8 +154,7 @@ def generate_sitemap(date_iso):
         ("", "1.0", "weekly"),
         ("index_en.html", "0.8", "weekly"),
         ("page-credits.html", "0.3", "monthly"),
-        ("privacy.html", "0.3", "monthly"),
-        ("terms.html", "0.3", "monthly"),
+        ("page-credits_en.html", "0.3", "monthly"),
     ]
 
     urls = ""

@@ -125,7 +125,7 @@
   /**
    * GLightbox & Isotope
    */
-  const glightbox = GLightbox({ selector: '.glightbox' });
+  const glightbox = (typeof GLightbox !== 'undefined') ? GLightbox({ selector: '.glightbox' }) : null;
 
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
@@ -261,6 +261,30 @@ document.addEventListener("DOMContentLoaded", function() {
   const acGridContainer = document.getElementById("ac-grid-container");
   const acGrid = document.getElementById("ac-grid");
 
+  // Langue de la page (fr / en) + échappement HTML des données injectées
+  const IS_EN = document.documentElement.lang === 'en';
+  const T = IS_EN ? {
+    project: 'Project', projects: 'Projects',
+    todo: 'To be completed',
+    openDoc: 'Open the document',
+    noDoc: 'No document or file in this AC',
+    noProject: 'No project or file in this AC',
+    noProjectSub: 'The related skills do not have documented work yet.',
+    viewDoc: 'View the document',
+    docNA: 'Document not available'
+  } : {
+    project: 'Projet', projects: 'Projets',
+    todo: 'À compléter',
+    openDoc: 'Consulter le document',
+    noDoc: 'Aucun document ou fichier dans cet AC',
+    noProject: 'Aucun projet ou fichier dans cet AC',
+    noProjectSub: "Les compétences associées n'ont pas encore de réalisations documentées.",
+    viewDoc: 'Voir le document',
+    docNA: 'Document non disponible'
+  };
+  const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g,
+    c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
   // Si on n'est pas sur une page avec la section AC, on arrête
   if (!acGridContainer || typeof COMPETENCES === "undefined") return;
 
@@ -300,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const tracesCount = ac.detail && ac.detail.traces ? ac.detail.traces.length : 0;
         const badgeClass = tracesCount > 0 ? "bg-info text-dark" : "bg-dark text-light border border-secondary";
         const badgeIcon = tracesCount > 0 ? "bi-folder-fill" : "bi-folder";
-        const badgeProjet = `<span class="badge ${badgeClass} ms-2" style="font-size: 0.75rem; vertical-align: middle;"><i class="bi ${badgeIcon}"></i> ${tracesCount} Projet${tracesCount > 1 ? 's' : ''}</span>`;
+        const badgeProjet = `<span class="badge ${badgeClass} ms-2" style="font-size: 0.75rem; vertical-align: middle;"><i class="bi ${badgeIcon}"></i> ${tracesCount} ${tracesCount > 1 ? T.projects : T.project}</span>`;
 
         const card = document.createElement("div");
         card.className = "ac-card";
@@ -384,20 +408,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
 
-      document.getElementById("acInlineFait").textContent = d.ce_que_jai_fait || "À compléter";
-      document.getElementById("acInlinePourquoi").textContent = d.pourquoi || "À compléter";
-      document.getElementById("acInlineComment").textContent = d.comment || "À compléter";
-      document.getElementById("acInlineDifficultes").textContent = d.difficultes || "À compléter";
-      document.getElementById("acInlineAppris").textContent = d.appris || "À compléter";
-      document.getElementById("acInlineAutrement").textContent = d.ferais_autrement || "À compléter";
+      document.getElementById("acInlineFait").textContent = d.ce_que_jai_fait || T.todo;
+      document.getElementById("acInlinePourquoi").textContent = d.pourquoi || T.todo;
+      document.getElementById("acInlineComment").textContent = d.comment || T.todo;
+      document.getElementById("acInlineDifficultes").textContent = d.difficultes || T.todo;
+      document.getElementById("acInlineAppris").textContent = d.appris || T.todo;
+      document.getElementById("acInlineAutrement").textContent = d.ferais_autrement || T.todo;
 
       const tracesListContainer = document.getElementById("acInlineTraces");
       if (traceClicked && traceClicked.url) {
-        tracesListContainer.innerHTML = `<a href="${traceClicked.url}" target="_blank" class="btn btn-primary" style="background-color: ${color}; border-color: ${color};"><i class="bi bi-box-arrow-up-right"></i> Consulter le document (${traceClicked.title})</a>`;
+        tracesListContainer.innerHTML = `<a href="${esc(traceClicked.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background-color: ${color}; border-color: ${color};"><i class="bi bi-box-arrow-up-right"></i> ${T.openDoc} (${esc(traceClicked.title)})</a>`;
       } else if (hasTraces && d.traces[0].url) {
-        tracesListContainer.innerHTML = `<a href="${d.traces[0].url}" target="_blank" class="btn btn-primary" style="background-color: ${color}; border-color: ${color};"><i class="bi bi-box-arrow-up-right"></i> Consulter le document</a>`;
+        tracesListContainer.innerHTML = `<a href="${esc(d.traces[0].url)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background-color: ${color}; border-color: ${color};"><i class="bi bi-box-arrow-up-right"></i> ${T.openDoc}</a>`;
       } else {
-        tracesListContainer.innerHTML = `<p class="text-muted mb-0" style="font-style: italic;">Aucun document ou fichier dans cet AC</p>`;
+        tracesListContainer.innerHTML = `<p class="text-muted mb-0" style="font-style: italic;">${T.noDoc}</p>`;
       }
 
       detailsContainer.style.display = "block";
@@ -409,8 +433,8 @@ document.addEventListener("DOMContentLoaded", function() {
       tracesContainer.innerHTML = `
         <div class="text-center py-5" style="animation: slideDown 0.4s ease-out;">
           <i class="bi bi-folder-x display-1 text-danger mb-3 d-block" style="opacity: 0.8;"></i>
-          <h4 class="text-danger">Aucun projet ou fichier dans cet AC</h4>
-          <p class="text-danger small" style="opacity: 0.8;">Les compétences associées n'ont pas encore de réalisations documentées.</p>
+          <h4 class="text-danger">${T.noProject}</h4>
+          <p class="text-danger small" style="opacity: 0.8;">${T.noProjectSub}</p>
         </div>
       `;
       tracesContainer.style.display = "block";
@@ -422,14 +446,14 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="row g-3 justify-content-center">
           ${d.traces.map((t, idx) => `
             <div class="col-md-6 col-lg-4">
-              <div class="trace-card trace-card--clean" data-idx="${idx}" ${t.url ? `data-url="${t.url}"` : ''} style="cursor:${t.url ? 'pointer' : 'default'}">
+              <div class="trace-card trace-card--clean" data-idx="${idx}" ${t.url ? `data-url="${esc(t.url)}"` : ''} style="cursor:${t.url ? 'pointer' : 'default'}">
                 <div class="trace-card-clean-body">
-                  <span class="trace-cat">${t.category} · ${t.year}</span>
-                  <h6 class="trace-title">${t.title}</h6>
+                  <span class="trace-cat">${esc(t.category)} · ${esc(t.year)}</span>
+                  <h6 class="trace-title">${esc(t.title)}</h6>
                   <div class="trace-tags">
-                    ${(t.tags || []).map(tag => `<span class="trace-tag">${tag}</span>`).join('')}
+                    ${(t.tags || []).map(tag => `<span class="trace-tag">${esc(tag)}</span>`).join('')}
                   </div>
-                  ${t.url ? `<span class="trace-link-hint"><i class="bi bi-arrow-up-right"></i> Voir le document</span>` : `<span class="trace-no-link"><i class="bi bi-lock"></i> Document non disponible</span>`}
+                  ${t.url ? `<span class="trace-link-hint"><i class="bi bi-arrow-up-right"></i> ${T.viewDoc}</span>` : `<span class="trace-no-link"><i class="bi bi-lock"></i> ${T.docNA}</span>`}
                 </div>
               </div>
             </div>
@@ -466,7 +490,12 @@ document.addEventListener('DOMContentLoaded', function() {
   if (el && typeof LAST_UPDATED !== 'undefined' && LAST_UPDATED) {
     const isEn = document.documentElement.lang === 'en';
     if (isEn) {
-      const enDate = typeof LAST_UPDATED_EN !== 'undefined' ? LAST_UPDATED_EN : 'Tuesday, May 26, 2026';
+      let enDate = typeof LAST_UPDATED_EN !== 'undefined' ? LAST_UPDATED_EN : null;
+      if (!enDate && typeof PORTFOLIO_DATA !== 'undefined' && PORTFOLIO_DATA.last_updated) {
+        const d = new Date(PORTFOLIO_DATA.last_updated);
+        if (!isNaN(d)) enDate = d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      }
+      enDate = enDate || LAST_UPDATED;
       el.textContent = 'Last updated on ' + enDate;
     } else {
       el.textContent = 'Mis à jour le ' + LAST_UPDATED;
@@ -480,6 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initCustomInteractions() {
   // PARTICLES SYSTEM
   const canvas = document.getElementById("particles-canvas");
+  if (!canvas) return; // page sans animation de particules (ex. crédits, 404)
   const ctx = canvas.getContext("2d");
   let particlesArray = [];
   const mouse = { x: undefined, y: undefined, radius: 80 }; // Rayon d'interaction réduit
@@ -670,4 +700,17 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
+});
+
+/**
+ * Liens du pied de page : ouvrent la compétence correspondante dans le Portfolio
+ * (remplace les anciens onclick en ligne, pour pouvoir utiliser une CSP stricte).
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-open-comp]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      const btn = document.getElementById('btn-' + link.dataset.openComp);
+      if (btn) btn.click();
+    });
+  });
 });
